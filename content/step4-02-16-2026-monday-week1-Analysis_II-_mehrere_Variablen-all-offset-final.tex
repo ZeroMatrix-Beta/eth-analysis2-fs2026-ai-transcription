@@ -1,0 +1,1256 @@
+% ==========================================
+% LatexRefinement Step Output: step4-02-16-2026-monday-week1-Analysis_II-_mehrere_Variablen-all-offset-final.tex
+% Model: gemini-3.6-flash
+% Temperature: 0.33
+% TopP: 0.95
+% TopK: 40
+% MaxOutputTokens: 65535
+% ThinkingBudget: 32765
+% ThinkingLevel: HIGH
+% Prompt Tokens: 54'182
+% Candidates Tokens: 23'079 (inkl. Thinking Tokens)
+% Cached Tokens: 0
+% Processed on: 2026-07-23 19:04:03
+% ==========================================
+
+% Primary Language: English
+% End of the video: 01:27:09
+
+\lecturechapter[1]{Monday}{16. Feb}{16. February 2026}{Course Overview, \texorpdfstring{$\mathbb{R}^n$}{Rn} as Euclidean Space, and Metric Spaces}
+% Old chapter title: Introduction to Multivariable Calculus
+
+\begin{nice-box}[Course Context \& Overview]
+This is the opening lecture of \emph{Analysis II: mehrere Variablen} (Spring 2026) at ETH Zürich, taught by Prof.\ Joaquim Serra. The course extends single-variable calculus (\emph{Analysis I}) to multivariable functions, Euclidean spaces $\mathbb{R}^n$, differential topology, partial derivatives, surface integration, and vector calculus leading up to the Gauss--Green--Stokes Divergence Theorem.
+
+\textbf{Key Lecture Highlights:}
+\begin{itemize}
+    \item \textbf{1D FTC vs.\ Multivariable Calculus:} Framing the 3D Divergence Theorem as the natural higher-dimensional counterpart to the 1D Fundamental Theorem of Calculus.
+    \item \textbf{Course Architecture \& Learning Goals:} The five main pillars of Analysis II, pedagogical philosophy on proofs, multi-tiered proof mastery, Lean, and AI tools.
+    \item \textbf{$\mathbb{R}^n$ as Euclidean Space:} Vector structure, Euclidean norm, scalar product, Euclidean distance, and formal proofs of the Triangle Inequality and Cauchy--Schwarz Inequality.
+    \item \textbf{Metric Spaces:} Abstract metric space definition $(X, d)$, three metric axioms, and canonical examples ($\mathbb{R}^n$, Manhattan metric, $S^2$, $C([a, b])$ with supremum and $L^2$ metrics).
+\end{itemize}
+\end{nice-box}
+
+\section{Course Administration and Logistics}
+
+\begin{spoken-clean}[00:00:00 - 00:02:30]
+Good morning. Good morning. Thank you. Please, please, please.
+
+Good morning and welcome to Analysis $2$ (i.e., Analysis II: mehrere Variablen). I have here a projection with my name, Joaquim Serra, the name of the coordinator, Enric Florit-Simón. Now, this is my introduction. And then you know the times of the lectures, obviously, because you are here.
+
+And I wanted to share, before starting with the mathematical content, some practical information that is very important because we are a large group and the communication and everything needs to be done in a more or less structured way. Otherwise --- otherwise we collapse.
+
+So, as a general rule, everything that applied to Analysis $1$ applies to Analysis $2$, unless otherwise stated. We will try to follow the same rules, and then you know what to expect. In particular, you will have this webpage on the ETH portal that --- I can see that from up there is a bit difficult to see, right? --- but I will try to make it bigger, yeah.
+\end{spoken-clean}
+
+\begin{meta-note}[Course Portal Displayed]
+The lecturer projects the course website for \emph{Analysis II: mehrere Variablen Spring 2026} on the screen, detailing lecture times (Mondays 08:15--10:00 in ETA F 5, Wednesdays 08:15--10:00 in HG F 7, Thursdays 16:15--18:00 in ETA F 5), exercise classes, exam information, and the bonus program.
+\end{meta-note}
+
+\begin{spoken-clean}[00:02:30 - 00:05:07]
+So, you know that you need to register for the exercise classes. For the communication, please try to use whenever possible the forum. We will look at the forum and reply, and your peers can also reply to questions, because then we can use the collective knowledge, right?
+
+There will be recordings of the lecture, but not until later on, okay? Because it is important for the lecture and for you, but mainly --- I mean, for you it is your interest if you want to come or not ---, but for the lecture it is very good that you come to the lecture, you ask questions, you stop me when I'm going too fast, these kinds of things. You know, it's very important. So, it is where you meet with your peers and you can communicate, ask questions to your peers. It's better for the learning.
+
+We will tell you more about the exam later on, right? Today I will tell you a bit more what is important to be successful in the course, what to expect about this course, and the details and the rules of the exam will come later on --- you don't need to know now. The bonus --- there is a $0.25$ bonus --- will be in questions that you will answer in some exercise classes. We will tell you in advance which ones, and essentially you need to be in the exercise class and answer it. And do not worry, because the rules will be thought out --- in any case it's just $0.25$ points ---, but the rules will be thought out so that if you miss $1$ day or casuistics like this, it's not that you get $0$ points, right?
+
+Lecture notes: there will be lecture notes similar to those in Analysis $1$, and we will put them on this page, hopefully by the end of each week, because I update them after the lecture, mainly depending on your questions, depending on your feedback.
+
+And that's it! I think that the rules are mainly those, and the organization. Is there some question about organization? So, essentially, as I said, if you have doubts, it is like in Analysis $1$, unless I say something that is surprising to you, as in Analysis $1$. Is this okay? Yeah.
+
+Okay, now I will switch --- I have some other things I want to project later, but now, because we cannot record at the same time blackboard and projection, I will switch one moment to the blackboard.
+\end{spoken-clean}
+
+\begin{ai-global-state-checkpoint-invisible-content}
+% timestamp: 00:05:07
+% topic: Course administrative overview & transition to blackboard
+% board_state: clean blackboard
+% next_goal: High-level contrast between Analysis 1 (FTC) and Analysis 2 (Gauss-Green-Stokes)
+% open_loops: none
+\end{ai-global-state-checkpoint-invisible-content}
+
+\section{Analysis I vs. Analysis II: High-Level Overview}
+
+\begin{spoken-clean}[00:05:07 - 00:07:22]
+Okay, now, just to start, we will give a very quick --- so quick that it's almost a cartoon --- but a very quick overview of what Analysis $1$ and Analysis $2$ are, right? It's very, very quick.
+
+For me, it's very difficult to write big. So, if you don't see something, I will try to say out loud everything I write.
+
+Analysis $1$ is calculus of $1$ variable (i.e., single-variable calculus). And then, if we got to choose a representative theorem of Analysis $1$ that represents the course a bit, what would you choose?
+
+Can you tell me at least $2$ answers? So, $2$ people can tell me: what is one representative theorem of Analysis $1$? Yeah?
+\end{spoken-clean}
+
+\begin{student-interaction}[Student Answer]
+The Fundamental Theorem of Calculus.
+\end{student-interaction}
+
+\begin{spoken-clean}[00:07:22 - 00:08:35]
+Yeah, I agree! He said the Fundamental Theorem of Calculus. Makes sense, right? Is there some other guess? Yeah, there?
+\end{spoken-clean}
+
+\begin{student-interaction}[Student Answer]
+The Intermediate Value Theorem.
+\end{student-interaction}
+
+\begin{spoken-clean}[00:08:35 - 00:10:32]
+The Intermediate Value Theorem, okay. I think we need to use this (i.e., catch-box microphone) for the recording; otherwise, I will repeat. Later on, when I get better with throwing the catch-box, we will use that.
+
+So, we said $2$ theorems that are indeed important. Perhaps the most representative --- I would agree, and I saw many people saying yes --- is the Fundamental Theorem of Calculus (FTC), right? And it is this:
+\[
+\int_a^b f'(x) \, dx = f(b) - f(a).
+\]
+Is it correct? Yeah, looks like it, doesn't it?
+
+Now, to unfold, to write, and to understand every detail about this equation over here, you needed to introduce a lot of things. You needed to define what is that: derivative, right? What is this: the Riemann sum, integral. And even --- and you spent a lot of time, right? --- what is that: real number. It was not easy. Yeah, is there some mistake?
+\end{spoken-clean}
+
+\begin{student-interaction}[Student Spotting Equation Typo]
+Shouldn't it be $f(b) - f(a)$ on the right side? You wrote $f(a) - f(b)$.
+\end{student-interaction}
+
+\begin{spoken-clean}[00:10:32 - 00:11:45]
+Good! Well spotted! \inlinemetanote{corrects the board from $f(a) - f(b)$ to $f(b) - f(a)$}
+\[
+\int_a^b f'(x) \, dx = f(b) - f(a).
+\]
+Now? Good.
+
+Okay, so this is a fairly compact theorem, yet the ingredients you had to learn to unfold all of this and to understand the meaning of every symbol here were a bit of work.
+
+Now, what will Analysis $2$ look like?
+\end{spoken-clean}
+
+\begin{math-stroke}[Fundamental Theorem of Calculus (Analysis I Baseline)]
+In single-variable calculus (\emph{Analysis I}), the central, unifying result connecting differentiation and integration is the Fundamental Theorem of Calculus.
+
+\begin{theorem}[Fundamental Theorem of Calculus (1D)]\label[theorem]{thm:ftc-1d}
+Let $f \colon [a, b] \to \mathbb{R}$ be continuously differentiable on $[a, b]$. Then:
+\begin{equation}\label{eq:ftc-1d}
+\int_a^b f'(x) \, dx = f(b) - f(a).
+\end{equation}
+\end{theorem}
+
+\begin{explanation-of-steps}[Unfolding the 1D Fundamental Theorem]
+Fully understanding \cref{eq:ftc-1d} requires three foundational pillars established in Analysis I:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{The Real Continuum ($\mathbb{R}$):} Construction of real numbers via Dedekind cuts or Cauchy sequences to guarantee completeness and the existence of limits.
+    \item \textbf{Differential Calculus ($f'(x)$):} Definition of local rates of change via difference quotients and limits:
+    \[
+    f'(x) := \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}.
+    \]
+    \item \textbf{Integral Calculus ($\int_a^b \dots dx$):} Construction of Riemann sums, partitions, upper/lower Darboux sums, and taking limits as partition mesh sizes vanish.
+\end{enumerate}
+\end{explanation-of-steps}
+\end{math-stroke}
+
+\begin{ai-global-state-checkpoint-invisible-content}
+% timestamp: 00:11:45
+% topic: FTC baseline in Analysis 1 vs Multivariable preview
+% board_state: thm:ftc-1d written and corrected on board
+% next_goal: Formulate Gauss-Green-Stokes Divergence Theorem in 3D
+% open_loops: none
+\end{ai-global-state-checkpoint-invisible-content}
+
+\subsection{Multivariable Calculus: The Generalized Divergence Theorem}
+
+\begin{spoken-clean}[00:11:45 - 00:13:30]
+This will be calculus in more than $1$ variable --- at least $2$ variables, because otherwise it's already covered by Analysis $1$.
+
+And a representative theorem that would be the equivalent, the counterpart of this one, is the Gauss--Stokes--Divergence--Green Theorem. It has many names, and it's always the same theorem. So, it's the Gauss / Divergence / Stokes / Green Theorem.
+
+Now I will write the theorem, and you will not understand exactly what each thing means. I will tell you intuitively, and then the goal of the course will be that by the end you will be able to understand in full precision everything that I wrote here, okay?
+
+So, the theorem goes as follows.
+\end{spoken-clean}
+
+\begin{spoken-clean}[00:13:30 - 00:16:15]
+So, we have the space --- let me say I will put it in the space $\mathbb{R}^3$, three coordinates of space, right? This thing: $x, y, z$, or $x_1, x_2, x_3$, right?
+
+And then in this space we are given a domain, we are given some surface that encloses some interior. So, this is the interior of the surface, and the exterior. And this is a surface $S$.
+
+What is a surface? It could be a sphere, it could be a sort of the skin of a potato --- it's a surface, a two-dimensional object. The interior of the surface --- so the filling of the potato, the white part --- is $\Omega$; I call it $\Omega$.
+
+And then the equivalent of this theorem in this setup is this: given a vector field $f = (f_1, f_2, f_3)$ --- these are three functions of space, right? At each point of space you have three numbers --- this is a vector field. And how do we draw vector fields? We draw it like this, right? Like a field of some cereal, but at every point you have an arrow instead of a plant.
+
+Okay, so this is the vector field $f$. And the theorem says that the integral in $\Omega$ of the derivative of the field, the $i$-th component with respect to the $x_i$ variable, summed over $i$ (from $i=1$ to $3$), is equal to the flux of the field across the boundary, across $S$:
+\[
+\int_\Omega \sum_{i=1}^3 \frac{\partial f_i}{\partial x_i} \, dx = \int_S f \cdot \nu \, dS.
+\]
+\end{spoken-clean}
+
+\begin{math-stroke}
+
+
+
+
+\begin{theorem}[Gauss--Green--Stokes Divergence Theorem in $\mathbb{R}^3$]\label[theorem]{thm:gauss-divergence-3d}
+Let $\Omega \subset \mathbb{R}^3$ be a bounded domain enclosed by a smooth surface $S = \partial\Omega$, and let $\nu \colon S \to \mathbb{R}^3$ denote the outward-pointing unit normal vector field on $S$. For any $C^1$-vector field $f = (f_1, f_2, f_3) \colon \overline{\Omega} \to \mathbb{R}^3$, the total divergence over the volume equals the net flux across the boundary surface:
+\begin{equation}\label{eq:gauss-divergence-3d}
+\int_\Omega \sum_{i=1}^3 \frac{\partial f_i}{\partial x_i} \, dx = \int_S f \cdot \nu \, dS,
+\end{equation}
+where $\sum_{i=1}^3 \frac{\partial f_i}{\partial x_i} = \operatorname{div}(f) = \nabla \cdot f$ represents the volume divergence rate, and $dS$ denotes the two-dimensional surface area element.
+\end{theorem}
+
+\begin{ai-tikz-planner-invisible-content}
+% 1. Canvas: scale=1.35, 2D coordinate system representing 3D (x1, x2, x3).
+% 2. Domain \Omega: Smooth 2D "potato" with ball shading (MidnightBlue!15) to simulate volume.
+% 3. Surface S: The boundary of \Omega is drawn in a contrasting color (BurntOrange) to clearly separate the surface from the interior volume.
+% 4. Normal Vector \nu: Right-angle symbols added. Labels and vectors placed explicitly to avoid crossing the x3 axis.
+% 5. Vector Field f: Label moved entirely outside the domain as requested.
+\end{ai-tikz-planner-invisible-content}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.35, >=Stealth]
+    % 1. 3D Coordinate Axes (drawn in 2D perspective)
+    \draw[->, thick, gray!70] (0,0) -- (-1.8,-1.4) node[below left, text=black] {$x_1$};
+    \draw[->, thick, gray!70] (0,0) -- (4.5,0) node[right, text=black] {$x_2$};
+    \draw[->, thick, gray!70] (0,0) -- (0,4.0) node[above, text=black] {$x_3$};
+
+    % 2. The Domain \Omega (Interior Volume)
+    % Defining explicit points for a smooth organic shape
+    \def\potatoPoints{ (1, 0.5) (2.5, -0.2) (3.5, 1.0) (3.0, 2.2) (1.5, 2.5) (0.5, 1.5) }
+    
+    % Shaded body (\Omega) in MidnightBlue
+    % (Increased from !15 to !40 so it reads as a rich blue rather than gray)
+    \shade[ball color=MidnightBlue!30, opacity=0.85] 
+        plot [smooth cycle, tension=0.8] coordinates { \potatoPoints };
+        
+    % 3. Surface S (Boundary) in contrasting BurntOrange
+    \draw[ultra thick, BurntOrange] 
+        plot [smooth cycle, tension=0.8] coordinates { \potatoPoints };
+
+    % 3D Volume Effect (Equator lines to give depth to the 2D shape)
+    % Back (dashed) in BurntOrange to match surface S
+    \draw[BurntOrange!60, densely dashed, thick] 
+        (0.5, 1.5) .. controls (1.5, 2.2) and (2.5, 1.8) .. (3.5, 1.0);
+    % Front (solid) in BurntOrange to match surface S
+    \draw[BurntOrange, thick] 
+        (0.5, 1.5) .. controls (1.5, 0.5) and (2.5, 0.3) .. (3.5, 1.0);
+
+    % 4. Annotations for \Omega and S
+    % Logic for non-collision of \Omega:
+    % The label \Omega is placed precisely at the visual center of mass of the 
+    % interior (2.0, 1.2). The internal vector field (f) is explicitly clustered 
+    % *around* this center point (in the four quadrants) rather than passing 
+    % *through* it. This ensures the domain label floats freely and highly 
+    % legibly in its own central void, completely avoiding any green arrows.
+    \node[MidnightBlue!90!black, font=\Large\bfseries] at (2.0, 1.2) {$\Omega$};
+    % S label placed near the top right boundary
+    \node[BurntOrange!90!black, font=\bfseries] at (3.1, 2.6) {$S = \partial\Omega$};
+
+    % 5. Vector Field f(x)
+    % Internal vectors
+    \foreach \px/\py/\vx/\vy in {
+        1.2/0.8/0.5/0.2,
+        2.2/0.5/0.4/0.3,
+        1.8/1.7/0.3/0.5,
+        1.3/2.1/0.3/0.4
+    } {
+        \draw[->, thick, ForestGreen] (\px, \py) -- ++(\vx, \vy);
+    }
+    
+    % Vectors crossing the boundary explicitly to show flux
+    % Logic for non-collision:
+    % To ensure the flux vectors (f) and the unit normal vectors (\nu) remain
+    % distinct and do not visually collide, the normal vectors are placed at 
+    % the outermost extrema of the domain (top, bottom, right).
+    % The label for f is securely anchored to a dedicated flux vector exiting 
+    % at the top-right, aiming into completely empty space (y=2.0) perfectly 
+    % located above the right normal (y=1.3) and below the S label (y=2.6).
+    \draw[->, thick, ForestGreen] (0.8, 1.3) -- ++(-0.6, 0.5); % crossing top-left
+    \draw[->, thick, ForestGreen] (2.5, 1.6) -- ++(1.0, 0.4)   % crossing top-right
+        node[right, font=\bfseries] {$f = (f_1, f_2, f_3)$}; 
+
+    % 6. Outward Unit Normal Vectors \nu with Right Angles
+    
+    % Top normal (pointing straight up)
+    \coordinate (N1) at (1.5, 2.5); 
+    \fill[BrickRed] (N1) circle (1.5pt);
+    % Right angle symbol (tangent is horizontal here)
+    \draw[BrickRed, thick, join=round] (1.65, 2.5) -- (1.65, 2.65) -- (1.5, 2.65);
+    % Label placed above right to ensure it completely avoids the x3 axis (x=0)
+    \draw[->, ultra thick, BrickRed] (N1) -- ++(0, 0.9) node[above right, font=\bfseries\small] {$\nu$ \footnotesize(Unit Normal)};
+
+    % Bottom normal (pointing straight down)
+    \coordinate (N2) at (2.5, -0.2); 
+    \fill[BrickRed] (N2) circle (1.5pt);
+    % Right angle symbol (tangent is horizontal here)
+    \draw[BrickRed, thick, join=round] (2.65, -0.2) -- (2.65, -0.35) -- (2.5, -0.35);
+    \draw[->, ultra thick, BrickRed] (N2) -- ++(0, -0.9) node[below right, font=\bfseries\small] {$\nu$};
+
+    % Right normal (pointing right and slightly up)
+    \coordinate (N3) at (3.5, 1.0); 
+    \fill[BrickRed] (N3) circle (1.5pt);
+    % Right angle symbol for angled normal (0.9, 0.3)
+    \draw[BrickRed, thick, join=round] (3.45, 1.13) -- (3.58, 1.17) -- (3.63, 1.04);
+    \draw[->, ultra thick, BrickRed] (N3) -- ++(0.9, 0.3) node[right, font=\bfseries\small] {$\nu$};
+
+\end{tikzpicture}
+\end{center}
+
+
+\begin{explanation-of-steps}[Structural Correspondence: 1D FTC vs. 3D Divergence Theorem]
+Notice the exact structural parallel between \cref{thm:ftc-1d} and \cref{thm:gauss-divergence-3d}:
+\begin{itemize}
+    \item \textbf{Left-Hand Side (Interior Integration of Derivatives):}
+    In $1\text{D}$, we integrate the derivative $f'(x)$ over the $1\text{D}$ interval domain $(a, b)$. In $3\text{D}$, we integrate the sum of partial derivatives $\sum_{i=1}^3 \frac{\partial f_i}{\partial x_i}$ (the divergence) over the $3\text{D}$ volume domain $\Omega$.
+    \item \textbf{Right-Hand Side (Boundary Evaluation):}
+    In $1\text{D}$, the boundary of $(a, b)$ consists of two discrete points $\{a, b\}$, yielding the boundary evaluation $f(b) - f(a)$. In $3\text{D}$, the boundary of the volume $\Omega$ is the $2\text{D}$ surface $S = \partial\Omega$, yielding the boundary flux integral $\int_S f \cdot \nu \, dS$.
+\end{itemize}
+\end{explanation-of-steps}
+\end{math-stroke}
+
+\begin{spoken-clean}[00:16:15 - 00:18:20]
+This is the same theorem you got here in $1$ dimension, in several variables. Now the small problem is that maybe some of you in physics or in previous courses have seen some of these notations --- probably not, I don't expect you to ---, and we will need to introduce each of these notations: these partial derivatives, what is a domain, what is a surface? What is this surface mathematically? How do you model a surface? How do you compute an integral over a surface?
+
+You know how to compute an integral over the real line, right? Over a segment. But over a surface? This will need some definitions and some work. And these objects that are the partial derivatives.
+
+So, here in $1$ equation you have a bit of the goal and the syllabus of the course. How will we proceed?
+\end{spoken-clean}
+
+\begin{ai-global-state-checkpoint-invisible-content}
+% timestamp: 00:18:20
+% topic: Establishing the 5 main pillars of the Analysis II syllabus
+% board_state: thm:gauss-divergence-3d written; starting 5-point outline on right board
+% next_goal: Outline Euclidean spaces R^n, topology, derivatives, manifolds, and integration
+% open_loops: none
+\end{ai-global-state-checkpoint-invisible-content}
+
+\section{Structure and Syllabus of Analysis II}
+
+\begin{spoken-clean}[00:18:20 - 00:21:00]
+First, we will start looking at the space. In Analysis $1$, you did everything in $\mathbb{R}$. Now we will need to introduce $\mathbb{R}^3$, but we are mathematicians, so we will... well, some of us, or some of you are physicists or proto-physicists, who would like to become physicists... so we will use $\mathbb{R}^n$, because we don't want to spend time proving the same theorem in the plane $\mathbb{R}^2$, then in $\mathbb{R}^3$ in space, and then when you go to do general relativity you need $\mathbb{R}^4$, right? We do everything in $\mathbb{R}^n$, where $n$ is the dimension.
+
+So, what is $\mathbb{R}^n$? It is the set of $n$-tuples of real numbers. This is a definition, okay?
+\[
+\mathbb{R}^n := \left\{ x = (x_1, x_2, \dots, x_n) \;\middle|\; x_i \in \mathbb{R} \right\}.
+\]
+Now, this is a point, and these $x_i$ are real numbers. This you know probably because you are doing or have done linear algebra, right? So, this should be quite familiar, but still it's good that we recall.
+\end{spoken-clean}
+
+\begin{spoken-clean}[00:21:00 - 00:23:23]
+Now, the first part of the course we will be studying $\mathbb{R}^n$ and the properties of $\mathbb{R}^n$. A bit as in $\mathbb{R}$ you studied the axiom of the supremum, right? Or the fact that you can take limits of Cauchy sequences, these kinds of facts, right? The same we will need to study in $\mathbb{R}^n$.
+
+Then there will be some new things, or things that you could also study in $\mathbb{R}$ but become very trivial and now will be much more interesting: the topology of $\mathbb{R}^n$.
+
+So, first: \textbf{1.} $\mathbb{R}^n$ as Euclidean space. \textbf{2.} Topology.
+
+Then \textbf{3.} This object over here: partial derivatives. When you have several variables, you can differentiate a quantity with respect to each of them, right? Differentiation of functions of several variables.
+
+Then \textbf{4.} Integration in $\mathbb{R}^n$ here, in a domain of $\mathbb{R}^n$, and on surfaces. But because we want to learn also how to integrate on surfaces, we will do a bit of an introduction to differential geometry: introduction to surfaces and submanifolds. Now, I know it's a lot of words, but we will introduce them one by one.
+
+A surface is a usual $2$-dimensional object, right? Typically smooth. When it is a $3$-dimensional object in $\mathbb{R}^4$, for instance, we call this a submanifold. You can also call it a surface, but the word submanifold is more precise. Or a $2$-dimensional object in a $5$-dimensional space --- any combination of dimensions.
+
+And then when you know this, you will need to know how to integrate: \textbf{5.} Integration over $\mathbb{R}^n$ and surfaces.
+
+And hopefully, then you will know all of these elements. This element --- this is the normal vector; I can tell you now what this is: this is just the vector, the unit vector, the vector of length $1$ that is normal to the surface, right? If you have a surface, this $\nu$ is just the normal to the surface. So, this is easy, but still we will define this in detail.
+
+And after we know all of this, we will be able to prove that equation over here, and work with it, and see why it is useful for many things, okay? So, this is a rough plan of the course.
+\end{spoken-clean}
+
+\begin{math-stroke}[Syllabus and Topic Architecture for Analysis II]
+The course \emph{Analysis II: mehrere Variablen} is organized around five core mathematical modules:
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item \textbf{$\mathbb{R}^n$ as Euclidean Space:} Formalization of $n$-dimensional real vector spaces equipped with inner products, Euclidean norms, and metric properties:
+    \begin{equation}\label{eq:rn-def}
+    \mathbb{R}^n := \left\{ x = (x_1, x_2, \dots, x_n) \;\middle|\; x_i \in \mathbb{R} \text{ for all } i \in \{1, \dots, n\} \right\}.
+    \end{equation}
+    \item \textbf{Topology of $\mathbb{R}^n$:} Open and closed sets, interior/boundary/closure, sequences, completeness, compactness (Heine--Borel Theorem), and connectedness.
+    \item \textbf{Differential Calculus in Several Variables (Partial Derivatives):} Directional derivatives, partial derivatives $\frac{\partial f}{\partial x_i}$, total Jacobians, chain rule, implicit function theorem, and constrained optimization (Lagrange multipliers).
+    \item \textbf{Geometry of Surfaces and Submanifolds:} Parametric surfaces, $k$-dimensional submanifolds embedded in $\mathbb{R}^n$, tangent spaces, and unit normal fields $\nu$.
+    \item \textbf{Multivariable Integration and Vector Calculus:} Riemann integration over $n$-dimensional domains, change of variables (Jacobian determinants), line/surface integrals, differential forms, and the integral theorems of Green, Gauss, and Stokes.
+\end{enumerate}
+\end{math-stroke}
+
+\begin{ai-global-state-checkpoint-invisible-content}
+% timestamp: 00:23:23
+% topic: Pedagogical philosophy on proofs & interactive hand-vote
+% board_state: "Attitude towards proofs" table written on center board
+% next_goal: Discuss why proofs matter, Lean theorem prover, and telescopic sums
+% open_loops: none
+\end{ai-global-state-checkpoint-invisible-content}
+
+\section{The Role and Philosophy of Mathematical Proofs}
+
+\begin{spoken-clean}[00:23:23 - 00:26:22]
+Now, I wanted to do a very small survey about your attitude towards proofs, okay? This is important to mention.
+
+I will put two columns. The left column is: I find proofs --- so, by proofs I mean rigorous, long, very careful mathematical proofs with all details, okay? This is what I mean by proofs.
+
+Here I will put: I find proofs essential, illuminating, useful to clarify, the best part of any course.
+
+And on this column over here I will put: I find the proof unnecessary, confusing, mysterious, no clear rules of the game.
+
+Now, okay, this is extreme --- I'm making this on purpose, this is extreme, right? This is extreme. I know that most of you would be maybe in the middle. But I would like to know which of you lean more towards this opinion, or more towards this opinion, okay?
+
+So, let's start with this one. Who is here? Who loves proofs? Okay.
+
+And here? Okay, it's interesting.
+
+So, it's roughly... there are a bit more people that love proofs, but okay. So, there is no correct answer, right? So, I would be --- well, depending on where --- in between.
+\end{spoken-clean}
+
+\begin{meta-note}[Classroom Interaction: Voting on Mathematical Proofs]
+The lecturer writes a two-column comparison on the blackboard titled \emph{Attitude towards proofs}:
+\begin{itemize}
+    \item \textbf{Positive Column:} Essential, Illuminating, Useful, the best part.
+    \item \textbf{Negative Column:} Unnecessary, Confusing, Mysterious, No clear rules of the game.
+\end{itemize}
+Students raise hands to vote on which side better aligns with their personal learning experience.
+\end{meta-note}
+
+\begin{spoken-clean}[00:26:22 - 00:28:15]
+So, why am I asking this? Does it have some correlation with physicists and mathematicians, or not? Sometimes. What do you think? It could make sense; not always, there are physicists that... but it could make sense.
+
+So, I think that about this discussion of proofs I wanted to use $10$ minutes today to tell you two things: first, why I believe --- many people can have many answers, but what I believe --- that proofs are important; and what we will test in this course, right? Because it's a bit correlated, of course.
+
+The first thing is that in algebra, many times you have a theorem that is very beautiful, very clean, and you can apply it in many situations without modifying it, right? In analysis, as we will see, sometimes the theorem that you learned doesn't apply exactly to the situation you need. Then you need to know how to modify the theorem a little bit. And the only way to do that is to know the proof, and then modify some step here and some step there.
+
+Also, many times the proof contains the ideas on why the theorem is true, right? The theorem is a bunch of symbols, as we wrote there, sometimes, or statements, but it's not very illuminating. It's okay to know that a fact is true, but when you know a bit why, it's more useful many times, right?
+\end{spoken-clean}
+
+\begin{spoken-clean}[00:28:15 - 00:30:15]
+So, two things: being able to export and to use in situations that are new, and also understanding better --- meaning being also sometimes able to remember the theorem. Because if you get quick at remembering proofs and arguments, sometimes when you don't remember all the assumptions of a theorem, you can figure them out just by repeating the proof in your mind, right?
+
+This doesn't mean that you need to learn the proof in all the details all the time. For the proof to be useful and illuminating, it's very important that when you have a super long proof, you extract the main ideas of the proof. So, you need to have several levels in your head. For a proof that is that long, you can remember $3$ sentences --- like hints --- that are the key ingredients of the proof for you. And it's a very good exercise to do that. Then you expand! You learn how to expand these summaries.
+
+And how do you learn how to expand? You learn how to expand hints by doing exercises. That's why the exercises are important. If you become very good at solving exercises, you will be able to compress the information very well, because then you don't need to remember all the details. You just remember the highlights of the proof, and then you fill in the details, because you are an expert in doing that, right? So, becoming an expert in exercises is good to find proofs more interesting and more useful, and not that much of an effort.
+\end{spoken-clean}
+
+\begin{didactic-insight}[Didactic Philosophy: Multi-Tiered Proof Mastery]
+Prof.\ Serra highlights a fundamental learning strategy for theoretical analysis:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Level 1 (The Core Idea / Hint):} Compress a 3-page proof into $2$--$3$ pivotal mathematical insights (e.g., \emph{"For FTC, rewrite the total change as a telescopic sum over a partition and apply the Mean Value Theorem"}).
+    \item \textbf{Level 2 (Structural Expansion):} Unfold the core hints into formal claim structures, bounding inequalities, and limit setups.
+    \item \textbf{Level 3 (Computational Mechanics):} Fill in epsilon-delta estimates, algebra, and algebraic routine through regular problem set practice.
+\end{enumerate}
+Attempting to memorize proofs line-by-line without Level 1 abstraction leads to rapid cognitive overload.
+\end{didactic-insight}
+
+\begin{spoken-clean}[00:30:15 - 00:33:00]
+Now, some people here who find proofs confusing, mysterious, or unnecessary feel that way because sometimes the rules of the game, and why the game is interesting, are not that clear. So, why, when you finish a proof, can you say that the proof is finished, right? Because the professor says so, that this is the proof, Q.E.D.? Is it common sense? Most people see that: \qt{Oh, this looks like an argument that is conclusive} --- most people, but not every time! And there are very subtle arguments.
+
+So, that's why we need to spend sometimes a lot of time on things that seem obvious. Because if I tell you: a continuous function crosses the zero axis at some point, okay, of course it crosses! The Intermediate Value Theorem, right? A continuous function crosses the zero line... of course! But you need to prove it, right? And the proof cannot be just the intuition of: I make a drawing, I have the zero line, I have two points --- one here, one here ---, I have a continuous function, so if I cannot lift the pen from the paper, I need to cross the line at some point. This is not a mathematical proof, but it's a correct intuition.
+
+Now, what can help with this? I think something that can help with the rules of what is a proof and what is not a proof... \inlinemetanote{switches on the projector and opens browser}
+\end{spoken-clean}
+
+\begin{spoken-clean}[00:33:00 - 00:35:40]
+If someone is interested, you can Google \emph{Natural Number Game}. This is serious stuff --- I'm not... this is very serious stuff, it's difficult! I mean, I know that there are some cartoons, but this is a serious, difficult game.
+
+And now seriously, in the light of artificial intelligence and all that is going on, one argument that is very interesting about proofs is that --- maybe some of you didn't realize --- a proof is \emph{computable}. So, whether a proof is correct or not can be computed! That's why it's not an opinion, right?
+
+There are several programming languages for proofs --- one of the most famous is Lean --- where you can write the proof in the language. It's very tedious to write the proof in the language, but now there are tools that help you. And now it's like a computer program: if the program compiles, the proof is correct up to the axioms! You provide the axioms, you provide the reasoning, and if the program compiles, the proof is correct. And if it doesn't compile, it doesn't mean that it's not correct; it means that you need to put more details. Maybe it's not correct, maybe yes, but it's not detailed enough, right?
+
+So, the first argument is that proofs are computable. This means that this ends all discussion: if I write a proof and it's true, that's it, end of the discussion, okay? Which is interesting --- so it doesn't matter if Donald Trump says that the fundamental theorem... I mean, no! He can say whatever he wants, but the theorem will be true, okay? Nowadays, this is an interesting aspect.
+\end{spoken-clean}
+
+\begin{spoken-clean}[00:35:40 - 00:38:15]
+This is also an interesting aspect for these guys, right? \inlinemetanote{opens ChatGPT 5.2 on the browser screen} So, I had on purpose ChatGPT or Gemini or whatever... so, you are using those, right? You are using these --- I know that some people say \qt{don't use}, well, I know you are using them. And I think you know much better how to use them than people think.
+
+But you see, these guys still --- especially with more advanced proofs --- hallucinate and say things sometimes that are wrong! And then, knowing how to spot this is another motivation. Knowing how to spot wrong arguments, and being careful with correct and incorrect arguments, is a good motivation to learn how to do correct proofs, okay?
+
+And you can train by doing exercises. If you are not sure what the rules of the game are --- what is a proof, what is not a proof --- try to go to the Natural Number Game and play a bit, and you will see what a fully rigorous proof up to the end is.
+\end{spoken-clean}
+
+\begin{spoken-clean}[00:38:15 - 00:40:10]
+And why don't we do this all the time? Because the next thing I wanted to tell you is that in Analysis $2$, the pace will be quicker than in Analysis $1$. We'll start roughly at the same pace doing many details, and then we will go a bit faster. What does faster mean? That I will not be as detailed, you see? Some things will be: \qt{Because of this and that, then this follows.} And then, if you don't see that this follows --- if many don't see --- you ask a question: \qt{Wow, why does this follow? We don't see it.} Then we can provide details. But we will not be able to stop all the time to provide details, because some of the arguments you already know how to do --- the Analysis $1$ arguments. I will say: \qt{Okay, this is like in Analysis $1$}, right?
+
+So, the pace is quicker and quicker, and the more you advance in your studies, the quicker it will be. This doesn't mean that you can be okay with not understanding, right? If there is some statement you don't know how to prove, you can try by yourself, you can ask your peers, you can unfold everything. And this is a very good exercise.
+
+So, you need to do your exercises, and you need to try to understand all the steps of the proof --- meaning that ideally, with time and effort, you should be able to go back to the axioms, right? You don't need to do it every time; you just need to know that you are able to. And then you are okay. So, if you can do this with most proofs, it means that you are following the course very well.
+
+Is there something else I wanted to tell you before we start with the lecture? I don't think so. So, we have roughly $10$ minutes before the pause. I will start with the proper lecture in the second half. And then let me ask you: do you have some questions about what I said in this first part, a bit the plan of the course, how to be successful in the course, what do we expect from you?
+
+If there are no questions, let me summarize in $3$ points what the main learning goals are, okay?
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item \textbf{1.} Point number $1$, which is very relevant to both physicists and mathematicians, is \textbf{being able to do computations}. Computations mean advanced computations: compute the solution of some ODE, several variables stuff, compute some integral (why the area of the sphere of radius $1$ is $4\pi$, you need to be able to compute these integrals with a concrete numerical value).
+    \item \textbf{2.} You need to be able to \textbf{follow proofs and follow the logic}. This you train with exercises (some computational, some theoretical) and with the lecture notes.
+    \item \textbf{3.} The third leg that I will introduce a bit is \textbf{assessing if a proof is correct}. This is something we didn't test in the past, but now it's becoming more and more important: giving you some proof with a flawed argument (sometimes I make mistakes, so then it's good because you can practice this!), and spotting subtleties where an AI like ChatGPT made an hallucination.
+\end{enumerate}
+\end{spoken-clean}
+
+\begin{spoken-clean}[00:40:10 - 00:40:20]
+\inlinemetanote{A student in the audience raises a hand to ask a question} Ah, there? Is there a question? Yeah, okay. Thank you, sorry, I cannot see very well... Okay, now this will be tricky. \inlinemetanote{throws the catch-box microphone to the student} Oof, sorry!
+\end{spoken-clean}
+
+\begin{student-interaction}[Student Question on Proof Rigor in Exams]
+I wanted to ask: how rigorous do the proofs have to be in the test? Do we have to do them like the Analysis $1$ test, where we don't have to write down the axioms every time or we just mention the most important theorem, or do we have to do very rigorous proofs?
+\end{student-interaction}
+
+\begin{spoken-clean}[00:41:23 - 00:44:34]
+Let me put the question a bit differently. The proofs are always \emph{very rigorous}. The only thing is that they don't need to be as \emph{detailed}! You see?
+
+You can make some claims, and you don't need to justify to the smallest detail every single claim. In Analysis $1$, you see, the difference of the theorem is clear. So, what would be a proof... how would you summarize in a sentence a proof of this equation over here?
+
+\inlinemetanote{points at the 1D Fundamental Theorem of Calculus $\int_a^b f'(x) \, dx = f(b) - f(a)$ on the board}
+
+Fundamental Theorem of Calculus. So, can someone tell me $1$ sentence that kind of explains the idea of the proof of that?
+\end{spoken-clean}
+
+\begin{student-interaction}[Student Response via Catch-Box]
+We can show that the derivative of the primitive converges to the actual value of the function at, I think it was $a$ or no, $b$.
+\end{student-interaction}
+
+\begin{spoken-clean}[continued]
+The derivative of the... yeah, so the derivative with respect to this value, right? Yeah, this is a good answer.
+
+So, everyone has... this is what I was telling you about before. When you see something like this, the first time you see the whole proof, and then there needs to be something that you remember --- some summary of the proof that, for each person, might be a bit different. There are also several ways to do the proof. And then with this, you are able to reconstruct the details.
+
+You want to know what I remember when I see this? I always remember the \emph{telescopic sum}. You know what a telescopic sum is, right? So, when I see this, I see that!
+
+\inlinemetanote{draws interval partition and telescopic sum equations on the lower board}
+
+The proof in $2$ minutes, right? You take your interval $[a, b]$, and you divide it into tiny, smaller intervals. This is $x_0$, this is $x_N$ (capital $N$), and this is $x_i$. And then you write $f(b) - f(a) = f(x_N) - f(x_0)$ equals the sum of increments. You unfold the telescope!
+
+If you call the distance between two consecutive points $h$, you multiply and divide by $h$, and each of these pieces is approximately the derivative. End of the proof, okay?
+
+I will not go at this speed, but this is a way to remember the proof, and you need to find your own way in each proof. Then it's not that hard to remember them.
+
+Okay, so it's $9:00$. We do the $15$-minute pause, and then we start with the proper lecture.
+\end{spoken-clean}
+
+\begin{math-stroke}[Telescopic Sum Representation of FTC]
+To illustrate how a complex $1\text{D}$ proof is compressed into a single memorable cognitive anchor, consider the Fundamental Theorem of Calculus (\cref{thm:ftc-1d}).
+
+\begin{ai-tikz-planner-invisible-content}
+% 1. Canvas: scale=1.4, horizontal axis representing interval [a, b].
+% 2. Points: Partition points a = x_0 < x_1 < x_2 < ... < x_N = b marked along the axis.
+% 3. Spacing: Tick marks with small vertical deltas, sub-interval delta x = h.
+\end{ai-tikz-planner-invisible-content}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.4, >=Stealth]
+    % Main interval line [a, b]
+    \draw[thick, ->] (-0.5,0) -- (6.5,0) node[right] {$x$};
+    
+    % Endpoints
+    \draw[ultra thick, MidnightBlue] (0,0.1) -- (0,-0.1) node[below] {$a = x_0$};
+    \draw[ultra thick, MidnightBlue] (5.5,0.1) -- (5.5,-0.1) node[below] {$b = x_N$};
+    
+    % Sub-partition ticks
+    \foreach \x/\i in {0.8/1, 1.6/2, 2.4/3, 3.8/{N-2}, 4.65/{N-1}} {
+        \draw[thick, gray!80] (\x,0.08) -- (\x,-0.08);
+    }
+    \node[below, font=\small] at (0.8,0) {$x_1$};
+    \node[below, font=\small] at (1.6,0) {$x_2$};
+    \node[below, font=\small] at (3.1,0) {$\dots$};
+    \node[below, font=\small] at (4.65,0) {$x_{N-1}$};
+
+    % Step width h
+    \draw[<->, BrickRed, thick] (0.8, 0.3) -- (1.6, 0.3) node[midway, above] {$h = \Delta x$};
+\end{tikzpicture}
+\end{center}
+
+\begin{short-proof}[Proof Idea via Telescopic Partitioning]
+Let $a = x_0 < x_1 < x_2 < \dots < x_N = b$ be a uniform partition of $[a, b]$ with mesh width $h = \frac{b-a}{N}$. The total difference $f(b) - f(a)$ decomposes as a \newterm{telescopic sum}:
+\begin{align}
+f(b) - f(a) &= f(x_N) - f(x_0) \nonumber \\
+&= \sum_{i=1}^N \bigl( f(x_i) - f(x_{i-1}) \bigr) \nonumber \\
+&= \sum_{i=1}^N \frac{f(x_i) - f(x_{i-1})}{x_i - x_{i-1}} \cdot (x_i - x_{i-1}). \label{eq:telescopic-mvt}
+\end{align}
+By the Mean Value Theorem (MVT), on each sub-interval $[x_{i-1}, x_i]$ there exists $\xi_i \in (x_{i-1}, x_i)$ such that $\frac{f(x_i) - f(x_{i-1})}{x_i - x_{i-1}} = f'(\xi_i)$. Substituting this into \eqref{eq:telescopic-mvt} yields a Riemann sum:
+\[
+f(b) - f(a) = \sum_{i=1}^N f'(\xi_i) \, \Delta x \xrightarrow{N \to \infty} \int_a^b f'(x) \, dx.
+\]
+\end{short-proof}
+\end{math-stroke}
+
+\begin{lecture-break}[15-Minute Lecture Break]
+The lecturer announces a 15-minute mid-lecture break at 09:00. The video recording pauses during the break and resumes at timestamp 00:45:00.
+\end{lecture-break}
+
+\begin{ai-global-state-checkpoint-invisible-content}
+% timestamp: 00:45:00
+% topic: Resuming post-break lecture on R^n as Euclidean space
+% board_state: Board erased clean for formal definitions
+% next_goal: Formally define R^n, vector operations, norm, and distance
+% open_loops: none
+\end{ai-global-state-checkpoint-invisible-content}
+
+\section{\texorpdfstring{$\mathbb{R}^n$}{Rn} as Euclidean Space}
+
+\begin{spoken-clean}[00:45:00 - 00:47:19]
+So, I will do my best to respect the schedule, okay, and the times. But please, I would ask you to also do your best to respect the $15$-minute break and be here $30$ seconds before the bell rings, because otherwise we lose $2$ minutes that, of course, are not subtracted from the exam --- it's just that I rush some proof, right? So, it's in your interest to be on time.
+
+So, $\mathbb{R}^n$, as we said before, is the set of $n$-tuples of real numbers, right?
+\[
+\mathbb{R}^n = \left\{ x = (x_1, \dots, x_n) \;\middle|\; x_i \in \mathbb{R} \right\}.
+\]
+Here $n \in \mathbb{N}$ is the dimension of the space.
+
+Can you see from up there? Yeah? You have very good eyes, because I couldn't see anything. Okay.
+
+Now, $\mathbb{R}^n$ by itself --- well, just vectors of real numbers --- is not that interesting; we will need to add some extra structure. So, what is the Euclidean structure? You already know, I think, but we will say it again.
+
+So, in $\mathbb{R}^n$, what can we do? We can measure... we can, well, sum vectors:
+\[
+x + y = (x_1 + y_1, \dots, x_n + y_n).
+\]
+If $\lambda \in \mathbb{R}$, we can multiply by a scalar, a real number:
+\[
+\lambda x = (\lambda x_1, \dots, \lambda x_n).
+\]
+You know that from linear algebra very well.
+\end{spoken-clean}
+
+\begin{math-stroke}
+\begin{definition}[Euclidean $n$-Space]\label[definition]{def:euclidean-n-space}
+For any $n \in \mathbb{N}$ ($n \ge 1$), the \newterm{Euclidean $n$-space} (or $n$-dimensional real space) $\mathbb{R}^n$ is defined as the Cartesian product of $n$ copies of the real line $\mathbb{R}$:
+\begin{equation}\label{eq:rn-set-def}
+\mathbb{R}^n := \underbrace{\mathbb{R} \times \mathbb{R} \times \dots \times \mathbb{R}}_{n \text{ times}} = \left\{ x = (x_1, x_2, \dots, x_n) \;\middle|\; x_i \in \mathbb{R} \text{ for all } i \in \{1, \dots, n\} \right\}.
+\end{equation}
+An element $x \in \mathbb{R}^n$ is called a \newterm{point} or a \newterm{vector} in $\mathbb{R}^n$, and $x_i \in \mathbb{R}$ is referred to as the $i$-th \newterm{coordinate} (or component) of $x$. The integer $n \in \mathbb{N}$ specifies the \newterm{dimension} of the space.
+\end{definition}
+\end{math-stroke}
+
+\begin{math-stroke}[Vector Addition and Scalar Multiplication in \texorpdfstring{$\mathbb{R}^n$}{Rn}]
+The set $\mathbb{R}^n$ possesses a canonical real vector space structure:
+\begin{align}
+x + y &:= (x_1 + y_1, x_2 + y_2, \dots, x_n + y_n) && \text{(Vector Addition)} \label{eq:vector-addition} \\
+\lambda x &:= (\lambda x_1, \lambda x_2, \dots, \lambda x_n) && \text{(Scalar Multiplication, } \lambda \in \mathbb{R}\text{)} \label{eq:scalar-multiplication}
+\end{align}
+\end{math-stroke}
+
+\begin{spoken-clean}[00:47:19 - 00:50:09]
+And then the Euclidean structure means that we can also measure distances between points, right?
+
+So, we have the norm --- the Euclidean norm --- and distance. First, the norm: the norm of a vector $x$ is the square root of the sum of the squares of the components:
+\[
+\|x\| = \sqrt{x_1^2 + \dots + x_n^2}.
+\]
+This is the length of the vector.
+
+In the plane, let's say this is $x_1$ and this is $x_2$, and this is the point $x$. The length of this vector $x$ is $\sqrt{x_1^2 + x_2^2}$ --- Pythagoras, right? Pythagorean theorem, and the same applies to every dimension.
+
+And we can also measure scalar products or inner products that have to do with angles, right? The scalar products. So, we will use these notations: $x \cdot y$ or sometimes $\langle x, y \rangle$, both are fine:
+\[
+x \cdot y = \langle x, y \rangle := \sum_{i=1}^n x_i y_i.
+\]
+This shouldn't be too surprising: scalar product.
+\end{spoken-clean}
+
+\begin{math-stroke}
+\begin{definition}[Euclidean Norm and Scalar Product]\label[definition]{def:euclidean-norm-dot-product}
+For any $x = (x_1, \dots, x_n)$ and $y = (y_1, \dots, y_n)$ in $\mathbb{R}^n$:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item The \newterm{Euclidean norm} (or length) of $x$ is given by:
+    \begin{equation}\label{eq:euclidean-norm-def}
+    \|x\| := \sqrt{x_1^2 + x_2^2 + \dots + x_n^2} = \sqrt{\sum_{i=1}^n x_i^2}.
+    \end{equation}
+    \item The \newterm{Euclidean scalar product} (or dot product / inner product) of $x$ and $y$ is given by:
+    \begin{equation}\label{eq:scalar-product-def}
+    x \cdot y = \langle x, y \rangle := \sum_{i=1}^n x_i y_i.
+    \end{equation}
+\end{enumerate}
+\end{definition}
+
+\begin{ai-tikz-planner-invisible-content}
+% 1. Canvas: scale=1.3, 2D Cartesian axes x1 and x2.
+% 2. Points: Origin O(0,0), point x = (x1, x2).
+% 3. Construction: Dashed projection lines to axes, hypotenuse vector x in MidnightBlue.
+% 4. Right-angle marker at (x1, 0).
+\end{ai-tikz-planner-invisible-content}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5, >=Stealth]
+    % Axes
+    \draw[->, thick, gray!70] (-0.5,0) -- (4.5,0) node[right, text=black] {$x_1$};
+    \draw[->, thick, gray!70] (0,-0.5) -- (0,3.5) node[above, text=black] {$x_2$};
+
+    % Point x
+    \coordinate (O) at (0,0);
+    \coordinate (P) at (3.5, 2.5);
+    
+    % Projections
+    \draw[dashed, gray!70] (3.5, 0) node[below, text=black] {$x_1$} -- (P);
+    \draw[dashed, gray!70] (0, 2.5) node[left, text=black] {$x_2$} -- (P);
+
+    % Vector x (Hypotenuse)
+    % -------------------------------------------------------------------------
+    % MATHEMATICAL LOGIC FOR COLLISION AVOIDANCE (Bounding Box Geometry):
+    % A rotated text box (sloped, above) on a hypotenuse of length h will collide
+    % with the top bounding dashed line y_max if:  L + 2H(x/y) > h
+    % (where L = text width, H = text height, x,y = coordinates of point P).
+    % 
+    % OLD CODE (Collision):
+    % At P(2.4, 1.6) and scale=1.3, h=3.75cm. Box required ~4.0cm space.
+    % 4.0 > 3.75 -> The top right corner of the text box pierced the dashed line.
+    %
+    % NEW CODE (100% Safe):
+    % By increasing to P(3.5, 2.5) and scale=1.5, we get h=6.45cm. 
+    % The text box only requires ~3.9cm. Since 3.9 <= 6.45, a collision is 
+    % mathematically impossible. We use pos=0.45 to center the box exactly 
+    % within the safe interval p \in [0.25, 0.70].
+    % -------------------------------------------------------------------------
+    \draw[->, ultra thick, MidnightBlue] (O) -- (P) 
+        node[pos=0.45, sloped, above, font=\small] {$\|x\| = \sqrt{x_1^2 + x_2^2}$};
+    \fill[MidnightBlue] (P) circle (2pt) node[above right] {$x = (x_1, x_2)$};
+
+    % Right angle marker
+    \draw[gray!80] (3.2, 0) -- (3.2, 0.3) -- (3.5, 0.3);
+\end{tikzpicture}
+\end{center}
+\end{math-stroke}
+
+\begin{spoken-clean}[00:50:09 - 00:50:59]
+And then, I said the norm of a vector is the length of a vector. And what is the distance between points?
+
+If I take two points here --- one point $x$ and one point $y$ over here --- the distance between the two points is the length of the vector that joins them, right? The distance between $x$ and $y$ is the length of the vector that joins them:
+\[
+d(x, y) := \|y - x\|.
+\]
+This is a definition. This is the Euclidean distance.
+\end{spoken-clean}
+
+\begin{math-stroke}
+\begin{definition}[Euclidean Distance]\label[definition]{def:euclidean-distance}
+The \newterm{Euclidean distance} $d(x, y)$ between two points $x, y \in \mathbb{R}^n$ is defined as the norm of their difference vector:
+\begin{equation}\label{eq:euclidean-distance-def}
+d(x, y) := \|y - x\| = \sqrt{\sum_{i=1}^n (y_i - x_i)^2}.
+\end{equation}
+\end{definition}
+\end{math-stroke}
+
+\begin{ai-global-state-checkpoint-invisible-content}
+% timestamp: 00:50:59
+% topic: Proving the Triangle Inequality and Cauchy-Schwarz
+% board_state: def:euclidean-distance on board; stating Lemma (triangle inequality)
+% next_goal: Formulate triangle inequality, student interaction on equivalence, proof via Cauchy-Schwarz
+% open_loops: none
+\end{ai-global-state-checkpoint-invisible-content}
+
+\subsection{The Triangle Inequality and Cauchy--Schwarz Inequality}
+
+\begin{spoken-clean}[00:50:59 - 00:53:34]
+Now, the first lemma I will prove about Euclidean distance is the triangle inequality.
+
+\textbf{Lemma:} Triangle inequality.
+
+Do you know... do some of you know the triangle inequality? Have you seen that? How many people have not seen the triangle inequality? Ah, you all know the triangle inequality. Okay, then I will be quick on that.
+
+So, the triangle inequality states this: for all $x, y, z \in \mathbb{R}^n$,
+\[
+\|z - x\| \le \|y - x\| + \|z - y\|.
+\]
+Maybe you have seen the triangle inequality with the absolute value, but you have also seen that one with the norm, with the length, right?
+
+What this says is that whenever you have three points $x, y, z$ in space in any position, the distance between $x$ and $z$ is always smaller than or equal to the sum of these two distances, right? And actually, it is equal when the point is aligned with the two, right? But I'm not saying this yet. So, let's prove that.
+\end{spoken-clean}
+
+\begin{math-stroke}
+\begin{lemma}[Triangle Inequality]\label[lemma]{lem:triangle-inequality-rn}
+For all vectors $x, y, z \in \mathbb{R}^n$, the Euclidean norm satisfies:
+\begin{equation}\label{eq:triangle-inequality-xyz}
+\|z - x\| \le \|y - x\| + \|z - y\|.
+\end{equation}
+\end{lemma}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.3, >=Stealth]
+    % Points x, y, z
+    \coordinate (X) at (0,0);
+    \coordinate (Y) at (1.8,1.4);
+    \coordinate (Z) at (4.2,0.2);
+
+    % Distance segments
+    \draw[thick, BrickRed] (X) -- (Z) node[midway, below, text=black] {$\|z - x\|$};
+    \draw[thick, MidnightBlue] (X) -- (Y) node[midway, above left, text=black] {$\|y - x\|$};
+    \draw[thick, MidnightBlue] (Y) -- (Z) node[midway, above right, text=black] {$\|z - y\|$};
+
+    % Vertices
+    \fill[MidnightBlue] (X) circle (2pt) node[left] {$x$};
+    \fill[MidnightBlue] (Y) circle (2pt) node[above] {$y$};
+    \fill[MidnightBlue] (Z) circle (2pt) node[right] {$z$};
+\end{tikzpicture}
+\end{center}
+\end{math-stroke}
+
+\begin{spoken-clean}[00:53:34 - 00:55:34]
+Equivalently, I'm saying that:
+\begin{equation}\tag{\textcolor{BrickRed}{$\ast$}}\label{eq:triangle-inequality-sum}
+\|x + y\| \le \|x\| + \|y\| \quad \forall x, y \in \mathbb{R}^n.
+\end{equation}
+Why is this equivalent to that? Well, equivalent means that if you know how to prove this, you easily prove that, right? Yeah...
+\end{spoken-clean}
+
+\begin{student-interaction}[Student Question on Vector Equivalence]
+If we look at the vector representation of $x$ and $y$... if we draw them as vectors, and then if we put $z$ as the origin, we have the same... the idea is actually the same.
+\end{student-interaction}
+
+\begin{spoken-clean}[00:55:50 - 00:57:09]
+Yeah! You put one of the points as the origin; that's correct. You can put $z$ as the origin, and then you have the two vectors. Or another way to do this --- it's the same, it's equivalent --- is you can do a change of variables, right?
+
+You can call $a := y - x$, and $b := z - y$. And then automatically, if you sum $a + b$, it is $z - x$, right? So, if you want to go from here to there, you just make this substitution, and it works both ways, right? Because if you do this, you will get $\|a + b\| \le \|a\| + \|b\|$.
+
+Now, this is as detailed as I will be --- again, a bit of the difference between Analysis $1$ and $2$. If this equivalence poses some trouble --- it shouldn't pose too much --- you can work a bit by yourself; it's a nice exercise. And if you cannot, ask later.
+
+Okay, so since we convinced ourselves that the two statements are equivalent and this one is shorter, I will prove this one. So, now the goal is to prove that inequality \eqref{eq:triangle-inequality-sum}.
+\end{spoken-clean}
+
+\begin{proof}[Proof of the Triangle Inequality]
+\begin{spoken-clean}[00:57:09 - 01:01:21]
+So, I start writing... let me call this inequality star \eqref{eq:triangle-inequality-sum}.
+
+So, what I want to show is equivalent after squaring, right? I square and I say:
+\[
+\|x + y\|^2 \le \bigl( \|x\| + \|y\| \bigr)^2 = \|x\|^2 + \|y\|^2 + 2 \|x\| \|y\|.
+\]
+That inequality is equivalent to this one because it's an inequality between non-negative numbers, and squaring is a monotone function. This is the part that I say in words, but I will not write, because we are in Analysis $2$, okay? This you learned in Analysis $1$.
+
+Now, once I write it in this form, I can expand what the norm squared is. This is equal by definition to:
+\[
+\sum_{i=1}^n (x_i + y_i)^2.
+\]
+Now, these are real numbers, so I can expand the squares:
+\[
+\sum_{i=1}^n \bigl( x_i^2 + y_i^2 + 2 x_i y_i \bigr) = \|x\|^2 + \|y\|^2 + 2 (x \cdot y).
+\]
+So, what I'm left with... I know it's a bit like a snake, but these are equalities... what I'm left with is proving that this thing is less than or equal to this thing! And you see, here I can simplify these, right? I can simplify because they are on both sides.
+
+So, what I want to show is that $2 (x \cdot y) \le 2 \|x\| \|y\|$, or equivalently:
+\begin{equation}\tag{\textcolor{ForestGreen}{$\star$}}\label{eq:cauchy-schwarz-target}
+x \cdot y \le \|x\| \|y\|.
+\end{equation}
+And this is an inequality that is famous. Now I will prove it in case you don't know it, but this is the Cauchy--Schwarz inequality.
+\end{spoken-clean}
+
+\begin{math-stroke}[Reduction of Triangle Inequality to Cauchy--Schwarz]
+To establish \eqref{eq:triangle-inequality-sum}, squaring both sides yields the equivalent inequality:
+\begin{equation}\label{eq:sq-expanded}
+\|x + y\|^2 \le \|x\|^2 + \|y\|^2 + 2 \|x\| \|y\|.
+\end{equation}
+Expanding the left-hand side using the definition of the Euclidean norm:
+\begin{align}
+\|x + y\|^2 &= \sum_{i=1}^n (x_i + y_i)^2 \nonumber \\
+&= \sum_{i=1}^n \bigl( x_i^2 + y_i^2 + 2 x_i y_i \bigr) \nonumber \\
+&= \sum_{i=1}^n x_i^2 + \sum_{i=1}^n y_i^2 + 2 \sum_{i=1}^n x_i y_i \nonumber \\
+&= \|x\|^2 + \|y\|^2 + 2 (x \cdot y). \label{eq:lhs-expanded}
+\end{align}
+Comparing \eqref{eq:lhs-expanded} with the right-hand side of \eqref{eq:sq-expanded}, canceling $\|x\|^2 + \|y\|^2$, and dividing by $2$ reduces the claim to proving:
+\begin{equation}\label{eq:cs-reduced}
+x \cdot y \le \|x\| \|y\|.
+\end{equation}
+\end{math-stroke}
+
+\begin{spoken-clean}[01:01:21 - 01:04:54]
+And this is true because it's the Cauchy--Schwarz inequality.
+
+And now, just to warm up and in case you didn't remember or you never saw the proof of the Cauchy--Schwarz inequality, I will prove the Cauchy--Schwarz inequality, right?
+
+So, if I can prove this inequality, you see that the proof of the triangle inequality is concluded. I'm just left with proving this inequality that, as I told you, is called the Cauchy--Schwarz inequality.
+
+So, let me do this... I will put a square that means end of the proof, but up to this ingredient that I will prove next.
+
+\textbf{Lemma:} Cauchy--Schwarz inequality. This holds for all $x, y \in \mathbb{R}^n$.
+
+\textbf{Proof:} In the notes I have put two proofs --- there are many ways to prove this. I will give one, okay?
+
+The first observation is that if either $x = 0$ or $y = 0$, the inequality is $0 \le 0$, which is trivially true.
+
+By this observation, I can assume without loss of generality that both vectors are non-zero. So, \qt{assume w.l.o.g.} both $x, y \neq 0$.
+
+I guess you have seen this \qt{assume w.l.o.g.} phrasing many times now that you are in the second semester.
+\end{spoken-clean}
+
+\begin{math-stroke}
+\begin{lemma}[Cauchy--Schwarz Inequality]\label[lemma]{lem:cauchy-schwarz}
+For all vectors $x, y \in \mathbb{R}^n$, the inner product is bounded by the product of their norms:
+\begin{equation}\label{eq:cauchy-schwarz-statement}
+x \cdot y \le \|x\| \|y\|.
+\end{equation}
+Furthermore, $|x \cdot y| \le \|x\| \|y\|$.
+\end{lemma}
+\end{math-stroke}
+
+\begin{spoken-clean}[01:04:54 - 01:08:19]
+Okay, so both vectors are non-zero. Now, what I will do... I want to write what the scalar product is:
+\[
+x \cdot y = \sum_{i=1}^n x_i y_i.
+\]
+And now I will do a trick: for every $\lambda > 0$, I have the right to divide and multiply by $\lambda$. I will put $\lambda$ here and $\lambda$ over here:
+\[
+x \cdot y = \sum_{i=1}^n (\lambda x_i) \left( \frac{y_i}{\lambda} \right).
+\]
+I did nothing, because I multiplied and divided by $\lambda$.
+
+And now I will use $n$ times an inequality of real numbers. You know that $2 a b \le a^2 + b^2$, which is the same as $(a - b)^2 \ge 0$.
+
+So, this inequality of real numbers I will apply $n$ times to each of these pairs: this will be the $a$ and this will be the $b$ in each case:
+\[
+2 (x \cdot y) = 2 \sum_{i=1}^n (\lambda x_i) \left( \frac{y_i}{\lambda} \right) \le \sum_{i=1}^n \left( \lambda^2 x_i^2 + \frac{y_i^2}{\lambda^2} \right) = \lambda^2 \|x\|^2 + \frac{1}{\lambda^2} \|y\|^2.
+\]
+And this holds for every $\lambda > 0$.
+
+Now is where I use that both are non-zero, so I can take:
+\[
+\lambda^2 = \frac{\|y\|}{\|x\|}.
+\]
+We take that $\lambda$, and you get:
+\[
+\lambda^2 \|x\|^2 + \frac{1}{\lambda^2} \|y\|^2 = \frac{\|y\|}{\|x\|} \|x\|^2 + \frac{\|x\|}{\|y\|} \|y\|^2 = 2 \|x\| \|y\|.
+\]
+You see, this simplifies to what you want, and you get $2 \|x\| \|y\|$.
+
+This is the proof of Cauchy--Schwarz, and this ends the proof of the triangle inequality.
+\end{spoken-clean}
+
+\begin{math-stroke}[Algebraic Proof of Cauchy--Schwarz]
+If $x = 0$ or $y = 0$, then $x \cdot y = 0$ and $\|x\| \|y\| = 0$, so $0 \le 0$ holds trivially.
+Assume w.l.o.g.\ $x \neq 0$ and $y \neq 0$. For any $\lambda > 0$, apply the real number inequality $2ab \le a^2 + b^2$ (derived from $(a - b)^2 \ge 0$) with $a_i = \lambda x_i$ and $b_i = \frac{y_i}{\lambda}$:
+\begin{align}
+2 (x \cdot y) &= 2 \sum_{i=1}^n x_i y_i = 2 \sum_{i=1}^n (\lambda x_i) \left( \frac{y_i}{\lambda} \right) \nonumber \\
+&\le \sum_{i=1}^n \left( \lambda^2 x_i^2 + \frac{y_i^2}{\lambda^2} \right) \nonumber \\
+&= \lambda^2 \sum_{i=1}^n x_i^2 + \frac{1}{\lambda^2} \sum_{i=1}^n y_i^2 \nonumber \\
+&= \lambda^2 \|x\|^2 + \frac{1}{\lambda^2} \|y\|^2. \label{eq:lambda-bound}
+\end{align}
+Since $x \neq 0$ and $y \neq 0$, choose the optimal scaling parameter $\lambda > 0$ such that $\lambda^2 := \frac{\|y\|}{\|x\|}$. Substituting $\lambda^2$ into \eqref{eq:lambda-bound}:
+\[
+2 (x \cdot y) \le \left( \frac{\|y\|}{\|x\|} \right) \|x\|^2 + \left( \frac{\|x\|}{\|y\|} \right) \|y\|^2 = \|x\| \|y\| + \|x\| \|y\| = 2 \|x\| \|y\|.
+\]
+Dividing by $2$ proves $x \cdot y \le \|x\| \|y\|$. Replacing $x$ by $-x$ yields $-(x \cdot y) \le \|x\| \|y\|$, establishing $|x \cdot y| \le \|x\| \|y\|$.
+\end{math-stroke}
+
+\begin{spoken-clean}[01:08:19 - 01:08:53]
+Is there any question about this proof?
+\end{spoken-clean}
+
+\begin{student-interaction}[Student Correction on Index Sign]
+Shouldn't it be $x + y$ at the beginning of the proof?
+\end{student-interaction}
+
+\begin{spoken-clean}[01:08:54 - 01:09:24]
+Ah, yes! Actually it's the same, but yeah, now that you say it, it's better. So, you can put $x+y$ or $x-y$, but to match this inequality... Thank you! Thank you for the... nice!
+\end{spoken-clean}
+\end{proof}
+
+\begin{ai-global-state-checkpoint-invisible-content}
+% timestamp: 01:09:24
+% topic: Transition from R^n to Abstract Metric Spaces
+% board_state: Lem:triangle-inequality and Lem:cauchy-schwarz proven on board
+% next_goal: Define metric spaces (X, d) and 3 axioms (definiteness, symmetry, triangle ineq)
+% open_loops: none
+\end{ai-global-state-checkpoint-invisible-content}
+
+\section{Metric Spaces}
+
+\begin{spoken-clean}[01:09:24 - 01:12:04]
+So, this --- $\mathbb{R}^n$ with this structure of the scalar product and length --- is the main structure we will use in proofs to do analysis.
+
+But now we need to understand convergent sequences in $\mathbb{R}^n$, Cauchy sequences, and all these things that you understood in $\mathbb{R}$.
+
+To make it more efficient, we will learn all these concepts from a more general viewpoint, that is, from the viewpoint of metric spaces. So that later, when you go to other courses, or later in this course when we have different metric spaces, I don't need to redefine all the time what convergence means, and so on.
+
+\textbf{Metric spaces.}
+
+Now, I need to warn you --- especially the physicists --- now it will get a bit more abstract! But then we will come back... this will be for a couple of weeks or so. Later we will come back to $\mathbb{R}^n$ --- everything in $\mathbb{R}^n$.
+
+But metric spaces and topology are more axiomatic, more abstract. It's good to practice proofs. Because here you need to use axioms; you cannot use your intuition all the time. You need to go back to the axioms of what a metric space is, which I will tell you now, and do the proofs.
+
+Sometimes working, like mathematicians, from a more abstract viewpoint with fewer axioms is also easier. Because if you have fewer axioms... in $\mathbb{R}^n$ we have many axioms: we have the axiom of the supremum for each coordinate, you have many things.
+
+Now, in a metric space, I will introduce $3$ axioms. Just $3$! And then all the proofs need to use these $3$ axioms. So, you don't need to think too much... it's like playing chess --- as I sometimes say --- like playing chess only with the rooks!
+
+If you play chess only with the rooks, it's not as difficult as playing with many pieces, right? But then you need a bit more abstraction, because it's not what you are used to.
+
+So, we are going to play chess with the rooks, and we will define: a metric space is a pair $(X, d)$...
+\end{spoken-clean}
+
+\begin{didactic-insight}[Analogy: Playing Chess with Only Rooks]
+Prof.\ Serra compares abstract metric space theory to playing chess with only rooks. In $\mathbb{R}^n$, one possesses a vast array of algebraic, geometric, and order properties. In a general metric space $(X, d)$, all structures are stripped away except for a single distance function $d \colon X \times X \to [0, \infty)$ satisfying three simple axioms. This constraint forces strict adherence to first-principles axiomatic reasoning without relying on Euclidean visual intuition.
+\end{didactic-insight}
+
+\begin{spoken-clean}[01:12:04 - 01:16:09]
+...where $X$ is a non-empty set, and $d$ is a map from $X \times X$ to $[0, \infty)$, which will be called the distance.
+
+\textbf{Definition of a metric space.}
+
+And $d$ is a map from $X \times X$ to the non-negative real numbers $[0, \infty)$ that will be called the distance.
+
+And this distance satisfies three axioms:
+
+Axiom \textbf{(1)}: Definiteness. For every pair of points $x$ and $y$ in $X$, $d(x, y) = 0 \iff x = y$. The distance between a point and itself is zero, of course, because what sort of distance would be non-zero from a point to itself? And if the points are different, the distance will not be zero, because otherwise this distance would not be able to distinguish points, right?
+
+Axiom \textbf{(2)}: Symmetry. For every $x, y \in X$, $d(x, y) = d(y, x)$. This axiom is also very reasonable for a distance. In applications, this is not always true if you think of a distance... like the distance of flying with a plane between two cities. You know that when you fly to the west, it usually takes less time than flying to the east, due to the wind, right? To atmospheric drift. So, it's not always true in every situation that the distance is symmetric, but in many situations it is true.
+
+And the third axiom, Axiom \textbf{(3)}: The triangle inequality. For all $x, y, z \in X$,
+\[
+d(x, z) \le d(x, y) + d(y, z).
+\]
+These are the axioms of a metric space.
+\end{spoken-clean}
+
+\begin{math-stroke}
+\begin{definition}[Metric Space]\label[definition]{def:metric-space}
+A \newterm{metric space} is an ordered pair $(X, d)$, where $X$ is a non-empty set and $d \colon X \times X \to [0, \infty)$ is a function (called the \newterm{metric} or \newterm{distance}) satisfying the following three axioms for all $x, y, z \in X$:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item \textbf{Definiteness (Positivity):}
+    \begin{equation}\label{eq:metric-definiteness}
+    d(x, y) = 0 \iff x = y.
+    \end{equation}
+    \setcounter{enumi}{1} \item \textbf{Symmetry:}
+    \begin{equation}\label{eq:metric-symmetry}
+    d(x, y) = d(y, x).
+    \end{equation}
+    \setcounter{enumi}{2} \item \textbf{Triangle Inequality:}
+    \begin{equation}\label{eq:metric-triangle-ineq}
+    d(x, z) \le d(x, y) + d(y, z).
+    \end{equation}
+\end{enumerate}
+\end{definition}
+\end{math-stroke}
+
+\begin{spoken-clean}[01:16:09 - 01:19:28]
+First example of a metric space: the Euclidean space $\mathbb{R}^n$ with the Euclidean distance $d_{\text{Euclidean}}(x, y) = \|y - x\|$, the length of the vector. It is very easy to see that it satisfies the three axioms.
+
+Examples:
+
+\textbf{1.} $(\mathbb{R}^n, d_{\text{Euclidean}})$.
+
+Why do we specify both the set and the distance? Because sometimes the same set has $2$ or more interesting distances, right?
+
+For instance, in $\mathbb{R}^2$, I can put the Euclidean distance, or I can put a different distance that is called the New York distance or Manhattan distance:
+\[
+d_{\text{NY}}(x, y) = |x_1 - y_1| + |x_2 - y_2|.
+\]
+Why? Because this is the sort of distance when you live in one of these modern American cities where the streets go north to south and east to west, and you want to go from point $x$ to point $y$, right? Then you cannot go diagonally because you hit the buildings, and so you need to go like that! And then the distance between two points is this thing. You can check very easily that this still satisfies all the axioms of distance, right?
+
+A \textbf{3rd} example, a bit more abstract: when you have any metric space $(X, d)$ and $Y \subset X$ is a subset of it, you can just restrict this distance to $Y$. The distance $d|_{Y \times Y}$ restricted to $Y$, together with $Y$, is another metric space! If you take a subset of your given metric space and restrict the distance, it will always be a metric space.
+
+Example: if this is $\mathbb{R}^3$ with the Euclidean distance, and I take a subset that is the two-dimensional sphere:
+\[
+S^2 := \left\{ x \in \mathbb{R}^3 \;\middle|\; \|x\| = 1 \right\}.
+\]
+Then $(S^2, d)$ is a metric space with the Euclidean distance. The distance between two points of the sphere --- say this one and this one --- is just: you take the straight segment and measure the length. And this satisfies the axioms of distance.
+
+You can say: \qt{Okay, but this distance maybe is not the best, because if you travel by plane, this is not the distance between points.} The distance between points when you travel by plane is the geodesic distance, that is, the length of the arc, the shortest arc on the surface of the Earth. This is another distance!
+
+The same set can have multiple meaningful distances depending on the context.
+\end{spoken-clean}
+
+\begin{math-stroke}[Examples of Metric Spaces]
+\begin{example}[Euclidean Space]\label[example]{ex:euclidean-metric-space}
+The space $(\mathbb{R}^n, d_{\text{Euclidean}})$ with $d(x, y) = \|y - x\|_2$ is a metric space.
+\end{example}
+
+\begin{example}[Manhattan / New York Metric on $\mathbb{R}^2$]\label[example]{ex:manhattan-metric-space}
+In $\mathbb{R}^2$, the \newterm{Manhattan metric} (or $L^1$-metric / taxicab metric) $d_{\text{NY}}$ is defined by:
+\begin{equation}\label{eq:manhattan-def}
+d_{\text{NY}}(x, y) := |x_1 - y_1| + |x_2 - y_2|.
+\end{equation}
+\begin{center}
+\begin{tikzpicture}[scale=1.5, >=Stealth]
+    % Grid
+    \draw[step=0.5cm, gray!30, thin] (0,0) grid (4.0,3.5);
+    
+    % Points
+    \coordinate (X) at (0.5,0.5);
+    \coordinate (Y) at (3.5,3.0);
+    
+    % Euclidean path (dashed)
+    % sloped and above=4pt perfectly separates the white text box from the dashed line!
+    \draw[dashed, gray!80, thick] (X) -- (Y) 
+        node[midway, sloped, above=4pt, font=\footnotesize, fill=white, inner sep=1.5pt] {Euclidean $d$};
+    
+    % Manhattan path (thick green lines)
+    % below=4pt and right=4pt ensures the white box never bites into the green lines
+    \draw[ultra thick, ForestGreen] (X) -- (3.5, 0.5) 
+        node[midway, below=4pt, fill=white, inner sep=1.5pt] {$|x_1 - y_1|$};
+    \draw[ultra thick, ForestGreen] (3.5, 0.5) -- (Y) 
+        node[midway, right=4pt, fill=white, inner sep=1.5pt] {$|x_2 - y_2|$};
+
+    % Draw points LAST so they render crisply on top
+    \fill[MidnightBlue] (X) circle (2pt) node[below left=4pt, fill=white, inner sep=1.5pt] {$x = (x_1, x_2)$};
+    \fill[BrickRed] (Y) circle (2pt) node[above right=4pt, fill=white, inner sep=1.5pt] {$y = (y_1, y_2)$};
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+\begin{example}[Metric Subspaces and the 2-Sphere $S^2$]\label[example]{ex:subspace-metric-sphere}
+Let $(X, d)$ be a metric space and $Y \subseteq X$ a non-empty subset. The restriction $d_Y := d|_{Y \times Y}$ defines an \newterm{induced metric} (or subspace metric) on $Y$.
+
+For $X = \mathbb{R}^3$ with $d_{\text{Euclidean}}$ and $Y = S^2 := \{x \in \mathbb{R}^3 \mid \|x\| = 1\}$, the pair $(S^2, d_{\text{Euclidean}})$ is a metric subspace.
+\begin{center}
+\begin{tikzpicture}[scale=1.4, >=Stealth]
+    % 3D Sphere Surface S^2 (Hollow Shell)
+    % Replaced solid 'ball color' with a transparent fill and added a meridian 
+    % to make it visually obvious that this is a hollow surface (like a soap bubble), 
+    % not a solid bowling ball.
+    \fill[MidnightBlue!10, opacity=0.7] (0,0) circle (1.5cm);
+    \draw[ultra thick, MidnightBlue!80!black] (0,0) circle (1.5cm);
+    
+    % Equator lines to provide 3D depth
+    % Back part (dashed)
+    \draw[MidnightBlue!60, densely dashed, thick] (1.5,0) arc (0:180:1.5cm and 0.45cm);
+    % Front part (solid)
+    \draw[MidnightBlue!80!black, thick] (-1.5,0) arc (180:360:1.5cm and 0.45cm);
+    
+    % Meridian line to emphasize the wireframe/surface character
+    \draw[MidnightBlue!60, densely dashed, thick] (0,1.5) arc (90:270:0.45cm and 1.5cm);
+    \draw[MidnightBlue!80!black, thick] (0,-1.5) arc (-90:90:0.45cm and 1.5cm);
+
+    % Points on the surface
+    \coordinate (P1) at (-0.8, 0.6);
+    \coordinate (P2) at (0.9, -0.4);
+    
+    % Chord distance (Straight through the interior - dashed to show it's inside)
+    \draw[dashed, ultra thick, BrickRed] (P1) -- (P2);
+
+    % Great circle arc (Geodesic on the surface - solid line)
+    \draw[ultra thick, ForestGreen] (P1) to[bend left=25] (P2);
+        
+    % Draw points AFTER paths so they render on top
+    \fill[black] (P1) circle (2pt) node[above left=2pt, font=\bfseries] {$x$};
+    \fill[black] (P2) circle (2pt) node[below right=2pt, font=\bfseries] {$y$};
+
+    % --- Legend Block (Bullet List) ---
+    % Placed clearly outside to the right of the sphere
+    \begin{scope}[shift={(2.2, 0.8)}]
+        \node[anchor=north west, align=left, font=\footnotesize, draw=gray!30, fill=gray!5, rounded corners, inner sep=8pt] (legend) {
+            \textbf{Legend:}\\[6pt]
+            % S^2 Bullet
+            \tikz[baseline=-0.5ex]{\draw[thick, MidnightBlue, fill=MidnightBlue!10] (0,0) circle (3pt);} 
+            \ $S^2$: \textbf{Surface only} (hollow shell) \\[6pt]
+            % Chord Bullet
+            \tikz[baseline=-0.5ex]{\draw[dashed, ultra thick, BrickRed] (0,0) -- (0.5,0);} 
+            \ Chord $d(x,y)$ (straight through interior) \\[6pt]
+            % Geodesic Bullet
+            \tikz[baseline=-0.5ex]{\draw[ultra thick, ForestGreen] (0,-0.05) to[bend left=20] (0.5,-0.05);} 
+            \ Geodesic $d_g(x,y)$ (curved on surface)
+        };
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+\end{example}
+\end{math-stroke}
+
+\begin{ai-global-state-checkpoint-invisible-content}
+% timestamp: 01:19:28
+% topic: Function Spaces as Metric Spaces
+% board_state: Metric space definition & R^n/S^2 examples written on board
+% next_goal: Introduce C([a,b]) with max/supremum metric and L^2 integral metric
+% open_loops: none
+\end{ai-global-state-checkpoint-invisible-content}
+
+\begin{spoken-clean}[01:19:28 - 01:24:54]
+So, one thing that can be useful when you try to do a proof in this setup of metric spaces, which is a bit abstract: remember, you have very few axioms you can use, but then you have less intuition!
+
+So, how can you overcome your lack of intuition? What you do is you think of a specific example. Don't think of a general metric space. A general metric space means a billion things at the same time, right? It is an abstract model of many things at the same time. Pick a concrete example! Pick Euclidean space. Do your proof in Euclidean space using the intuition that you have from that space. And then try to see which axioms you are using. If you... maybe you use a wrong proof and you are not using just those axioms, but then try to modify your proof using your intuition until you can do it with those axioms, okay? This can be useful.
+
+So, whenever things are abstract, don't think always in the abstract; just go to concrete examples. And this applies always, because I have seen many times in more advanced courses during examinations that people know the abstract theory very well, and then when you ask in a concrete case: \qt{What is this in Euclidean space?}, people sometimes don't know how to answer. And this is a problem. So, abstract theory is good, but you need to know very well and spend time thinking about concrete examples.
+
+So, let me give you some more interesting examples of metric spaces, so that you can see things start to be interesting very soon.
+
+Now we saw spaces of points. We can also consider spaces of functions!
+
+You learned what a continuous function is. Let's say $a, b \in \mathbb{R}$ with $a < b$, and you can take $X$ as the space of continuous functions from the closed interval $[a, b]$ to $\mathbb{R}$:
+\[
+X = \left\{ f \colon [a, b] \to \mathbb{R} \;\middle|\; f \text{ continuous} \right\}.
+\]
+This is a space of functions.
+
+One point in this space would look something like this: an entire curve! This is one point in this space.
+
+How can we define a distance between functions? Well, in many ways. Something that is used often is the supremum distance, or the maximum distance:
+\[
+d(f, g) := \max_{x \in [a, b]} |f(x) - g(x)|.
+\]
+So, you take two different curves here, and then you look at the maximal oscillation --- the maximum difference between the two functions. This is a distance between functions.
+
+If this is $0$, are the two functions equal? Yes! Only if? Yes, they are continuous, so you can do that. Exercise!
+
+Does it satisfy the triangle inequality? Prove it! Prove that it satisfies the triangle inequality. The symmetry is very easy, because if you swap $f$ and $g$ it's the same, because here you have the absolute value. But the triangle inequality you can prove using the triangle inequality for the absolute value and playing with the maximum.
+\end{spoken-clean}
+
+\begin{math-stroke}
+\begin{example}[{Function Space $C([a, b])$ with Supremum Metric}]\label[example]{ex:function-space-sup-metric}
+Let $a, b \in \mathbb{R}$ with $a < b$. The space of continuous real-valued functions on $[a, b]$ is denoted by:
+\begin{equation}\label{eq:c-ab-def}
+X = C([a, b], \mathbb{R}) := \left\{ f \colon [a, b] \to \mathbb{R} \;\middle|\; f \text{ is continuous on } [a, b] \right\}.
+\end{equation}
+The \newterm{supremum metric} (or uniform metric / $L^\infty$-metric) $d_\infty$ on $C([a, b], \mathbb{R})$ is defined by:
+\begin{equation}\label{eq:sup-metric-def}
+d_\infty(f, g) := \max_{x \in [a, b]} |f(x) - g(x)|.
+\end{equation}
+
+\begin{ai-tikz-planner-invisible-content}
+% 1. Canvas: scale=1.3, x-axis from a to b, y-axis.
+% 2. Functions: Smooth curve f(x) in MidnightBlue, curve g(x) in BrickRed over [a, b].
+% 3. Distance: Double-headed vertical green arrow showing max |f(x) - g(x)|.
+\end{ai-tikz-planner-invisible-content}\begin{center}
+\begin{tikzpicture}[scale=1.3, >=Stealth]
+    % Axes
+    \draw[->, thick, gray!70] (-0.3,0) -- (4.6,0) node[right, text=black] {$x$};
+    \draw[->, thick, gray!70] (0,-0.3) -- (0,2.8) node[above, text=black] {$y$};
+
+    % Interval [a, b] delimiting dashed lines (ends at y=1.8, safely below gray box)
+    \draw[dashed, gray!40] (0.6, 0) -- (0.6, 1.8);
+    \draw[dashed, gray!40] (3.8, 0) -- (3.8, 1.8);
+    \draw[thick] (0.6, 0.08) -- (0.6, -0.08) node[below] {$a$};
+    \draw[thick] (3.8, 0.08) -- (3.8, -0.08) node[below] {$b$};
+
+    % Function f(x) - stays strictly above g(x) everywhere on [a, b]
+    \draw[thick, MidnightBlue, domain=0.6:3.8, samples=50]
+        plot (\x, {1.6 + 0.5*sin(180*(\x-0.6)/1.6)});
+    % Node placed with `right=4pt` so it sits past the end of the curve (zero collision)
+    \node[MidnightBlue, right=4pt] at (3.8, 1.6) {$f(x)$};
+
+    % Function g(x) - stays strictly below f(x) everywhere on [a, b]
+    \draw[thick, BrickRed, domain=0.6:3.8, samples=50]
+        plot (\x, {0.6 - 0.3*sin(180*(\x-0.6)/1.6)});
+    % Node placed with `right=4pt` so it sits past the end of the curve (zero collision)
+    \node[BrickRed, right=4pt] at (3.8, 0.6) {$g(x)$};
+
+    % True Supremum / Maximum difference indicator at x_0 = 1.40
+    % Mathematically derived: f(1.40) = 2.1, g(1.40) = 0.3 -> max gap = 1.8
+    \coordinate (P_f) at (1.40, 2.1);
+    \coordinate (P_g) at (1.40, 0.3);
+    
+    % Dashed projection to x-axis at x_0
+    \draw[dashed, gray!50] (1.40, 0) node[below] {$x_0$} -- (P_g);
+
+    % OliveGreen Arrow (Clean, without inline label to prevent any collision)
+    \draw[<->, ultra thick, OliveGreen] (P_f) -- (P_g);
+
+    % Full Definition Formula in top-right empty region (y >= 2.3), safely above the dashed lines
+    \node[anchor=north east, font=\footnotesize, text=OliveGreen!90!black, fill=gray!5, draw=gray!30, rounded corners, inner sep=4pt] 
+        at (4.6, 2.7) {$d_\infty(f, g) = \max_{x \in [a,b]} |f(x) - g(x)|$};
+\end{tikzpicture}
+\end{center}
+\end{example}
+\end{math-stroke}
+
+\begin{spoken-clean}[01:24:54 - 01:27:09]
+Another distance between functions:
+\[
+d_2(f, g) := \left( \int_a^b \bigl( f(x) - g(x) \bigr)^2 \, dx \right)^{1/2}.
+\]
+You measure the difference, you square, you integrate, and you take the square root.
+
+This is another distance, a very important one: the $L^2$ distance! We will not use this in this course, but you will see that you will use this later on many, many times.
+
+So, we will continue next time from here. Thank you! \inlinemetanote{applause from students; lecturer packs up equipment}
+\end{spoken-clean}
+
+\begin{math-stroke}
+\begin{example}[{$L^2$-Metric on $C([a, b])$}]\label[example]{ex:l2-metric-space}
+On $X = C([a, b], \mathbb{R})$, another standard metric is the \newterm{$L^2$-metric} (or root-mean-square integral metric) $d_2$:
+\begin{equation}\label{eq:l2-metric-def}
+d_2(f, g) := \left( \int_a^b \bigl( f(x) - g(x) \bigr)^2 \, dx \right)^{1/2}.
+\end{equation}
+\end{example}
+\end{math-stroke}
+
+\begin{nice-box}[Summary of Key Concepts]
+\begin{itemize}
+    \item \textbf{High-Level Course Vision:} Analysis II elevates single-variable calculus to multivariable Euclidean space $\mathbb{R}^n$, culminating in integral theorems on surfaces (Gauss--Green--Stokes Divergence Theorem).
+    \item \textbf{Structure of $\mathbb{R}^n$:} Formalized as a real vector space equipped with the Euclidean scalar product $x \cdot y = \sum x_i y_i$, norm $\|x\| = \sqrt{\sum x_i^2}$, and metric distance $d(x, y) = \|y - x\|$.
+    \item \textbf{Fundamental Inequalities:} Rigorously established that the Triangle Inequality $\|x + y\| \le \|x\| + \|y\|$ in $\mathbb{R}^n$ reduces directly to the Cauchy--Schwarz Inequality $|x \cdot y| \le \|x\| \|y\|$.
+    \item \textbf{Metric Space Axioms:} Introduced the general abstraction $(X, d)$ defined by non-negativity/definiteness ($d(x, y) = 0 \iff x = y$), symmetry ($d(x, y) = d(y, x)$), and the triangle inequality ($d(x, z) \le d(x, y) + d(y, z)$).
+    \item \textbf{Metric Hierarchy \& Function Spaces:} Surveyed diverse metrics including the Euclidean metric on $\mathbb{R}^n$, Manhattan taxicab metric $d_{\text{NY}}$ on $\mathbb{R}^2$, subspace metrics on $S^2$, and metrics on continuous function spaces $C([a, b])$ ($L^\infty$ supremum metric $d_\infty$ vs.\ $L^2$ integral metric $d_2$).
+\end{itemize}
+\end{nice-box}
+
+% [SYSTEM] Refinement complete
