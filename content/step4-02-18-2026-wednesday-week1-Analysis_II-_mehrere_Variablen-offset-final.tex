@@ -1,0 +1,1448 @@
+% ==========================================
+% Step 4/4 - Final refinement (refinement step 3)
+% Output: step4-02-18-2026-wednesday-week1-Analysis_II-_mehrere_Variablen-offset-final.tex
+% Input: step3-02-18-2026-wednesday-week1-Analysis_II-_mehrere_Variablen-offset-speech_refined.tex
+% Model: gemini-3.7-flash
+% Temperature: 0.35
+% TopP: 0.9
+% TopK: 10
+% MaxOutputTokens: 65535
+% ThinkingBudget: 4096
+% ThinkingLevel: MEDIUM
+% Processed on: 2026-10-12 19:55:13
+% ------------------------------------------
+% Token Usage (1 Request(s)):
+%   - Total Prompt Tokens : 62'045 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 59'949 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 2'096 (neu verrechneter Input)
+%   - Output Tokens       : 29'883 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 2'834 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 3/4 - Speech refinement (refinement step 2)
+% Output: step3-02-18-2026-wednesday-week1-Analysis_II-_mehrere_Variablen-offset-speech_refined.tex
+% Input: step2-02-18-2026-wednesday-week1-Analysis_II-_mehrere_Variablen-offset-merged.tex
+% Model: gemini-3.7-flash
+% Temperature: 0.35
+% TopP: 0.9
+% TopK: 10
+% MaxOutputTokens: 65535
+% ThinkingBudget: 4096
+% ThinkingLevel: MEDIUM
+% Processed on: 2026-10-12 19:45:21
+% ------------------------------------------
+% Token Usage (1 Request(s)):
+%   - Total Prompt Tokens : 214'359 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 214'359 (neu verrechneter Input)
+%   - Output Tokens       : 30'213 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 29'537 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 2/4 - Merge & timestamp alignment (refinement step 1)
+% Output: step2-02-18-2026-wednesday-week1-Analysis_II-_mehrere_Variablen-offset-merged.tex
+% Input: step1-02-18-2026-wednesday-week1-Analysis_II-_mehrere_Variablen-all-offset.tex
+% Model: gemini-3.7-flash
+% Temperature: 0.4
+% TopP: 0.95
+% TopK: 40
+% MaxOutputTokens: 65535
+% ThinkingBudget: 32765
+% ThinkingLevel: MEDIUM
+% Processed on: 2026-10-12 19:34:54
+% ------------------------------------------
+% Token Usage (1 Request(s)):
+%   - Total Prompt Tokens : 188'218 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 188'218 (neu verrechneter Input)
+%   - Output Tokens       : 31'896 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 9'920 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 1/4 - Transcription, 4 part(s) combined
+% Output: step1-02-18-2026-wednesday-week1-Analysis_II-_mehrere_Variablen-all-offset.tex
+% Source video: 02-18-2026-wednesday-week1-Analysis_II-_mehrere_Variablen-speed-1-compressed.mp4
+% Model: gemini-3.7-flash
+% Temperature: 0.36
+% TopP: 0.95
+% TopK: 40
+% MaxOutputTokens: 65535
+% ThinkingBudget: 32765
+% ThinkingLevel: HIGH
+% Processed on: 2026-10-12 19:05:42
+% ------------------------------------------
+% Parts:
+%   - Part 1: 02-18-2026-wednesday-week1-Analysis_II-_mehrere_Variablen-part1.mp4 | start 00:00:00 | model gemini-3.7-flash | processed 2026-10-12 18:04:22 | prompt 335'436 | output 9'257 | thinking 17'639 | aus Cache
+%   - Part 2: 02-18-2026-wednesday-week1-Analysis_II-_mehrere_Variablen-part2.mp4 | start 00:19:05 | model gemini-3.7-flash | processed 2026-10-12 18:10:54 | prompt 344'079 | output 9'651 | thinking 14'841 | aus Cache
+%   - Part 3: 02-18-2026-wednesday-week1-Analysis_II-_mehrere_Variablen-part3.mp4 | start 00:38:11 | model gemini-3.7-flash | processed 2026-10-12 18:20:12 | prompt 353'454 | output 9'408 | thinking 18'329 | aus Cache
+%   - Part 4: 02-18-2026-wednesday-week1-Analysis_II-_mehrere_Variablen-part4.mp4 | start 00:57:17 | model gemini-3.7-flash | processed 2026-10-12 19:05:41 | prompt 362'482 | output 11'266 | thinking 24'414
+% ------------------------------------------
+% Token Usage of this run (1 Request(s)):
+%   - Total Prompt Tokens : 362'482 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 360'428 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 2'054 (neu verrechneter Input)
+%   - Output Tokens       : 11'266 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 24'414 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+
+% Primary Language: English
+% End of the video: 01:20:22
+
+\lecturechapter[1]{Wednesday}{18 Feb}{18 February 2026}{Metric Spaces: Sequences, Completeness, and Euclidean Space $\mathbb{R}^n$}
+
+\begin{overview}[Course Content Overview]
+In this lecture, we study sequences and convergence in general metric spaces $(X, d)$, proving the uniqueness of limits and introducing subsequences and accumulation points. We examine subtleties in characterizing convergence via subsequences, including a counterexample in $\mathbb{R}$ and the sub-subsequence criterion. Finally, we introduce Cauchy sequences and completeness, analyze complete and incomplete subspaces of $\mathbb{R}$, and prove that $n$-dimensional Euclidean space $(\mathbb{R}^n, d_{\text{Eucl}})$ is complete via componentwise convergence.
+\end{overview}
+
+\section{Sequences in Metric Spaces}
+
+\subsection{Definition and Notation}
+
+\begin{speech}[00:00:00 - 00:01:45]
+Hopefully by the second week, it will only take us two seconds to go from chatting to full silence.
+
+We will continue with metric spaces, provided my voice allows. Remember, last time we introduced this pair \inlinemetanote{writes $(X, d)$ on the blackboard}: $X$ is a set, and $d$ was a map from $X \times X$ to positive numbers, or non-negative numbers.
+
+And now, for today you can forget about the rest of the math you learned, because we are going to use only this and the three axioms. So, you just need to remember three pieces of information: the three axioms.
+
+Now, we will learn again concepts you saw in Analysis I, and the first concept is that of sequence. \inlinemetanote{writes Def'n (sequence) on the blackboard} You saw sequences of real numbers. If $X$ is a set \inlinemetanote{writes $X$ set}, we call a sequence in $X$ a map \inlinemetanote{writes we call sequence in $X$ a map} that we write like this: small $x$ from the natural numbers to $X$ \inlinemetanote{writes $x \colon \mathbb{N} \to X$}. This is small $x$, this is big $X$, okay?
+\end{speech}
+
+\begin{speech}[00:01:45 - 00:02:55]
+And, as in Analysis I, instead of denoting this map $x(n)$ \inlinemetanote{writes $x(n)$} as we do with functions, we will use this notation: $x_n$ \inlinemetanote{writes $x_n$}, right? Sub-index.
+
+This is just one element, the $n$-th element of the sequence \inlinemetanote{writes $\longleftarrow n\text{-th element}$} that belongs to $X$ \inlinemetanote{writes $\in X$} --- belongs to the set $X$.
+
+When we want to denote the full sequence, we will say: let $(x_n)$ like this be a sequence. Then we can write this \inlinemetanote{writes $(x_n)_{n \ge 0}$}, or we can write this \inlinemetanote{writes $(x_n)_{n=0}^\infty$} --- all of these are equivalent notations --- or we can write \inlinemetanote{writes $(x_n)_{n \in \mathbb{N}}$}, things like that. So, this is our notation for sequences, right? \inlinemetanote{draws a horizontal dividing line across the blackboard}
+\end{speech}
+
+\begin{content}
+\begin{definition}[Sequence in a Set]\label[definition]{def:sequence}
+Let $X$ be a non-empty set. A \newterm{sequence} in $X$ is a mapping:
+\[
+x \colon \mathbb{N} \to X, \quad n \mapsto x(n).
+\]
+\end{definition}
+
+\begin{notation}[Element and Sequence Notations]\label[notation]{not:sequence-notations}
+Instead of standard functional notation $x(n)$, the value of the sequence at index $n \in \mathbb{N}$ is denoted using a subscript:
+\[
+x_n := x(n) \in X \quad (\text{the } n\text{-th element of the sequence}).
+\]
+The entire sequence as a unified mathematical object is denoted interchangeably by:
+\[
+(x_n)_{n \ge 0}, \quad (x_n)_{n=0}^\infty, \quad \text{or} \quad (x_n)_{n \in \mathbb{N}}.
+\]
+\end{notation}
+
+\begin{steps}[Functions vs.\ Index Notation]
+Formally, a sequence is simply a function whose domain is the set of natural numbers $\mathbb{N} = \{0, 1, 2, \dots\}$ (or starting from $1$, depending on the convention). Rather than writing $x(0), x(1), x(2)$, mathematicians use indexed family notation $x_0, x_1, x_2, \dots$ to emphasize the discrete, sequential progression of points in the target space $X$.
+\end{steps}
+\end{content}
+
+\subsection{Convergence and Limits}
+
+\begin{speech}[00:02:55 - 00:04:33]
+Now we are in a metric space, so we can also define convergent sequences and limits.
+
+Definition number two will be convergent sequence and limit \inlinemetanote{writes Def'n (convergent seq'ce and limit) on the upper board}. We say $(x_n)$... \inlinemetanote{writes We say $(x_n)_{n \ge 0}$}
+
+This is for a metric space: $(X, d)$ is a metric space \inlinemetanote{writes $(X, d)$ metric space}, $d$ is the distance, and $(x_n)$ has limit $x$ in $X$ \inlinemetanote{writes has limit $x \in X$} if...
+
+Well, we can put it in many ways, but essentially what we will say is that if we have a sequence of points in our space, it converges to our given limit point if the distance converges to zero. We have the distance; we need to phrase everything in terms of the distance.
+\end{speech}
+
+\begin{speech}[00:04:33 - 00:06:22]
+So, if the distance between $x_n$ and the limit point $x$ converges to zero as real numbers \inlinemetanote{writes if $d(x_n, x) \to 0$ as real numbers}, right?
+
+These are points in your abstract space, but the distance between the two points is a number. So, I can say: if this distance goes to zero, this means that this point is the limit of that sequence.
+
+Equivalently --- if you want something very similar, equivalently \inlinemetanote{writes Equivalently} ---: for all $\varepsilon$ positive, there exists capital $N$ that depends on $\varepsilon$, such that the distance between $x_n$ and $x$ is less than $\varepsilon$ whenever $n$ is bigger than capital $N$ \inlinemetanote{writes $\forall \varepsilon > 0 \;\exists N \text{ such that } d(x_n, x) < \varepsilon \text{ whenever } n \ge N$}, right? This is more analogous to what you have seen in Analysis I for sequences.
+
+Now, this is super general, because we saw last time that metric spaces could be a space of functions, could be anything. Now you know how to do convergent sequences in a very general setup.
+\end{speech}
+
+\begin{content}
+\begin{definition}[Convergent Sequence and Limit]\label[definition]{def:convergent-sequence-limit}
+Let $(X, d)$ be a metric space. A sequence $(x_n)_{n \ge 0}$ in $X$ is said to \newterm{converge} to a point $x \in X$ (or to have \newterm{limit} $x$) if:
+\begin{equation}\label{eq:limit-via-metric}
+\lim_{n \to \infty} d(x_n, x) = 0 \quad (\text{as a sequence of real numbers in } \mathbb{R}).
+\end{equation}
+Equivalently, expressed in $\varepsilon$-$N$ language:
+\begin{equation}\label{eq:limit-epsilon-N}
+\forall \varepsilon > 0 \;\exists N \in \mathbb{N} \;\forall n \ge N \colon \quad d(x_n, x) < \varepsilon.
+\end{equation}
+\end{definition}
+
+\begin{steps}[Reduction to Real Sequences]
+Notice the elegance of \cref{def:convergent-sequence-limit}:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item The elements $x_n$ and $x$ live in an arbitrary, abstract set $X$ (which could be a set of matrices, a space of continuous functions $C([0, 1])$, or a Riemannian manifold).
+    \setcounter{enumi}{1} \item However, the distance $d(x_n, x)$ is a non-negative \emph{real number}.
+    \setcounter{enumi}{2} \item Therefore, the sequence of distances $\big(d(x_n, x)\big)_{n \in \mathbb{N}}$ is an ordinary sequence in $\mathbb{R}_{\ge 0}$, allowing us to reduce convergence in any abstract metric space directly to standard single-variable convergence in $\mathbb{R}$.
+\end{enumerate}
+\end{steps}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:06:20
+% topic: Definition of sequences, convergent sequences, and limits in metric spaces
+% board_state: def:sequence, not:sequence-notations, def:convergent-sequence-limit
+% next_goal: Notation for limits (\lim x_n = x, x_n \to x) and uniqueness of limits
+% open_loops: none
+\end{hidden}
+
+\begin{speech}[00:06:22 - 00:07:35]
+Well, let me once and for all give you the notations we will use. \inlinemetanote{draws a horizontal dividing line}
+
+When the metric space you are using is clear --- most of the time in this course will be $\mathbb{R}^n$ with the Euclidean distance, or maybe the complex numbers, that is $\mathbb{R}^2$, right? --- then, to say that $x_n$ has limit $x$, we will use these notations: the limit in $n$, or when $n$ goes to infinity, of $x_n$ is equal to $x$ \inlinemetanote{writes $\lim_{n \to \infty} x_n = x$}. This we can write when everything is clear from the context, right? When the space $X$ and the distance are clear.
+
+Or we can also put it even more shortly: $x_n$ converges to $x$ \inlinemetanote{writes $x_n \to x$}. This I like a lot; it is very compact, right? As in here --- I used it in here \inlinemetanote{points at $d(x_n, x) \to 0$}.
+\end{speech}
+
+\begin{content}
+\begin{notation}[Limit of a Sequence]\label[notation]{not:limit-notations}
+When the underlying metric space $(X, d)$ is clear from the context, the statement that $(x_n)_{n \in \mathbb{N}}$ converges to $x$ is denoted by:
+\[
+\lim_{n \to \infty} x_n = x \quad \text{or simply} \quad x_n \to x.
+\]
+\end{notation}
+\end{content}
+
+\subsection{Uniqueness of the Limit}
+
+\begin{speech}[00:07:35 - 00:09:20]
+Now, given a convergent sequence, we defined what its limit is.
+
+First question: is the limit unique? Let's start from the very basic, fundamental questions.
+
+First lemma... \inlinemetanote{notices a smiley face chalk drawing on the board} Oh, nice! What is this? \inlinemetanote{laughs}
+
+Lemma \inlinemetanote{writes Lemma}: The limit of a sequence is unique. In a metric space $(X, d)$ \inlinemetanote{writes $(X, d)$ metric space}, take a sequence \inlinemetanote{writes $(x_n)_{n \ge 0}$}, and assume that $x_n$ converges to $x$, and you know also that $x_n$ converges to $y$ \inlinemetanote{writes $x_n \to x, x_n \to y$}, for two given points of $X$ \inlinemetanote{writes $x, y \in X$}.
+
+So, this is a sequence, and this is an assumption: assume that $x_n \to x$ and $x_n \to y$. Then $x = y$ \inlinemetanote{writes then $x = y$ and frames it in a box}, right? \inlinemetanote{draws a dividing line under the lemma statement}
+
+How do we prove this?
+\end{speech}
+
+\begin{content}
+\begin{lemma}[Uniqueness of the Limit]\label[lemma]{lem:limit-unique}
+Let $(X, d)$ be a metric space. If a sequence $(x_n)_{n \ge 0} \subseteq X$ converges to $x \in X$ and also converges to $y \in X$, then:
+\begin{equation}\label{eq:limit-equality}
+x = y.
+\end{equation}
+\end{lemma}
+\end{content}
+
+\begin{proofWrapper}[Proof of Lemma \ref{lem:limit-unique}]
+
+\begin{speech}[00:09:20 - 00:11:04]
+\inlinemetanote{draws two points on the board} These are two potential limit points, $x$ and $y$.
+
+Remember that the first axiom of the distance says that the distance distinguishes points, so the distance between two distinct points is positive. Let me call the distance between $x$ and $y$ two times $\varepsilon$, which is a positive number \inlinemetanote{writes $d(x, y) = 2\varepsilon > 0$ in red chalk}, right? Or, to make it more dramatic, let me put three times $\varepsilon$ \inlinemetanote{changes $2\varepsilon$ to $3\varepsilon$} --- and also more symmetric, because the three and the $\varepsilon$ are symmetric. Okay.
+
+So, this is $3\varepsilon$. Then the definition of convergence tells us that after a certain point --- for very, very large $n$ --- all the elements of the sequence will fall close to the limit $x$. But at the same time, all the elements of the sequence will fall close to that other limit $y$. And this should contradict another axiom, which is the triangle inequality, okay?
+
+Here we see the intuition: all the elements cannot be at the same time here and here, right? So, this is what we are going to do. And now we write this in symbols using the definition, right? \inlinemetanote{slides the blackboards upward to reveal fresh blackboard space below}
+\end{speech}
+
+\begin{content}[Geometric Intuition of the Uniqueness Proof]
+\begin{hidden}
+% - Canvas: scale=1.3, x in [-1, 5], y in [-1.5, 1.5]
+% - Elements:
+%   1. Points x at (0.2, -0.3) and y at (3.8, 0.4)
+%   2. Segment between x and y labeled d(x, y) = 3\varepsilon
+%   3. \varepsilon-neighborhoods (balls) B_\varepsilon(x) and B_\varepsilon(y) around x and y (dashed circles)
+%   4. Sequence points x_n for n >= N
+% - Key coordinates:
+%   dist(x, y) = sqrt(3.6^2 + 0.7^2) = sqrt(12.96 + 0.49) = sqrt(13.45) \approx 3.67
+%   Set \varepsilon = 3.67 / 3 \approx 1.22
+%   Ball around x: radius 1.05cm, center (0.2, -0.3)
+%   Ball around y: radius 1.05cm, center (3.8, 0.4)
+%   Gap between the balls: 3.67 - 2.1 = 1.57 > 0 (strictly disjoint)
+% - Labels:
+%   x below left of (0.2, -0.3), y above right of (3.8, 0.4)
+%   d(x, y) = 3\varepsilon above the connecting segment
+%   B_\varepsilon(x) and B_\varepsilon(y) outside the balls
+% - Collisions: completely disjoint balls, no overlapping text
+\end{hidden}
+\begin{center}
+\begin{tikzpicture}[scale=1.3, >=Stealth]
+    % Points x and y
+    \coordinate (X) at (0.2, -0.3);
+    \coordinate (Y) at (3.8, 0.4);
+
+    % Distance line between x and y
+    \draw[thick, BrickRed] (X) -- (Y) node[midway, sloped, above, font=\small] {$d(x, y) = 3\varepsilon > 0$};
+
+    % Disjoint epsilon-balls around x and y
+    \draw[dashed, thick, MidnightBlue, fill=MidnightBlue!5, opacity=0.8] (X) circle (1.05cm);
+    \draw[dashed, thick, ForestGreen, fill=ForestGreen!5, opacity=0.8] (Y) circle (1.05cm);
+
+    % Point markers
+    \fill[black] (X) circle (2pt) node[below left, font=\bfseries] {$x$};
+    \fill[black] (Y) circle (2pt) node[above right, font=\bfseries] {$y$};
+
+    % Ball labels
+    \node[MidnightBlue, font=\footnotesize] at (-0.6, 0.7) {$B_\varepsilon(x)$};
+    \node[ForestGreen, font=\footnotesize] at (4.6, -0.5) {$B_\varepsilon(y)$};
+
+    % Illustrative sequence points x_n for large n
+    \fill[MidnightBlue] ($(X) + (0.4, 0.3)$) circle (1.5pt) node[right, font=\tiny] {$x_n$};
+    \fill[MidnightBlue] ($(X) + (-0.3, 0.4)$) circle (1.5pt);
+    \fill[MidnightBlue] ($(X) + (0.2, -0.5)$) circle (1.5pt);
+\end{tikzpicture}
+\end{center}
+
+\begin{steps}[The Geometric Contradiction]
+If $x \neq y$, the first metric axiom guarantees $d(x, y) > 0$. By choosing $\varepsilon := \frac{1}{3} d(x, y) > 0$, the open balls $B_\varepsilon(x)$ and $B_\varepsilon(y)$ are strictly disjoint. For sufficiently large $n$, convergence to $x$ requires $x_n \in B_\varepsilon(x)$, while convergence to $y$ requires $x_n \in B_\varepsilon(y)$. A single point $x_n$ cannot reside in two disjoint sets simultaneously.
+\end{steps}
+\end{content}
+
+\begin{speech}[00:11:04 - 00:12:40]
+By definition of the limit, given that $\varepsilon$ over there, there exists $N$ --- let's say $N_x$ --- such that \inlinemetanote{writes $\exists N_x \in \mathbb{N} \text{ st }$} the distance between $x_n$ and $x$ is less than $\varepsilon$ for all $n$ bigger than $N_x$ \inlinemetanote{writes $d(x_n, x) < \varepsilon \;\forall n \ge N_x$}.
+
+Right? And the same with $y$: there also exists some $N_y$ such that the distance between $x_n$ and $y$ is less than $\varepsilon$ for all $n$ bigger than or equal to $N_y$ \inlinemetanote{writes $\exists N_y \text{ st } d(x_n, y) < \varepsilon \;\forall n \ge N_y$}.
+
+And then, if I take capital $N$ to be the maximum of these two numbers \inlinemetanote{writes $N = \max(N_x, N_y)$}, what happens? Then for all $n \ge N$ \inlinemetanote{writes $\forall n \ge N$}, since $N$ is bigger than both, I will have: the distance between $x$ and $y$ --- this was what? By definition, this was three times $\varepsilon$ \inlinemetanote{writes $3\varepsilon = d(x, y)$}, right?
+\end{speech}
+
+\begin{speech}[00:12:40 - 00:14:15]
+Now, I said I would use the triangle inequality, right? So, the distance between $x$ and $y$ should be less than or equal to the distance between $x$ and $x_n$ plus the distance between $x_n$ and $y$ \inlinemetanote{writes $\le d(x, x_n) + d(x_n, y)$ and labels it \qt{Triangle} with circled 3 in red chalk}. I'm using the triangle inequality with these three points: $x$, $y$, and $x_n$. This is the triangle axiom.
+
+Now, I want to have this, right? So, I need to switch these two arguments. I'm using the second axiom here: symmetry. Axiom number three is the triangle inequality; by axiom number two, I can switch the points in the distance \inlinemetanote{writes circled 2 and red arrows switching $x$ and $x_n$}.
+
+And then I get that this is strictly less than $\varepsilon + \varepsilon$ \inlinemetanote{writes $< \varepsilon + \varepsilon$}: $3\varepsilon$ is less than $2\varepsilon$, contradiction!
+
+The contradiction comes from the fact that I assumed that the points are different and the distance is positive, okay? If the points are the same and the distance is zero, there is no contradiction, of course. So, this finishes the proof of the uniqueness of the limit. \inlinemetanote{draws a boundary line around the proof}
+\end{speech}
+
+\begin{content}[Derivation of the Contradiction]
+\begin{proof}
+Let $(x_n)_{n \ge 0} \subseteq X$ be a sequence such that $x_n \to x$ and $x_n \to y$.
+We proceed by contradiction: assume that $x \neq y$.
+By the first metric axiom (\textbf{Positivity/Separation}), the distance between distinct points is strictly positive. We define:
+\begin{equation}\label{eq:epsilon-choice}
+d(x, y) =: 3\varepsilon > 0 \implies \varepsilon := \frac{1}{3} d(x, y) > 0.
+\end{equation}
+By the definition of convergence, there exist indices $N_x, N_y \in \mathbb{N}$ such that:
+\begin{align}
+d(x_n, x) &< \varepsilon && \forall n \ge N_x, \label{eq:conv-x} \\
+d(x_n, y) &< \varepsilon && \forall n \ge N_y. \label{eq:conv-y}
+\end{align}
+Define $N := \max(N_x, N_y) \in \mathbb{N}$. Then for all $n \ge N$, both inequalities \eqref{eq:conv-x} and \eqref{eq:conv-y} hold simultaneously.
+Using the metric axioms, we evaluate the distance $d(x, y)$ for any $n \ge N$:
+\begin{align}
+3\varepsilon &= d(x, y) \nonumber \\
+&\le d(x, x_n) + d(x_n, y) && \text{(by Axiom 3: Triangle Inequality)} \nonumber \\
+&= d(x_n, x) + d(x_n, y) && \text{(by Axiom 2: Symmetry)} \nonumber \\
+&< \varepsilon + \varepsilon = 2\varepsilon && \text{(by \eqref{eq:conv-x} and \eqref{eq:conv-y})}. \label{eq:contradiction-step}
+\end{align}
+This yields:
+\[
+3\varepsilon < 2\varepsilon \implies 3 < 2,
+\]
+which is an absurd contradiction since $\varepsilon > 0$.
+Hence, the assumption $x \neq y$ is false, concluding that $x = y$.
+\end{proof}
+\end{content}
+
+\end{proofWrapper}
+
+\begin{hidden}
+% timestamp: 00:14:15
+% topic: Uniqueness of limits in metric spaces
+% board_state: lem:limit-unique, proof of uniqueness via triangle inequality
+% next_goal: Class pacing check, then introduce subsequences
+% open_loops: none
+\end{hidden}
+
+\begin{speech}[00:14:15 - 00:16:35]
+Can you tell me now: how is this pace? Is it very slow? Is it very quick? Is it okay?
+
+It's important --- I tell you because I have the experience from two years ago: there are some people who, whatever I do, always find it super slow, right? And these are the people who sometimes are more active looking at me and giving feedback. So, it's very important that if people start to be confused, I know before it's too late.
+
+In this direction, today before the break, there will be the election of the class speakers. This is very useful, and I ask you to volunteer, because then I have a more fluid communication. Maybe some people don't come to complain to me that I'm going too fast or too slow, but you can go to your speakers and they will give feedback. Like this, we will adjust as we go.
+
+\inlinemetanote{walks back to the upper blackboard} The next thing that you learned in Analysis I is the definition --- it will be the same --- of a subsequence \inlinemetanote{writes def'n (subsequence)}, right?
+
+If $(x_n)_{n \ge 0}$ is a sequence in a set $X$ \inlinemetanote{writes $(x_n)_{n \ge 0}$ seq in $X$}, we define... \inlinemetanote{notices confused look in audience} Is there some problem, or do you have some... yeah? No?
+
+Is there some confusion with this proof? I can spend more time; we have time. Yeah, good. \inlinemetanote{walks to the front desk and picks up the blue Catchbox throwable microphone} Now, here's the tricky part, right? \inlinemetanote{throws the Catchbox into the audience} Almost.
+\end{speech}
+
+\begin{student}[Student Question]
+Um, I do not quite understand where the contradiction is, so why this proof actually works. Um, I do not get the last line you wrote there.
+\end{student}
+
+\begin{speech}[00:17:01 - 00:17:08]
+This last line? \inlinemetanote{points at the inequality line $3\varepsilon \le d(x_n, x) + d(x_n, y) < 2\varepsilon$}
+\end{speech}
+
+\begin{student}[Student Question continued]
+Yes. Like, why we can...
+\end{student}
+
+\begin{speech}[00:17:08 - 00:18:25]
+Is that okay? This is the definition of $3\varepsilon$.
+
+\inlinemetanote{Student nods}
+
+Now, the triangle inequality says that when you have three points, the distance between two of them is shorter than going from one to the third, and from the third to the second, right? This is the triangle; this is less than or equal to.
+
+Now, if we switch these two \inlinemetanote{points at $d(x, x_n)$}, and we use that and that \inlinemetanote{points at $d(x_n, x) < \varepsilon$ and $d(x_n, y) < \varepsilon$} --- the switching is by the second axiom: I can switch the two points --- I get strictly less than $\varepsilon + \varepsilon$. So, I am getting that $3\varepsilon < 2\varepsilon$, which is a contradiction, right?
+
+\inlinemetanote{Student responds: \qt{Okay}}
+
+The only place where the contradiction came from is because I assumed that the points are different and $\varepsilon$ is positive. If $\varepsilon$ is zero, you cannot do that, okay?
+
+\inlinemetanote{Student responds: \qt{Okay}}
+
+\inlinemetanote{Student tosses the Catchbox back to the front}
+
+Almost! Thank you.
+
+\inlinemetanote{Lecturer takes the Catchbox and plugs it into the charger on the desk} Where's the charger? I think it should be somewhere here. Ah, here.
+\end{speech}
+
+\begin{speech}[00:18:25 - 00:18:57]
+Okay, so a subsequence, yeah? \inlinemetanote{notices another student raising their hand} Oh, good.
+\end{speech}
+
+\begin{student}[Student Question]
+Um, so can we use the terminology of limit if $x$ isn't in the set $X$? So, for example, if we have like $\mathbb{R}$ but without $0$ and like $x_n$ is defined as $1/n$, it converges to $0$, but $0$ isn't in $X$.
+\end{student}
+
+\begin{speech}[00:19:19 - 00:20:15]
+No, in this context, no.
+
+\inlinemetanote{Student acknowledges: \qt{Okay}}
+
+Here you can use it because you are artificially removing part of your set, but you can measure the distance between $0$ and the positive numbers, because you are in $\mathbb{R}$, and $\mathbb{R}$ has its distance.
+
+When you look at the definition, all the things that appear in the definition need to have a meaning. When you have that the distance of $x_n$ and $x$ goes to zero, so that this real number is well defined, you need both points to be in your space. Otherwise, I don't know what the distance is between something that lives in one space and something that lives in another galaxy, right?
+
+\inlinemetanote{catches the Catchbox, drops it accidentally and picks it up} Okay, oops.
+\end{speech}
+
+\begin{insight}[Ambient Space Requirement for Limits]
+In a metric space $(X, d)$, a sequence $(x_n)_{n \in \mathbb{N}} \subseteq X$ can only converge to a limit point $x$ if $x \in X$. For instance, in the metric space $X = (0, \infty)$ equipped with the standard Euclidean distance, the sequence $x_n = 1/n$ does \emph{not} converge in $X$, because its candidate limit $0 \notin X$. The metric $d$ is a function $d \colon X \times X \to \mathbb{R}_{\ge 0}$; the expression $d(x_n, 0)$ is undefined within the space $X$.
+\end{insight}
+
+\begin{hidden}
+% timestamp: 00:20:15
+% topic: Student questions on uniqueness contradiction and ambient space for limits
+% board_state: lem:limit-unique, proof of uniqueness
+% next_goal: Resume definition of subsequence on the blackboard
+% open_loops: none
+\end{hidden}
+
+\subsection{Subsequences}
+
+\begin{speech}[00:20:15 - 00:22:38]
+\inlinemetanote{walks back to the blackboard} Okay, subsequence.
+
+A subsequence is any sequence of the form... \inlinemetanote{writes we define subsequence as any sequence of the form $(x_{f(n)})_{n \ge 0}$ where $f \colon \mathbb{N} \to \mathbb{N}$ is some increasing function} where $f \colon \mathbb{N} \to \mathbb{N}$ is some increasing function, an increasing map.
+
+You know what increasing is, right? When I say increasing, it means: $f(n) < f(m)$ if and only if $n < m$ \inlinemetanote{writes $f(n) < f(m) \iff n < m$}. It's with a strict inequality; this is increasing. When you get this inequality \inlinemetanote{writes $\le$} for a map, we say that this is non-decreasing \inlinemetanote{writes non-decreasing in red chalk}. Increasing is strict, okay?
+
+And these subsequences, as in Analysis I, it's customary not to denote them this way, but something like this: $x_{n_k}$ \inlinemetanote{writes $(x_{n_k})_{k \ge 0}$}. So, instead of putting $f(n)$ or $f(k)$ --- let's say $f(k)$, it's the same --- we will write $n_k$, because $n$ was the original index, and when we are running this index at a faster speed, we write $n_k$.
+
+Same notation, same concept as in Analysis I, just now that the elements live in some abstract space. \inlinemetanote{draws a stepped dividing line on the blackboard}
+\end{speech}
+
+\begin{content}
+\begin{definition}[Subsequence]\label[definition]{def:subsequence}
+Let $(x_n)_{n \ge 0}$ be a sequence in a set $X$. A \newterm{subsequence} of $(x_n)$ is any sequence of the form:
+\begin{equation}\label{eq:subsequence-map}
+(x_{f(k)})_{k \ge 0},
+\end{equation}
+where $f \colon \mathbb{N} \to \mathbb{N}$ is a strictly increasing function, meaning:
+\begin{equation}\label{eq:strictly-increasing}
+f(k) < f(\ell) \iff k < \ell.
+\end{equation}
+\end{definition}
+
+\begin{notation}[Standard Subsequence Notation]\label[notation]{not:subsequence-notation}
+Instead of writing $f(k)$, it is customary to write $n_k := f(k)$, denoting the subsequence as:
+\[
+(x_{n_k})_{k \ge 0} \quad \text{with} \quad n_0 < n_1 < n_2 < \dots < n_k < \dots
+\]
+Here, $k$ acts as the new running index that samples the original sequence at strictly advancing positions $n_k$.
+\end{notation}
+
+\begin{remark}[Increasing vs.\ Non-Decreasing Maps]\label[remark]{rem:increasing-vs-nondecreasing}
+A mapping $f \colon \mathbb{N} \to \mathbb{N}$ is:
+\begin{itemize}
+    \item \textbf{Strictly Increasing:} $k < \ell \implies f(k) < f(\ell)$.
+    \item \textbf{Non-Decreasing (Weakly Increasing):} $k \le \ell \implies f(k) \le f(\ell)$.
+\end{itemize}
+The definition of a subsequence strictly requires $f$ to be \emph{strictly increasing}, which guarantees that $n_k \ge k \to \infty$ as $k \to \infty$ and prevents the sequence from stalling or repeating elements.
+\end{remark}
+\end{content}
+
+\subsection{Accumulation Points}
+
+\begin{speech}[00:22:37 - 00:24:12]
+Okay. Something you already learned in $\mathbb{R}$ also: accumulation points. You know what an accumulation point is. Let's put in here: definition of accumulation points \inlinemetanote{writes \qt{def'n (accumulation points)} on the blackboard}. We will give two things, two definitions.
+
+I will not write it every time, but unless stated otherwise, $(X, d)$ is a metric space \inlinemetanote{writes $(X, d)$}.
+
+And $Y$ is a subset of $X$, right? \inlinemetanote{writes \qt{• $Y \subset X$ subset}} We say that $y \in X$ \inlinemetanote{writes \qt{We say that $y \in X$}} is an accumulation point \inlinemetanote{writes \qt{is an acc. pt.}} of $Y$ \inlinemetanote{writes \qt{of $Y$}} if there exists a sequence $(y_n)$ contained in $Y$ \inlinemetanote{writes \qt{if $\exists (y_n)_{n \ge 0} \subset Y$}} --- so a sequence of points in $Y$ --- such that $y_n$ converges to $y$ \inlinemetanote{writes \qt{such that $y_n \to y$}}.
+
+Bullet point number one.
+\end{speech}
+
+\begin{speech}[00:24:12 - 00:26:03]
+And bullet point number two \inlinemetanote{writes •} is for sequences. If $(x_n)_{n \ge 0}$ is a sequence in $X$ \inlinemetanote{writes \qt{$(x_n)_{n \ge 0}$ sequence of $X$}}, we say that $x$ is an accumulation point \inlinemetanote{writes \qt{we say the $x$ is an acc. pt.}} of this sequence if there exists a subsequence that converges to $x$ --- if there exists an increasing $f$ \inlinemetanote{writes \qt{if $\exists f$ increasing st}} such that $x_{f(n)}$ converges to $x$ \inlinemetanote{writes \qt{$x_{f(n)} \to x$}}.
+
+Or, if you prefer, with the notation you are more used to \inlinemetanote{draws a boxed region on the right board}: if there exists some subsequence \inlinemetanote{writes \qt{$\exists x_{n_k}$ subsequence}} --- it's the same, I'm just repeating --- a subsequence $(x_{n_k})_{k \ge 0}$ such that, when $k \to \infty$ \inlinemetanote{writes \qt{$k \to \infty$}}, $x_{n_k}$ converges to $x$ \inlinemetanote{writes \qt{$x_{n_k} \to x$}}.
+\end{speech}
+
+\begin{content}
+Let $(X, d)$ be a metric space.
+
+\begin{definition}[Accumulation Point of a Subset]\label[definition]{def:accumulation-point-subset}
+Let $Y \subseteq X$ be a subset. A point $y \in X$ is called an \newterm{accumulation point} of $Y$ if there exists a sequence $(y_n)_{n \ge 0} \subseteq Y$ such that:
+\begin{equation}\label{eq:acc-point-set}
+\lim_{n \to \infty} y_n = y \quad (y_n \to y).
+\end{equation}
+\end{definition}
+
+\begin{definition}[Accumulation Point of a Sequence]\label[definition]{def:accumulation-point-sequence}
+Let $(x_n)_{n \ge 0} \subseteq X$ be a sequence. A point $x \in X$ is called an \newterm{accumulation point} of the sequence $(x_n)_{n \ge 0}$ if there exists a convergent subsequence $(x_{n_k})_{k \ge 0}$ converging to $x$:
+\begin{equation}\label{eq:acc-point-seq}
+\lim_{k \to \infty} x_{n_k} = x \quad \bigl(\text{or equivalently, } x_{f(n)} \to x \text{ for some strictly increasing } f \colon \mathbb{N} \to \mathbb{N}\bigr).
+\end{equation}
+\end{definition}
+
+\begin{steps}[Key Distinctions in Accumulation Points]
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item \textbf{Accumulation Point of a Set vs.\ Sequence:} An accumulation point of a set $Y$ is any point that can be reached as the limit of elements in $Y$. Note that $y$ does not need to belong to $Y$; it can lie on the boundary of $Y$. In contrast, an accumulation point of a sequence is a point that is visited infinitely often or approached along an infinite sub-index chain $n_k$.
+    \setcounter{enumi}{1} \item \textbf{Multiple Accumulation Points:} A sequence can have zero accumulation points (e.g., $x_n = n$ in $\mathbb{R}$), exactly one accumulation point (e.g., $x_n = \frac{1}{n}$ in $\mathbb{R}$), or multiple accumulation points (e.g., $x_n = (-1)^n$, which has accumulation points $-1$ and $+1$).
+\end{enumerate}
+\end{steps}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:06:58
+% topic: Subsequences and Accumulation Points
+% board_state: def:subsequence, not:subsequence-notation, def:accumulation-point-subset, def:accumulation-point-sequence
+% next_goal: Address student questions and relate convergence to accumulation points via Lemma
+% open_loops: none
+\end{hidden}
+
+\subsection{Discussion on Pacing and Definitions}
+
+\begin{speech}[00:26:03 - 00:27:29]
+All of these are definitions of concepts you already know in a more general framework. And now we will start to do more interesting things with these definitions.
+
+You will notice that I'm going very slowly --- speaking slowly, writing slowly --- but I'm not writing very much on the blackboard. I'm giving you a lot of time to see if what I write makes sense, but I'm not writing a lot, because when I start later to increase the speed and write like this \inlinemetanote{gestures broadly towards the board}, you will need to follow, right?
+
+So, if something is not clear because I need to write more... I say everything speaking, right? But I don't write everything on the blackboard. If someone is confused: raise your hand, stop me, we have time, okay?
+\end{speech}
+
+\begin{speech}[00:27:29 - 00:28:00]
+This will be very useful: for instance, I use abbreviations or things like that, so later, when I want to go slightly quicker, it will be very useful that we are all used to that.
+
+Yeah. \inlinemetanote{takes the Catchbox microphone from the table} Oops.
+\end{speech}
+
+\begin{student}[Student Question]
+Um, is there a reason why we often use for definitions something we kind of learned in Analysis I as corollaries or lemmas? For example, for the, um, accumulation point, we usually saw the definition with this epsilon-delta thing, and that whenever you have this delta neighborhood around your point and find the \emph{Schnittmenge} \inlinemetanote{laughs} with $Y$, for example, the set is not empty. Is there a reason why we avoid epsilon-delta, or is this just...
+\end{student}
+
+\begin{speech}[00:28:00 - 00:29:05]
+With the limit, no. The $\varepsilon$-$\delta$ is more usually for continuity, right? In continuity, we will see the sequence formulation and the $\varepsilon$-$\delta$ formulation, and we will see that everything is equivalent.
+
+Here, you cannot do that much $\varepsilon$-$\delta$. You can use epsilons, or you can use limits, and in the notion of a limit the epsilon is implicit, because when I gave the definition of limit, there was an epsilon: I gave it without the epsilon and with the epsilon. But no, it should be exactly equivalent to Analysis I.
+
+When there is something like this, where you have more than one possibility --- as when we define the continuity of maps, of functions --- I will give all the equivalent definitions systematically. But here, there are no epsilons and deltas that I can see yet. \inlinemetanote{erases the middle upper blackboard to make space}
+\end{speech}
+
+\begin{insight}[Sequential Characterization versus Neighborhood Characterization]
+In single-variable calculus, an accumulation point $y$ of a set $Y \subseteq \mathbb{R}$ is often introduced via open metric balls:
+\[
+\forall \varepsilon > 0 \colon \quad B_\varepsilon(y) \cap Y \neq \emptyset \quad (\text{or } B_\varepsilon(y) \cap (Y \setminus \{y\}) \neq \emptyset).
+\]
+In any metric space $(X, d)$, this metric ball condition is completely equivalent to the existence of a sequence $(y_n)_{n \ge 0} \subseteq Y$ converging to $y$:
+\begin{itemize}
+    \item If $y_n \to y$, then for any $\varepsilon > 0$, almost all terms $y_n$ lie in $B_\varepsilon(y)$, so $B_\varepsilon(y) \cap Y \neq \emptyset$.
+    \item Conversely, if $B_\varepsilon(y) \cap Y \neq \emptyset$ for every $\varepsilon > 0$, choosing $\varepsilon_n = \frac{1}{n+1}$ allows one to pick points $y_n \in B_{1/(n+1)}(y) \cap Y$, yielding a sequence with $d(y_n, y) < \frac{1}{n+1} \to 0$.
+\end{itemize}
+The lecturer purposefully builds on sequences because limits in metric spaces have already been established.
+\end{insight}
+
+\subsection{Convergence Characterized by Accumulation Points}
+
+\begin{speech}[00:29:05 - 00:30:50]
+Let me prove something: an easy lemma.
+
+A sequence in a metric space $(X, d)$ \inlinemetanote{writes \qt{Lemma Sequence $(x_n)_{n \ge 0} \subset X$, $(X, d)$ metric space}} converges to $x$ \inlinemetanote{writes \qt{converges to $x$}} if and only if \inlinemetanote{writes $\iff$} $x$ is its sole accumulation point --- its only accumulation point \inlinemetanote{writes \qt{$x$ is its only acc. pt.}}. \inlinemetanote{draws a dividing line under the lemma statement}
+
+This is to emphasize also that a sequence, in general, is not convergent, so it will have several accumulation points --- many. A sequence being convergent is exactly when the sequence has only one accumulation point. This is something you know for real numbers, and now we see that it's the same in a metric space.
+
+Let's prove that. Proof: \inlinemetanote{writes \qt{proof}}
+\end{speech}
+
+\begin{content}
+\begin{lemma}[Convergence and Unique Accumulation Point (Initial Statement)]\label[lemma]{lem:convergence-accumulation-point}
+Let $(X, d)$ be a metric space and $(x_n)_{n \ge 0} \subseteq X$ a sequence. Then $(x_n)_{n \ge 0}$ converges to $x \in X$ if and only if $x$ is its only accumulation point:
+\begin{equation}\label{eq:lemma-statement}
+\lim_{n \to \infty} x_n = x \iff x \text{ is the sole accumulation point of } (x_n)_{n \ge 0}.
+\end{equation}
+\end{lemma}
+\end{content}
+
+\begin{speech}[00:30:50 - 00:32:51]
+What we need to show is that $x_n$ converges to $x$... \inlinemetanote{writes $x_n \to x \iff$} I will put it in this phrasing: $x_n$ converges to $x$ is equivalent to: for every convergent subsequence converging to $y$ for some $y$, we have $y = x$ \inlinemetanote{writes $(x_{n_k} \to y \implies y = x)$}, right? An accumulation point is a limit of a subsequence. I'm rephrasing this; I'm saying these two things are equivalent.
+
+Now, there should be one implication that is easy, right? \inlinemetanote{writes $\Longleftarrow$ in a box}
+
+I need to do the two arrows. This implication is easy, because I can take $x_{n_k}$ to be $x_n$ \inlinemetanote{writes $(x_{n_k}) = (x_n)$}, right? The full sequence is always a subsequence: it's the case where $f$ is the identity, $f(n) = n$. Taking this, I find that $x_n$ converges to $x$ \inlinemetanote{writes $\implies x_n \to x$}.
+
+So, this proves this implication \inlinemetanote{draws a small square $\square$ closing the $\Longleftarrow$ step}, just taking a particular case of a subsequence.
+\end{speech}
+
+\begin{content}[Proof Setup and the Leftward Implication]
+\begin{proof}[Proof of \cref{lem:convergence-accumulation-point}]
+We rephrase the assertion in terms of convergent subsequences:
+\begin{equation}\label{eq:rephrased-lemma}
+x_n \to x \iff \bigl(x_{n_k} \to y \implies y = x\bigr).
+\end{equation}
+
+\textbf{Direction \texorpdfstring{$\Longleftarrow$}{<=} (as presented on the board):} \\
+Assume that any convergent subsequence of $(x_n)_{n \ge 0}$ converges to $x$.
+Consider the full sequence $(x_n)_{n \ge 0}$ itself. This corresponds to the subsequence with the identity index map:
+\[
+f(n) = n \quad (n_k = k).
+\]
+The lecturer writes:
+\[
+(x_{n_k}) = (x_n) \implies x_n \to x. \qedhere
+\]
+\end{proof}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:13:46
+% topic: Lemma on convergence and accumulation points: proof of backward implication
+% board_state: lem:convergence-accumulation-point, eq:lemma-statement, eq:rephrased-lemma
+% next_goal: Prove forward implication (convergence implies every subsequence converges to x)
+% open_loops: student will question whether the full sequence is known to converge a priori
+\end{hidden}
+
+\begin{speech}[00:32:51 - 00:35:20]
+\inlinemetanote{writes $\Longrightarrow$ in a box} Okay.
+
+Now, assume that $x_n$ converges to $x$, and I take a subsequence. For convenience, I will write the subsequence as: let $f \colon \mathbb{N} \to \mathbb{N}$ be increasing \inlinemetanote{writes \qt{let $f \colon \mathbb{N} \to \mathbb{N}$ increasing}}. The goal is to show that $x_{f(n)}$ converges to $x$ \inlinemetanote{writes \qt{Goal show $x_{f(n)} \to x$}}.
+
+This is an assumption now: I know that $x_n$ converges to $x$, and I want to prove that $x_{f(n)}$ converges to $x$ for every increasing $f$. Now I need to use the definition of limit.
+
+What does it mean that $x_n$ converges to $x$? It is the same as: given $\varepsilon > 0$, there exists $N$ depending on $\varepsilon$, such that the distance between $x_n$ and $x$ is less than $\varepsilon$ when $n \ge N$ \inlinemetanote{writes $x_n \to x \iff \forall \varepsilon > 0 \;\exists N \text{ st } d(x_n, x) < \varepsilon \text{ if } n \ge N$}.
+
+Now, since $f$ is increasing, $f(n) \ge n$, right? \inlinemetanote{writes $f(n) \ge n$} That $f$ is increasing implies that $f(n) \ge n$ \inlinemetanote{boxes the implication $f \text{ increasing} \implies f(n) \ge n$}. Using this, I get that the distance between $x_{f(n)}$ and $x$ is less than $\varepsilon$ if $n \ge N$ \inlinemetanote{writes $\implies d(x_{f(n)}, x) < \varepsilon \text{ if } n \ge N$}.
+
+Given an $\varepsilon$, the same capital $N$ works for this sequence or for any subsequence. So, I proved that $x_{f(n)}$ converges to $x$ \inlinemetanote{writes $\implies x_{f(n)} \to x$ and draws $\square$}.
+
+Okay? This was the first one.
+\end{speech}
+
+\begin{content}[Proof of the Rightward Implication]
+\begin{proof}[Continuation of Proof: Direction \texorpdfstring{$\Longrightarrow$}{=>}]
+Assume that $\lim_{n \to \infty} x_n = x$. Let $(x_{f(n)})_{n \ge 0}$ be an arbitrary subsequence, where $f \colon \mathbb{N} \to \mathbb{N}$ is strictly increasing.
+
+\textbf{Goal:} Show that $\lim_{n \to \infty} x_{f(n)} = x$.
+
+By the definition of the limit:
+\begin{equation}\label{eq:limit-hyp-proof}
+x_n \to x \iff \forall \varepsilon > 0 \;\exists N \in \mathbb{N} \colon \quad d(x_n, x) < \varepsilon \quad \text{whenever } n \ge N.
+\end{equation}
+Since $f \colon \mathbb{N} \to \mathbb{N}$ is strictly increasing, an immediate induction on $n$ yields:
+\begin{equation}\label{eq:increasing-index-lower-bound}
+f(n) \ge n \quad \text{for all } n \in \mathbb{N}.
+\end{equation}
+Consequently, whenever $n \ge N$, it follows from \eqref{eq:increasing-index-lower-bound} that $f(n) \ge n \ge N$.
+Applying \eqref{eq:limit-hyp-proof} to the index $f(n)$ yields:
+\[
+d(x_{f(n)}, x) < \varepsilon \quad \text{for all } n \ge N.
+\]
+Since $\varepsilon > 0$ was arbitrary, this proves that:
+\[
+\lim_{n \to \infty} x_{f(n)} = x. \qedhere
+\]
+\end{proof}
+
+\begin{steps}[Subsequences of a Convergent Sequence]
+This step rigorously establishes a standard theorem in analysis: \textbf{Every subsequence of a convergent sequence converges to the same limit.}
+Because the re-indexing function satisfies $f(n) \ge n$, any tail bound $n \ge N$ is automatically satisfied by $f(n)$, meaning the exact same cutoff index $N(\varepsilon)$ chosen for the parent sequence works simultaneously for every subsequence.
+\end{steps}
+\end{content}
+
+\subsection{Student Interjections and the Counterexample in \texorpdfstring{$\mathbb{R}$}{R}}
+
+\begin{speech}[00:35:20 - 00:35:37]
+Where is the cube? Can you throw it there? \inlinemetanote{tosses the Catchbox microphone into the auditorium}
+\end{speech}
+
+\begin{student}[Student Question]
+Um, in the first, like, in the first implication we showed to the left, how do we know $x_n$ is convergent? Because we because we assumed that any convergent subsequence converges to $x$, but we do not know that $x_n$ is convergent a priori.
+\end{student}
+
+\begin{speech}[00:35:56 - 00:37:10]
+You say: any convergent subsequence converges to $x$... Ah, how did I phrase the lemma? Now you are asking me... let me think again.
+
+A sequence $x_n$ converges to $x$... yes, I said that it converges to $x$ if it is the only accumulation point, yeah. And now you... No, this is a good question!
+
+You're telling me: if I take a subsequence that converges to $y$, I know that $y = x$. Good. But you are telling me: why should the full sequence be a convergent subsequence?
+
+\inlinemetanote{Student confirms: \qt{Yes}}
+
+Good! Good question, well spotted!
+
+Yes, I had in mind a slightly weaker result, and then I stated... This is also true, but then this implication is a bit harder, okay? Very good, very good!
+\end{speech}
+
+\begin{speech}[00:37:13 - 00:37:22]
+Can you throw it there? Yeah, let's ask all the questions and then we...
+\end{speech}
+
+\begin{student}[Student Question]
+Um, as far as I understand, why can't we let $n_k$ be equal to $n$, or in other words $f(n) = n$? It's still increasing, and it's still a sub-... so, in other words, a sequence is a subsequence of itself.
+\end{student}
+
+\begin{speech}[00:37:41 - 00:38:50]
+Yes, this is correct. But I stated a slightly stronger statement --- and he's right: I stated that whenever I pick an accumulation point, then it must be $x$.
+
+You see, what is written here is: \emph{if} there exists a convergent subsequence, then the limit must be $x$. But he's right in saying: okay, if I take the sequence $(x_n)$, it is a subsequence, but I don't know that it is converging.
+
+So, this \qt{if} is not satisfied. I cannot yet conclude that the limit is $x$ with the statement I have written here. It's a subtlety, but it's an important subtlety, and in some proofs we will use this, so we need to fix that.
+
+Is it clear? Yeah, there.
+\end{speech}
+
+\begin{student}[Student Question: The Counterexample]
+So, what would happen if you take a sequence that for even $n$ is... well, it's just $n$, and for odd $n$ is $1/n$? Because then you have an accumulation point at zero, but the entire sequence has no limit. What happens then?
+\end{student}
+
+\begin{speech}[00:39:30 - 00:40:45]
+Let me ask this question out loud, okay?
+
+\inlinemetanote{writes the sequence on the rightmost blackboard} You say: okay, we have $\mathbb{R}$, and you take this sequence where, let's say, $x_{2n} = n$ for $n \ge 0$, and $x_{2n+1} = 1/n$ for $n > 0$. Is that the question?
+
+And then you say: this sequence satisfies that the only accumulation point is zero, right? Because the even terms are unbounded. \inlinemetanote{writes $0$ below the definition on the board} The only accumulation point seems to be zero, while this goes to infinity. And then every subsequence seems to satisfy this, yeah?
+
+Good question!
+\end{speech}
+
+\begin{content}[The Student's Counterexample in \texorpdfstring{$\mathbb{R}$}{R}]
+\begin{example}[A Divergent Sequence with a Unique Accumulation Point]\label[example]{ex:unbounded-unique-accumulation}
+Consider the real line $\mathbb{R}$ equipped with the standard Euclidean metric. We define a sequence $(x_n)_{n \ge 0}$ piecewise by splitting even and odd indices:
+\begin{equation}\label{eq:counterexample-seq}
+\begin{cases}
+x_{2n} = n & \text{for } n \ge 0, \\[4pt]
+x_{2n+1} = \dfrac{1}{n} & \text{for } n > 0.
+\end{cases}
+\end{equation}
+The sequence alternates between unbounded growth and terms approaching zero:
+\[
+(x_n)_{n \ge 0} = \left( 0, 1, 1, \frac{1}{2}, 2, \frac{1}{3}, 3, \frac{1}{4}, 4, \dots \right).
+\]
+\end{example}
+
+\begin{steps}[Analysis of the Counterexample]
+\begin{itemize}
+    \item \textbf{Accumulation Points:} 
+    The odd subsequence converges:
+    \[
+    x_{2n+1} = \frac{1}{n} \xrightarrow{n \to \infty} 0,
+    \]
+    so $0$ is an accumulation point. Any subsequence containing infinitely many even indices $x_{2n_k} = n_k$ is unbounded and diverges to $+\infty$, which has no limit in $\mathbb{R}$. Any subsequence with only finitely many even indices eventually consists purely of odd terms and must converge to $0$. Hence, \textbf{$0$ is the unique accumulation point} of $(x_n)_{n \ge 0}$ in $\mathbb{R}$.
+
+    \item \textbf{Divergence of the Full Sequence:} 
+    Because the even terms diverge to infinity, the full sequence $(x_n)_{n \ge 0}$ does not converge.
+
+    \item \textbf{Conclusion on the Lemma:} 
+    This concrete example demonstrates that the statement \qt{$x_n \to x \iff x \text{ is the only accumulation point of } (x_n)$} is \textbf{false in non-compact metric spaces}! For the backward implication ($\Longleftarrow$) to hold, one either requires:
+    \begin{enumerate}[label=\textbf{(\alph*)}]
+        \item The ambient space $(X, d)$ to be compact (guaranteeing that every subsequence has a convergent sub-subsequence), or
+        \item The stronger assumption: \textbf{Every subsequence of $(x_n)$ converges to $x$} (as stated in the course notes).
+    \end{enumerate}
+\end{itemize}
+\end{steps}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:20:05
+% topic: Flaw in Lemma: Student counterexample of unbounded sequence with unique accumulation point
+% board_state: ex:unbounded-unique-accumulation, eq:counterexample-seq
+% next_goal: Address classroom discussion and align with course lecture notes
+% open_loops: Resolution of the lemma statement
+\end{hidden}
+
+\begin{speech}[00:40:45 - 00:41:05]
+Good. Any other questions? We will try to solve all of them, okay? It's a very good discussion. Yeah.
+\end{speech}
+
+\begin{student}[Student Question]
+I mean in the in the if you look in the script, the assumption is slightly different: we assume that every subsequence converges to $x$. We don't say that $x$ is the only accumulation point. Which would be correct.
+\end{student}
+
+\begin{speech}[00:41:06 - 00:42:38]
+Yeah, this is the stronger statement I was talking about. What script are you looking at? At the one from two years ago?
+
+\inlinemetanote{Student confirms: \qt{Yes}}
+
+Yeah, this is much easier, and actually it is true: every subsequence converges to $x$.
+
+Let me think what we will do. The problem is that, for the result we have in the script, I know that in the last lecture I will need a stronger version. So, I wanted to put the stronger version that you will need in the last lecture to do some proof exercise, but then I was not very fortunate in choosing it.
+
+Your comments were right, and what we will do is: I will put... I mean, anyway, this result in the lecture notes is not very interesting. I will put a new version that is slightly stronger than this, but not saying that this is false, right? And then we will prove this. We can do this after the break if you want, because we have a lot of time today.
+\end{speech}
+
+\begin{hidden}
+% timestamp: 00:04:27
+% topic: Resolution of the accumulation point lemma and break
+% board_state: ex:counterexample-divergent-sole-accumulation, lem:init-acc-point-flawed
+% next_goal: Correct formulation of Lemma 2 and Lemma 3
+% open_loops: fixing the invalid equivalence in Lemma 1
+\end{hidden}
+
+\begin{pause}[Mid-Lecture Break]
+The lecturer announces a short break. During the break, class representatives are elected, and the lecturer writes the corrected lemmas on the blackboard. The video resumes after the break at timestamp 00:04:27.
+\end{pause}
+
+\subsection{Corrected Characterizations of Convergence (Lemmas 2 and 3)}
+
+\begin{speech}[00:42:38 - 00:44:28]
+This is probably the most stupid lemma in the lecture, and it's the one I always have problems with, because... \inlinemetanote{laughs}
+
+Also, it's the first day... Last time I taught, two years ago, I was also sick the first week, and this time again! So, it's like my enemy, this lemma, okay? \inlinemetanote{laughs}
+
+But it's very interesting, because we could see a discussion where, from what you know in $\mathbb{R}$ --- in this abstract setup, the claim I made seemed more or less reasonable, but it was false, and it was a bit subtle that it was false. Some of your peers, thinking about what you know of $\mathbb{R}$, of the real line, said: okay, here is a counterexample. There is a problem in the fact that you could have sequences where some subsequences do not converge. Then it's not true that if zero is the only accumulation point, then the sequence converges, right?
+
+So, Lemma 1 that I wrote and the proof had a problem: this is false, and this is the example. So, this is false \inlinemetanote{writes \qt{FALSE} in a box under Lemma 1}. Why? Because this is the example \inlinemetanote{points at the counterexample on the right}. This is false \inlinemetanote{erases the FALSE mark and draws a new box around FALSE}.
+
+Yeah?
+\end{speech}
+
+\begin{student}[Student Question]
+Isn't this also, like, the strongest possible thing that you could prove, because if there exists any subsequence which does not converge, then you can't prove that the entire sequence does not converge... so this is the strongest possible thing you could get anyway?
+\end{student}
+
+\begin{speech}[00:44:44 - 00:45:46]
+This one?
+
+\inlinemetanote{Student clarifies: \qt{No, the second one.}}
+
+Ah, the second. No, there is something stronger. Now I will tell you: this is Lemma 2 that is in the notes, for those who read the notes. What I proved is weaker than that, but it is true: a sequence converges if and only if every subsequence converges to the same limit point, right?
+
+And for this, the implication I gave that is written here was correct, while the other implication is the one that is tricky --- well, that is false for the first lemma. For this second, corrected lemma, that implication is trivial, as I said. It is trivial because here it says \qt{for every subsequence}, not \qt{for every convergent subsequence}. For every subsequence, in particular, I can take $x_{n_k} = x_n$. Now it's correct.
+
+But what I wanted to put...
+\end{speech}
+
+\begin{content}
+\begin{lemma}[Convergence Characterized by All Subsequences]\label[lemma]{lem:convergence-all-subsequences}
+Let $(X, d)$ be a metric space and $(x_n)_{n \ge 0} \subseteq X$ a sequence. Then:
+\begin{equation}\label{eq:lemma2-statement}
+x_n \to x \iff \forall (x_{n_k})_{k \ge 0} \colon \quad x_{n_k} \to x.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+\textbf{Direction \texorpdfstring{$\Longrightarrow$}{=>}:} \\
+If $\lim_{n \to \infty} x_n = x$, then for any $\varepsilon > 0$ there exists $N \in \mathbb{N}$ such that $d(x_n, x) < \varepsilon$ for all $n \ge N$. Since an index map $f \colon \mathbb{N} \to \mathbb{N}$ defining a subsequence $(x_{n_k})_{k \ge 0} = (x_{f(k)})_{k \ge 0}$ is strictly increasing, it satisfies $n_k = f(k) \ge k$. Hence, for all $k \ge N$, we have $n_k \ge N$, which implies:
+\[
+d(x_{n_k}, x) < \varepsilon \implies \lim_{k \to \infty} x_{n_k} = x.
+\]
+
+\textbf{Direction \texorpdfstring{$\Longleftarrow$}{<=}:} \\
+Conversely, assume that every subsequence of $(x_n)_{n \ge 0}$ converges to $x$. Since the sequence $(x_n)_{n \ge 0}$ is a subsequence of itself (corresponding to the identity re-indexing map $f(k) = k$), it follows immediately that:
+\[
+\lim_{n \to \infty} x_n = x. \qedhere
+\]
+\end{proof}
+\end{content}
+
+\begin{speech}[00:45:46 - 00:47:26]
+Lemma 3 \inlinemetanote{writes \qt{Lemma 3} on the blackboard}, which is a bit more interesting, is that... well, the same assumptions as above \inlinemetanote{writes \qt{same assumptions as above}}.
+
+Then $x_n$ converges to $x$ \inlinemetanote{writes $x_n \to x \iff$} if and only if every subsequence $(x_{n_k})$ \inlinemetanote{writes \qt{Every subsequence $(x_{n_k})$}} has a sub-subsequence \inlinemetanote{writes \qt{has a sub-subsequence}} --- a subsequence of the subsequence. You can say: what the... Well, let me finish the sentence and then I will tell you why.
+
+So: it has a sub-subsequence such that $x_{n_{k_\ell}}$ converges to $x$ \inlinemetanote{writes \qt{st $x_{n_{k_\ell}} \to x$}}.
+\end{speech}
+
+\begin{speech}[00:47:26 - 00:49:06]
+Whenever I choose a subsequence, maybe this subsequence does not converge. But then, we will see next time the definition of compact spaces, as you know in $\mathbb{R}$. In compact spaces, like here in your example, you realized that you could construct this counterexample because the space is unbounded --- $\mathbb{R}$ is unbounded, or is not compact, right? If you restrict to a compact interval of $\mathbb{R}$, what I wrote here was true! So, we see that it's not completely false; we just need some extra assumptions. In a compact space, this will be true, but we need some extra assumptions.
+
+Instead, this thing is always true: if every subsequence has a sub-subsequence that converges to $x$, then the limit is $x$, right?
+
+Since today I need to do other things, and this is a bit difficult but a good exercise, I will put this statement as an exercise. I hope it is clear; otherwise you will have it in the notes. Try to solve it, and then next time or in a couple of days, when many people have tried, I will solve it here and we will discuss it again. Like this, you can practice a bit. It's a good exercise --- it's not trivial, that one. Lemma 2 is easier.
+
+So, this is an exercise.
+\end{speech}
+
+\begin{speech}[00:49:06 - 00:49:34]
+\inlinemetanote{writes \qt{exercise} in a box around Lemma 3} You have the solution in the notes, but don't look at the solution! Try to do it, right? And then we will solve it here.
+
+\inlinemetanote{coughs, takes a wiper and starts erasing the right blackboard} Okay.
+\end{speech}
+
+\begin{content}
+\begin{lemma}[Sub-Subsequence Criterion for Convergence]\label[lemma]{lem:sub-subsequence-criterion}
+Let $(X, d)$ be a metric space and $(x_n)_{n \ge 0} \subseteq X$ a sequence. Then:
+\begin{equation}\label{eq:lemma3-statement}
+\lim_{n \to \infty} x_n = x \iff \text{Every subsequence } (x_{n_k})_{k \ge 0} \text{ has a sub-subsequence } (x_{n_{k_\ell}})_{\ell \ge 0} \text{ such that } \lim_{\ell \to \infty} x_{n_{k_\ell}} = x.
+\end{equation}
+\end{lemma}
+
+\begin{exercise}[Proof of the Sub-Subsequence Criterion]\label[exercise]{exer:sub-subsequence-criterion}
+Prove \cref{lem:sub-subsequence-criterion}.
+\end{exercise}
+
+\begin{steps}[Why the Sub-Subsequence Criterion is Powerful]
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Forward Direction ($\Longrightarrow$):} If $x_n \to x$, then every subsequence $(x_{n_k})$ converges to $x$. Thus, any sub-subsequence $(x_{n_{k_\ell}})$ also converges to $x$ trivially.
+    \item \textbf{Backward Direction ($\Longleftarrow$):} Suppose $x_n \not\to x$. Then there exists $\varepsilon_0 > 0$ and a subsequence $(x_{n_k})$ such that $d(x_{n_k}, x) \ge \varepsilon_0$ for all $k \ge 0$. This subsequence cannot have any sub-subsequence converging to $x$, contradicting the hypothesis.
+    \item \textbf{Compact Spaces:} In a compact metric space, every sequence has a convergent subsequence. Therefore, in compact spaces, the condition that $x$ is the unique accumulation point does indeed guarantee convergence! The failure of Lemma 1 occurred purely because the counterexample sequence escaped to infinity.
+\end{enumerate}
+\end{steps}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:11:23
+% topic: Lemma 2 and Lemma 3 (sub-subsequence convergence criterion)
+% board_state: lem:convergence-all-subsequences, lem:sub-subsequence-criterion, exer:sub-subsequence-criterion
+% next_goal: Introduce Cauchy sequences and complete metric spaces
+% open_loops: proof of Lemma 3 left as an exercise for students
+\end{hidden}
+
+\section{Cauchy Sequences and Complete Metric Spaces}
+
+\subsection{Definitions of Cauchy Sequences and Completeness}
+
+\begin{speech}[00:49:59 - 00:51:39]
+Actually, this false lemma is very appropriate because it will be a very good example to introduce two concepts. The next concept I'm going to introduce is the concept of a complete space, right?
+
+Complete space. We know that $\mathbb{R}$ is complete --- we proved this in Analysis I. Now we are going to see the definition of a complete space at this abstract level, and we will prove that $\mathbb{R}^n$ is complete.
+
+First, we need to define Cauchy sequences. \inlinemetanote{writes \qt{Def'n (cauchy sequence)} on the blackboard} It's the same definition as in $\mathbb{R}$, right?
+
+$(x_n)_{n \ge 0}$ is Cauchy \inlinemetanote{writes $(x_n)_{n \ge 0}$ is (cauchy) if} if, for all $\varepsilon > 0$, there exists capital $N$ \inlinemetanote{writes $\forall \varepsilon \;\exists N \text{ st }$} such that the distance between $x_n$ and $x_m$ is less than $\varepsilon$ \inlinemetanote{writes $d(x_n, x_m) < \varepsilon$} whenever $n, m \ge N$ \inlinemetanote{writes whenever $n, m \ge N$}.
+\end{speech}
+
+\begin{speech}[00:51:39 - 00:52:59]
+Right? If you wait long enough --- if both indices are sufficiently large --- then any two points of the sequence become close, right? This is the same as in $\mathbb{R}$.
+
+\inlinemetanote{draws a dividing line} Now, once we know Cauchy sequences, we can define a complete metric space \inlinemetanote{writes \qt{Def'n (complete metric space)} on the blackboard}. We say that $(X, d)$ is complete \inlinemetanote{writes $(X, d)$ is complete} if every Cauchy sequence \inlinemetanote{writes if every (cauchy) sequence} converges to some limit in the space \inlinemetanote{writes converges to some limit in $X$}, right?
+\end{speech}
+
+\begin{speech}[00:52:59 - 00:53:56]
+The fact that it converges to some limit in the space I can put between parentheses, because in my definition of convergence, we say that a sequence converges if there is a point of the space towards which it is converging. Whenever I say that a sequence converges, it is to some point in the space; we cannot remove points from the space.
+
+If we start to remove points --- as your peer was asking before: what happens if I take the positive numbers? --- okay, then I'm taking a complete space, which is $\mathbb{R}$, and I'm making it incomplete by removing points, right?
+
+\inlinemetanote{underlines \qt{complete}} So, examples... Yeah? Questions?
+\end{speech}
+
+\begin{content}
+\begin{definition}[Cauchy Sequence]\label[definition]{def:cauchy-sequence}
+Let $(X, d)$ be a metric space. A sequence $(x_n)_{n \ge 0} \subseteq X$ is called a \newterm{Cauchy sequence} if:
+\begin{equation}\label{eq:cauchy-sequence-def}
+\forall \varepsilon > 0 \;\exists N \in \mathbb{N} \;\forall n, m \ge N \colon \quad d(x_n, x_m) < \varepsilon.
+\end{equation}
+\end{definition}
+
+\begin{definition}[Complete Metric Space]\label[definition]{def:complete-metric-space}
+A metric space $(X, d)$ is called \newterm{complete} if every Cauchy sequence in $X$ converges to a limit point in $X$:
+\begin{equation}\label{eq:complete-metric-space-def}
+(x_n)_{n \ge 0} \text{ is Cauchy in } X \implies \exists x \in X \colon \lim_{n \to \infty} x_n = x.
+\end{equation}
+\end{definition}
+
+\begin{steps}[Intuition of Completeness]
+A Cauchy sequence is one whose terms become arbitrarily close to each other as the indices grow. Completeness means there are no \qt{missing points} or \qt{holes} in the space: whenever a sequence clusters together, the point it clusters towards is guaranteed to exist within the space itself.
+\end{steps}
+\end{content}
+
+\subsection{Examples of Complete and Incomplete Metric Subspaces of \texorpdfstring{$\mathbb{R}$}{R}}
+
+\begin{student}[Student Question: Non-Convergent Cauchy Sequences]
+So here we get that if the Cauchy sequence doesn't converge, then the metric space is not complete?
+\end{student}
+
+\begin{speech}[00:54:08 - 00:54:09]
+Exactly.
+\end{speech}
+
+\begin{student}[Student Question continued]
+But my question is: what does it mean for a Cauchy sequence to not converge?
+\end{student}
+
+\begin{speech}[00:54:15 - 00:55:45]
+I can give you some examples. Let's give some examples of non-complete spaces that you know very well, okay?
+
+As an example of a complete metric space, we have $\mathbb{R}$, right? And then let's take subsets of $\mathbb{R}$. A subset of $\mathbb{R}$ is a metric space, because we have seen that whenever you have a metric space, a subset is a metric space.
+
+If you take a closed subset of a complete space \inlinemetanote{walks to the leftmost blackboard and starts cleaning it} --- you don't know what a closed subset of a complete space is yet --- but let me give some examples in $\mathbb{R}$, where you know everything.
+\end{speech}
+
+\begin{speech}[00:55:45 - 00:57:31]
+Example: \inlinemetanote{writes $\mathbb{R}, d_{\text{Euclidean}}$} $\mathbb{R}$ with the Euclidean distance. What is the Euclidean distance in $\mathbb{R}$? It's just the absolute value of the difference between two numbers, right? \inlinemetanote{writes $d(x, y) = |x - y|$}
+
+Now, we take a subset $A \subset \mathbb{R}$ \inlinemetanote{writes $A \subset \mathbb{R}$}. Then we can restrict the distance to $A$: the absolute value of the difference.
+
+Case number one: $A = (0, \infty)$ \inlinemetanote{writes • $A = (0, \infty)$}. Is this complete?
+
+What is the problem here? This is not complete because you are missing zero. This is open, right? \inlinemetanote{sketches an open interval $(0, \infty)$ on the board} And you can have a Cauchy sequence: the sequence $x_n = 1/n$ \inlinemetanote{writes $x_n = \frac{1}{n}$} is Cauchy, and the limit would be zero, but you are removing the limit from your space. So, this space is not complete, right?
+
+Instead, if you take a closed set --- let's say $[a, b]$ \inlinemetanote{writes • $A = [a, b]$}, a closed interval --- then, as a metric space with the distance of the absolute value, this is a complete metric space. When you take a Cauchy sequence, it converges in $\mathbb{R}$, so the limit belongs to $\mathbb{R}$; but since this is a closed interval, the limit will belong to your space, right?
+\end{speech}
+
+\begin{speech}[00:57:31 - 00:58:51]
+So, this is not complete \inlinemetanote{writes \qt{not complete} next to $(0, \infty)$}, and this is complete \inlinemetanote{writes \qt{complete} next to $[a, b]$}.
+
+A more interesting example: \inlinemetanote{writes • $\mathbb{Q} \subset \mathbb{R}$} $A = \mathbb{Q}$. The rational numbers are not complete. That's because you can take a sequence of rational numbers converging to $\sqrt{2}$, right? \inlinemetanote{writes $x_n \to \sqrt{2}$}
+
+You can take a sequence of rational numbers that, as real numbers, converges to $\sqrt{2}$. If your space were the rational numbers --- just fractions of integers --- and you hadn't invented the reals yet, you would have a problem, because you don't have this completeness property. And this is the whole point of inventing the reals, right? To make the rationals complete.
+\end{speech}
+
+\begin{content}
+Consider the real line equipped with the standard Euclidean metric:
+\[
+(\mathbb{R}, d_{\text{Euclidean}}), \quad d(x, y) = |x - y|.
+\]
+For any non-empty subset $A \subseteq \mathbb{R}$, $(A, d|_A)$ forms a metric subspace.
+
+\begin{examples}[Subspaces of $\mathbb{R}$ and Completeness]\label[examples]{exm:subspaces-completeness-r}
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item \textbf{Open Half-Line $A = (0, \infty)$ (\textcolor{BrickRed}{Not Complete}):} \\
+    The sequence $x_n = \frac{1}{n}$ ($n \ge 1$) lies entirely in $A = (0, \infty)$. It is a Cauchy sequence because:
+    \[
+    |x_n - x_m| = \left| \frac{1}{n} - \frac{1}{m} \right| \xrightarrow{n, m \to \infty} 0.
+    \]
+    As a sequence of real numbers, $\lim_{n \to \infty} x_n = 0$. However, $0 \notin A$. Because the limit point does not belong to the space $A$, the sequence $(x_n)_{n \ge 1}$ does \emph{not} converge in $(A, d|_A)$. Therefore, $(0, \infty)$ is \textbf{not complete}.
+
+    \setcounter{enumi}{1} \item \textbf{Closed Bounded Interval $A = [a, b]$ (\textcolor{ForestGreen}{Complete}):} \\
+    Let $(x_n)_{n \ge 0} \subseteq [a, b]$ be any Cauchy sequence. Since $\mathbb{R}$ is complete, there exists $x \in \mathbb{R}$ such that $x_n \to x$. Since $a \le x_n \le b$ for all $n \in \mathbb{N}$, taking the limit preserves the weak inequalities:
+    \[
+    a \le \lim_{n \to \infty} x_n = x \le b \implies x \in [a, b].
+    \]
+    Thus, the limit point belongs to the space $[a, b]$, proving that $[a, b]$ is \textbf{complete}.
+
+    \setcounter{enumi}{2} \item \textbf{The Rational Numbers $A = \mathbb{Q}$ (\textcolor{BrickRed}{Not Complete}):} \\
+    Consider a sequence of rational numbers $(x_n)_{n \ge 0} \subseteq \mathbb{Q}$ approximating $\sqrt{2}$ (for example, by truncated decimal expansions $1.4, 1.41, 1.414, \dots$). The sequence is Cauchy in $\mathbb{Q}$, but its unique limit in $\mathbb{R}$ is $\sqrt{2} \notin \mathbb{Q}$. Hence, $(x_n)_{n \ge 0}$ does not converge in $(\mathbb{Q}, d|_\mathbb{Q})$, proving that $\mathbb{Q}$ is \textbf{not complete}.
+\end{enumerate}
+\end{examples}
+
+\begin{steps}[The Essential Purpose of the Real Numbers]
+The historical motivation for constructing $\mathbb{R}$ from $\mathbb{Q}$ (via Dedekind cuts or equivalence classes of rational Cauchy sequences) was precisely to achieve \textbf{metric completeness}: filling in all the \qt{holes} such as $\sqrt{2}, \pi, e$ where rational Cauchy sequences want to converge.
+\end{steps}
+\end{content}
+
+\begin{speech}[00:58:51 - 00:59:16]
+Any questions about this completeness? Yeah.
+\end{speech}
+
+\begin{student}[Student Question: Constant Sequence Outside the Subspace]
+Um, if you take your second example...
+\end{student}
+
+\begin{speech}[00:59:25 - 00:59:26]
+Yeah.
+\end{speech}
+
+\begin{student}[Student Question continued]
+...and we consider the function $x_n$ is equal to the constant function... to the constant value $a - 2$...
+\end{student}
+
+\begin{speech}[00:59:37 - 00:59:38]
+In this example? \inlinemetanote{points to $[a, b]$}
+\end{speech}
+
+\begin{student}[Student Question continued]
+Yes.
+\end{student}
+
+\begin{speech}[00:59:40 - 00:59:41]
+$x_n = \dots$
+\end{speech}
+
+\begin{student}[Student Question continued]
+$a - 2$, or $a - 3$ to be more dramatic, yes.
+\end{student}
+
+\begin{speech}[00:59:47 - 00:59:48]
+$a - 3$? \inlinemetanote{writes $x_n = a - 3$ on the board with an arrow pointing to $[a, b]$}
+\end{speech}
+
+\begin{student}[Student Question continued]
+Then the sequence converges to some value that is not in $A$. So it's not...
+\end{student}
+
+\begin{speech}[01:00:04 - 01:00:41]
+Yeah, but the sequence needs to be in my metric space! You are taking a sequence that is outside of...
+
+\inlinemetanote{Student responds: \qt{Oh, yeah, okay, because in the third we are taking in $\mathbb{Q}$. Okay. Thank you.}}
+
+Is it clear?
+
+\inlinemetanote{Student confirms: \qt{Yes, clear.}}
+
+Yes, of course, one needs to be careful going back to the definitions. This sequence is not a valid sequence because it does not belong to my space, right? My space is $[a, b]$. Okay, good.
+\end{speech}
+
+\begin{content}
+\begin{remark}[Sequences Must Lie in the Metric Space]\label[remark]{rem:sequence-space-membership}
+When testing whether a metric space $(A, d_A)$ is complete, all candidate Cauchy sequences $(x_n)_{n \ge 0}$ must by definition consist entirely of elements belonging to $A$:
+\[
+x_n \in A \quad \forall n \in \mathbb{N}.
+\]
+A sequence like $x_n = a - 3$ for $A = [a, b]$ does not lie in $A$ and is therefore not a valid sequence in the metric space $(A, d_A)$.
+\end{remark}
+\end{content}
+
+\subsection{Lecture Transition and Overview of Upcoming Topics}
+
+\begin{speech}[01:00:57 - 01:02:42]
+\inlinemetanote{sets down the chalk and paces near the podium} Okay, so now I can do two things. I don't see more questions, right?
+
+We can start to introduce open and closed sets in a metric space, okay? And then, in the last five minutes, I will discuss a bit... Because this year you already saw with Professor Figalli the construction of the reals with Dedekind cuts, I think, right? So, you have a construction of the real numbers. But one can also construct them as a completion, as I said here: if you make $\mathbb{Q}$ complete, there is an abstract way to make any metric space complete. We can discuss this very quickly for those interested; this procedure applies to $\mathbb{Q}$ and gives you $\mathbb{R}$. This is another way to construct a model of $\mathbb{R}$. But since this is not strictly needed now --- it's just for extra information --- I will spend just the last five minutes on that.
+
+Now let's advance and introduce open and closed sets. You know what an open and closed interval is in $\mathbb{R}$, and now... \inlinemetanote{erases the middle chalkboard with a damp cloth}
+
+Or maybe... No, I think that... Sorry, maybe now it's better that I prove that $\mathbb{R}^n$ is complete; it's a good time. So, let's state this theorem. Sorry.
+\end{speech}
+
+\begin{hidden}
+% timestamp: 00:05:40
+% topic: Transition from completeness of subspaces to completeness of R^n
+% board_state: exm:completeness-subspaces-r, rem:sequence-space-membership
+% next_goal: State and prove that (R^n, d_Eucl) is complete using componentwise convergence
+% open_loops: student question resolved regarding sequence membership
+\end{hidden}
+
+\section{Completeness of Euclidean Space \texorpdfstring{$\mathbb{R}^n$}{R^n}}
+
+\subsection{Theorem Formulation and Coordinate Notation}
+
+\begin{speech}[01:02:42 - 01:04:02]
+\inlinemetanote{writes \qt{Thm $(\mathbb{R}^n, d_{\text{Eucl}})$ is complete} on the upper board} This is a theorem you have for $\mathbb{R}$. To prove the theorem for $\mathbb{R}^n$, I will use the result in $\mathbb{R}$: I will use that $\mathbb{R}$ is complete. This is a highly non-trivial fact; it's almost axiomatic --- you define $\mathbb{R}$ axiomatically at the beginning to make it complete. So, this is hard. But once I know that $\mathbb{R}$ is complete, it's very easy to show that $\mathbb{R}^n$ is complete, right?
+
+I will prove this theorem, but to prove this theorem I will need a lemma that will be useful for you many, many times, which says the following: \inlinemetanote{draws a dividing line under the theorem and writes \qt{Lemma}}
+
+If $x_m$... Ah, now we have the usual notational problem, so I will write $x_m$ \inlinemetanote{writes $(x_m)_{m \ge 0} \subset \mathbb{R}^n$}, a sequence in $\mathbb{R}^n$. I use the sub-index $m$ here because when I'm in $\mathbb{R}^n$, $n$ will be the dimension in this case, so I cannot use $n$ here, okay?
+\end{speech}
+
+\begin{content}
+\begin{theorem}[Completeness of Euclidean Space]\label[theorem]{thm:rn-complete}
+The $n$-dimensional Euclidean space $(\mathbb{R}^n, d_{\text{Eucl}})$ equipped with the standard Euclidean metric is complete:
+\begin{equation}\label{eq:rn-complete}
+(x_m)_{m \ge 0} \text{ is a Cauchy sequence in } \mathbb{R}^n \implies \exists x \in \mathbb{R}^n \colon \lim_{m \to \infty} x_m = x.
+\end{equation}
+\end{theorem}
+\end{content}
+
+\begin{speech}[01:04:02 - 01:05:47]
+When you have a sequence of points like this, $x_m$, remember that for a point in $\mathbb{R}^n$... This is a bit of notation, but it's important that we clarify it right now.
+
+In $\mathbb{R}^n$, we were denoting points as $x = (x_1, \dots, x_n)$ \inlinemetanote{writes $x = (x_1, \dots, x_n)$}, and these coordinates are $n$ real numbers. But now, if I have a sequence of points, we will denote the coordinates like this: $x_m$ is a point in the sequence, and we will denote the coordinates as $x_{m, 1}, x_{m, 2}, \dots, x_{m, n}$ \inlinemetanote{writes $x_m = (x_{m,1}, x_{m,2}, \dots, x_{m,n})$}.
+
+You see: the first sub-index is which element of the sequence, and the second sub-index is which coordinate, right? It must be like that.
+
+If you want, there is a small notational conflict, because when you see $x_m$, you are not sure --- well, you will be sure from the context, but if I only tell you $x_m$, what is this? Is it the $m$-th coordinate of the point $x$, or the $m$-th element of a sequence? You will always know by looking at the context. But this is a small notational conflict that I pointed out in the notes as well, and you need to resolve it by context.
+\end{speech}
+
+\begin{speech}[01:05:47 - 01:06:45]
+So, lemma: $(x_m)$ is a sequence in $\mathbb{R}^n$. Then $x_m$ converges to $x$ \inlinemetanote{writes $x_m \to x$} if and only if \inlinemetanote{writes $\iff$} every coordinate converges \inlinemetanote{writes $x_{m,i} \to x_i$} to the corresponding coordinate, for all $i$ from $1$ up to $n$ \inlinemetanote{writes $\forall i = 1, \dots, n$}.
+
+The way to find whether a sequence converges in $\mathbb{R}^n$ is just to look at each coordinate; if each coordinate converges to the corresponding coordinate of the limit --- these are the coordinates of that, right? \inlinemetanote{points to $x = (x_1, \dots, x_n)$} --- then you have convergence, and this is an \qt{if and only if}.
+
+We will first prove the lemma, and from this lemma we will get immediately that $\mathbb{R}^n$ is complete.
+\end{speech}
+
+\begin{content}
+\begin{notation}[Coordinates of Sequence Elements in $\mathbb{R}^n$]\label[notation]{not:double-index-coordinates}
+For a point $x \in \mathbb{R}^n$, we write its coordinates as:
+\[
+x = (x_1, x_2, \dots, x_n) \in \mathbb{R}^n, \quad \text{where } x_i \in \mathbb{R} \text{ for each } i \in \{1, \dots, n\}.
+\]
+For a sequence of vectors $(x_m)_{m \ge 0} \subseteq \mathbb{R}^n$, the index $m \in \mathbb{N}$ denotes the sequence term, while the index $i \in \{1, \dots, n\}$ denotes the coordinate:
+\[
+x_m = (x_{m,1}, x_{m,2}, \dots, x_{m,n}) \in \mathbb{R}^n.
+\]
+\end{notation}
+
+\begin{lemma}[Componentwise Convergence in $\mathbb{R}^n$]\label[lemma]{lem:componentwise-convergence-rn}
+Let $(x_m)_{m \ge 0} \subseteq \mathbb{R}^n$ be a sequence and let $x \in \mathbb{R}^n$. Then:
+\begin{equation}\label{eq:componentwise-equivalence}
+x_m \xrightarrow{m \to \infty} x \text{ in } (\mathbb{R}^n, d_{\text{Eucl}}) \iff x_{m,i} \xrightarrow{m \to \infty} x_i \text{ in } (\mathbb{R}, |\cdot|) \quad \forall i \in \{1, \dots, n\}.
+\end{equation}
+\end{lemma}
+
+\begin{steps}[Geometrical Meaning of Componentwise Convergence]
+In $\mathbb{R}^n$, convergence in the Euclidean metric is equivalent to convergence in each coordinate independently:
+\begin{center}
+\begin{tikzpicture}[scale=1.3, >=Stealth]
+    % \begin{hidden}
+    % - Canvas: scale 1.3, x-range [0, 4.5], y-range [0, 3.5]
+    % - Elements: (1) Axes x_1 and x_2; (2) Target point x = (3, 2.5);
+    %   (3) Sequence points x_m approaching x; (4) Projections on the axes
+    % - Coordinates: x = (3, 2.5), P1 = (1.0, 0.7), P2 = (1.8, 1.4), P3 = (2.4, 2.0)
+    % - Projections: dashed lines to both axes
+    % \end{hidden}
+    \draw[->, thick, gray!70] (0,0) -- (4.5,0) node[right, text=black] {$x_1$};
+    \draw[->, thick, gray!70] (0,0) -- (0,3.5) node[above, text=black] {$x_2$};
+
+    \coordinate (X) at (3.0, 2.5);
+    \draw[dashed, gray!60] (3.0, 0) -- (X) -- (0, 2.5);
+    \fill[black] (3.0, 0) circle (1.5pt) node[below] {$x_1$};
+    \fill[black] (0, 2.5) circle (1.5pt) node[left] {$x_2$};
+    \fill[MidnightBlue] (X) circle (2pt) node[above right, font=\bfseries] {$x = (x_1, x_2)$};
+
+    % Sequence points
+    \coordinate (P1) at (1.0, 0.7);
+    \coordinate (P2) at (1.8, 1.4);
+    \coordinate (P3) at (2.4, 2.0);
+
+    \fill[BrickRed] (P1) circle (1.5pt) node[below right, font=\footnotesize] {$x_1$};
+    \fill[BrickRed] (P2) circle (1.5pt) node[below right, font=\footnotesize] {$x_2$};
+    \fill[BrickRed] (P3) circle (1.5pt) node[below right, font=\footnotesize] {$x_3$};
+
+    \draw[->, thick, BrickRed!80, dashed] (P1) -- (P2);
+    \draw[->, thick, BrickRed!80, dashed] (P2) -- (P3);
+    \draw[->, thick, BrickRed!80, dashed] (P3) -- (X);
+
+    % Projections of x_3
+    \draw[dotted, ForestGreen, thick] (2.4, 0) node[below, font=\footnotesize] {$x_{3,1}$} -- (P3) -- (0, 2.0) node[left, font=\footnotesize] {$x_{3,2}$};
+\end{tikzpicture}
+\end{center}
+The Euclidean distance $\|x_m - x\|$ controls, and is controlled by, the individual coordinate distances $|x_{m,i} - x_i|$.
+\end{steps}
+\end{content}
+
+\subsection{Proof of Lemma \ref{lem:componentwise-convergence-rn}: Componentwise Convergence}
+
+\begin{proofWrapper}[Proof of Lemma \ref{lem:componentwise-convergence-rn}]
+
+\subsubsection{Forward Direction: Vector Convergence Implies Coordinate Convergence}
+
+\begin{speech}[01:06:45 - 01:07:47]
+\inlinemetanote{slides the blackboards upward to reveal clean space below} Okay, let's do the implication to the right. \inlinemetanote{writes $\implies$ on the board}
+
+The starting point is: I know that $x_m$ converges to $x$. \inlinemetanote{writes $x_m \to x$} What does it mean? \inlinemetanote{writes $\iff \forall \varepsilon > 0 \;\exists N \text{ such that}$} For all $\varepsilon > 0$, there exists capital $N$ such that the norm $\|x_n - x\| < \varepsilon$ \inlinemetanote{writes $\|x_n - x\| < \varepsilon$} if $n \ge N$ \inlinemetanote{writes if $n \ge N$}.
+
+This is the definition of convergence in a metric space, and I'm using that in my metric space the distance is the norm of the difference of points. So, this is the same as the distance between $x_n$ and $x$ \inlinemetanote{writes $d(x_n, x)$}: it's the definition of the Euclidean distance, right? This is by definition of convergence.
+\end{speech}
+
+\begin{speech}[01:07:47 - 01:09:17]
+Now I want to prove that this implies that each coordinate converges.
+
+You see that this implies that... let me put it here: \inlinemetanote{writes $\implies |x_{n,i} - x_i|$} for a given coordinate $i$ \inlinemetanote{writes Given $i \in \{1, \dots, n\}$}, what is $|x_{n,i} - x_i|$?
+
+This is less than or equal to the square root of the sum for $j = 1$ to $n$ of $(x_{n,j} - x_j)^2$ \inlinemetanote{writes $\le \sqrt{\sum_{j=1}^n |x_{n,j} - x_j|^2}$}, right? Given some coordinate $i$, $|x_{n,i} - x_i|$ is less than the sum of the squares for all coordinates, and then you take the square root.
+
+By definition, this is the norm \inlinemetanote{writes $= \|x_n - x\|$}, and I'm saying that this will be less than $\varepsilon$ \inlinemetanote{writes $< \varepsilon$}, right?
+\end{speech}
+
+\begin{speech}[01:09:17 - 01:10:16]
+And this is what I wanted to show, right?
+
+Given $\varepsilon$, there exists some $N$ --- here it is the same capital $N$ --- such that, when $m \ge N$... This is an $m$, sorry: $m$, $m$ \inlinemetanote{corrects the sequence index $n$ to $m$ across the board equations: $x_m$, $\|x_m - x\|$, and $m \ge N$}. This is $n$, this is $m$, okay?
+
+So, the $i$-th coordinate difference $|x_{m,i} - x_i|$ will be less than $\varepsilon$. This just follows from this inequality: the comparison between the difference of coordinates and the square root. This implication is rather easy, and is done here. \inlinemetanote{draws a small square $\square$ to complete the $\implies$ direction}
+\end{speech}
+
+\begin{content}[Forward Implication: Vector to Coordinates]
+\textbf{Direction ($\Longrightarrow$):} \\
+Assume that $x_m \to x$ in $(\mathbb{R}^n, d_{\text{Eucl}})$. By definition of convergence in a metric space:
+\begin{equation}\label{eq:forward-def-conv}
+\forall \varepsilon > 0 \;\exists N \in \mathbb{N} \;\forall m \ge N \colon \quad d_{\text{Eucl}}(x_m, x) = \|x_m - x\| < \varepsilon.
+\end{equation}
+Let $i \in \{1, \dots, n\}$ be an arbitrary coordinate. For any $m \in \mathbb{N}$, we compare the $i$-th coordinate difference to the full Euclidean norm:
+\begin{equation}\label{eq:coordinate-norm-inequality}
+|x_{m,i} - x_i| = \sqrt{(x_{m,i} - x_i)^2} \le \sqrt{\sum_{j=1}^n (x_{m,j} - x_j)^2} = \|x_m - x\|.
+\end{equation}
+Combining \eqref{eq:coordinate-norm-inequality} with \eqref{eq:forward-def-conv}, for all $m \ge N$:
+\[
+|x_{m,i} - x_i| \le \|x_m - x\| < \varepsilon.
+\]
+Since $\varepsilon > 0$ was arbitrary, this establishes that $\lim_{m \to \infty} x_{m,i} = x_i$ in $\mathbb{R}$ for each $i \in \{1, \dots, n\}$.
+\end{content}
+
+\subsubsection{Backward Direction: Coordinate Convergence Implies Vector Convergence}
+
+\begin{speech}[01:10:16 - 01:12:27]
+The other implication is almost the same, but slightly harder. \inlinemetanote{writes $\Longleftarrow$ in a circle}
+
+Now I start at the other point. Suppose that... Ah, this is an $m$, sorry, you needed to tell me: these are $m$'s \inlinemetanote{corrects another index to $m$}.
+
+My starting point is that for each coordinate $i$, $x_{m,i} \to x_i$. So, for all $\varepsilon > 0$, there exists an $N_i$ such that $|x_{m,i} - x_i| < \varepsilon$ if $m \ge N_i$ \inlinemetanote{writes $\forall \varepsilon > 0 \;\exists N_i \text{ st } |x_{m,i} - x_i| < \varepsilon \text{ if } m \ge N_i$}.
+
+I know that these kinds of things are always the most confusing, but I'm just starting on the right-hand side. For each coordinate $i$, $x_{m,i}$ converges to $x_i$, and I'm writing the definition: given $i \in \{1, \dots, n\}$ \inlinemetanote{writes Given $i \in \{1, \dots, n\}$}, for all $\varepsilon > 0$ there exists some $N$ that depends on $i$ --- that's why I call it $N_i$ --- such that this holds. Good?
+
+Now, if I can do this, I can take $\varepsilon$ divided by $n$ \inlinemetanote{modifies $\varepsilon$ to $\varepsilon/n$ in the inequality: $|x_{m,i} - x_i| < \frac{\varepsilon}{n}$}, right? You are just taking a different $\varepsilon$. This is true.
+\end{speech}
+
+\begin{hidden}
+% timestamp: 00:13:30
+% topic: Proof of Lemma 2 (Componentwise convergence in R^n)
+% board_state: thm:rn-complete, lem:componentwise-convergence-rn, eq:coordinate-norm-inequality
+% next_goal: Complete the backward direction using N = max N_i and prove completeness of R^n
+% open_loops: none
+\end{hidden}
+
+\begin{speech}[01:12:27 - 01:14:32]
+What you do now is: if this happens, then the norm $\|x_m - x\|$ \inlinemetanote{writes $\|x_m - x\| = \sqrt{\sum_{i=1}^n |x_{m,i} - x_i|^2}$}... What is this? This is the square root of the sum for $i = 1$ to $n$ of $|x_{m,i} - x_i|^2$.
+
+Now, I will take $m$ bigger than or equal to the maximum of these numbers for $i$ between $1$ and $n$ \inlinemetanote{writes $m \ge \max_{1 \le i \le n} N_i =: N$}. I take the maximum of all these numbers, and I call this capital $N$. If I take this $N$ that is the maximum of all these numbers, and $m$ is larger, it will satisfy all these conditions at the same time.
+
+Then I will get that this is strictly less than the square root of $n$ times $\varepsilon^2 / n^2$ \inlinemetanote{writes $\le \sqrt{n \frac{\varepsilon^2}{n^2}}$}. Each term is less than $\varepsilon/n$, so when squared it is $\varepsilon^2 / n^2$. And this is equal to $\varepsilon / \sqrt{n}$ \inlinemetanote{writes $= \frac{\varepsilon}{\sqrt{n}}$}, which is less than or equal to $\varepsilon$ \inlinemetanote{writes $< \varepsilon$}.
+
+You see, this establishes that implication \inlinemetanote{draws a small square $\square$ to complete the $\Longleftarrow$ direction}. I assumed that the coordinates converge; I needed to take a smaller epsilon, divided by $n$, but then the vector converges, right?
+\end{speech}
+
+\begin{content}[Backward Implication: Coordinates to Vector]
+\textbf{Direction ($\Longleftarrow$):} \\
+Assume that for every coordinate $i \in \{1, \dots, n\}$, we have $x_{m,i} \to x_i$ in $\mathbb{R}$.
+Let $\varepsilon > 0$. We apply the definition of convergence to each coordinate with the tighter tolerance $\frac{\varepsilon}{n} > 0$. For each $i \in \{1, \dots, n\}$, there exists an index $N_i \in \mathbb{N}$ such that:
+\begin{equation}\label{eq:coordinate-conv-eps-over-n}
+|x_{m,i} - x_i| < \frac{\varepsilon}{n} \quad \text{whenever } m \ge N_i.
+\end{equation}
+Define the unified cutoff index:
+\begin{equation}\label{eq:max-cutoff-index}
+N := \max_{1 \le i \le n} N_i \in \mathbb{N}.
+\end{equation}
+For all $m \ge N$, the bound \eqref{eq:coordinate-conv-eps-over-n} holds simultaneously for all $n$ coordinates. We compute the Euclidean norm of the difference vector:
+\begin{align}
+\|x_m - x\| &= \sqrt{\sum_{i=1}^n |x_{m,i} - x_i|^2} \nonumber \\
+&< \sqrt{\sum_{i=1}^n \left(\frac{\varepsilon}{n}\right)^2} = \sqrt{n \cdot \frac{\varepsilon^2}{n^2}} \nonumber \\
+&= \frac{\varepsilon}{\sqrt{n}} \le \varepsilon. \label{eq:vector-norm-bound}
+\end{align}
+Thus, $\|x_m - x\| < \varepsilon$ for all $m \ge N$, proving that $x_m \to x$ in $(\mathbb{R}^n, d_{\text{Eucl}})$.
+\end{content}
+
+\end{proofWrapper}
+
+\subsection{Proof of the Completeness of \texorpdfstring{$\mathbb{R}^n$}{R^n}}
+
+\begin{proofWrapper}[Proof of Theorem \ref{thm:rn-complete}]
+
+\begin{speech}[01:14:32 - 01:16:07]
+Now, with exactly the same trick, exactly the same setup, I can prove the theorem: the completeness of $\mathbb{R}^n$. $\mathbb{R}^n$ is complete! \inlinemetanote{writes \qt{proof of Thm ($\mathbb{R}^n$ complete)} on the board}
+
+How do you prove that something is complete? You give me a Cauchy sequence, and I must show that the Cauchy sequence converges.
+
+Given a Cauchy sequence \inlinemetanote{writes \qt{Given $(x_n)_{n \ge 0}$ Cauchy sequence}}, let us show that there exists some limit $x$ such that the sequence converges to $x$ \inlinemetanote{writes \qt{Let us show $\exists x \colon x_n \to x$}}.
+
+How will we find the limit? Remember, I told you: we need to use that $\mathbb{R}$ is complete.
+
+When we have a sequence... Ah, sorry, this is in $\mathbb{R}^n$, so I need to use $m$ or something else: $m$ \inlinemetanote{corrects index $n$ to $m$: $(x_m)_{m \ge 0}$, $x_m \to x$}. $m$ here, $n$ there.
+\end{speech}
+
+\begin{speech}[01:16:07 - 01:17:55]
+We need to use that $\mathbb{R}$ is complete, so what we will do is pass to the components. For each index $i = 1, \dots, n$, $(x_{m,i})_{m \ge 0}$ is a Cauchy sequence in $\mathbb{R}$ \inlinemetanote{writes $\forall i = 1, \dots, n \quad (x_{m,i})_{m \ge 0} \text{ is Cauchy in } \mathbb{R}$}.
+
+Why is this true? By the same inequality! When you have a Cauchy sequence, by the definition with $m$, we said that the component differences $|x_i - y_i|$ for two points are bounded by the norm $\|x - y\|$ \inlinemetanote{writes $|x_i - y_i| \le \|x - y\|$}.
+
+And then we also had the opposite inequality: that the minimum --- sorry, the minimum in $i$ of $|x_i - y_i|$ bounds the norm \inlinemetanote{writes $\|x - y\| \le \min_i |x_i - y_i| \sqrt{n}$}, but we need to pay a factor of $\sqrt{n}$ here. That is what we did here, right?
+\end{speech}
+
+\begin{speech}[01:17:55 - 01:19:37]
+Between these two quantities --- the difference of the components or the norm of the vector --- you can pass from one to the other. Just when you go in one direction, you need to pay a factor of $\sqrt{n}$.
+
+This shows that this sequence is Cauchy. Being a Cauchy sequence in $\mathbb{R}$, it converges, so $x_{m,i} \to x_i$ \inlinemetanote{writes $x_{m,i} \to x_i$}. This is my definition of $x_i$.
+
+Then I put all these real numbers together, and I form the point $x$: I define $x := (x_1, \dots, x_n)$ \inlinemetanote{writes $\leadsto x = (x_1, \dots, x_n)$}. And the original sequence of vectors converges to this limit, again by the same reasoning I used here: each component converges to the corresponding component implies that the vectors converge, right? I'm using the lemma --- this implication.
+
+It's almost time. So, in one sentence, because it's time: the proof of the completeness of $\mathbb{R}^n$ is just pass to the components. The components are Cauchy sequences, so they converge, and then you put together the components to make the point, proving the existence of the limit.
+
+Yeah. Hm?
+\end{speech}
+
+\begin{content}[Proof of Completeness of $\mathbb{R}^n$]
+\begin{proof}
+Let $(x_m)_{m \ge 0} \subseteq \mathbb{R}^n$ be an arbitrary Cauchy sequence in $(\mathbb{R}^n, d_{\text{Eucl}})$.
+\textbf{Goal:} Show that there exists $x \in \mathbb{R}^n$ such that $\lim_{m \to \infty} x_m = x. $
+
+\textbf{Step 1 (Components are Cauchy in $\mathbb{R}$):} \\
+By definition of a Cauchy sequence in $\mathbb{R}^n$:
+\[
+\forall \varepsilon > 0 \;\exists N \in \mathbb{N} \;\forall m, k \ge N \colon \quad \|x_m - x_k\| < \varepsilon.
+\]
+For each coordinate $i \in \{1, \dots, n\}$, applying inequality \eqref{eq:coordinate-norm-inequality} yields:
+\[
+|x_{m,i} - x_{k,i}| \le \|x_m - x_k\| < \varepsilon \quad \text{for all } m, k \ge N.
+\]
+Thus, for every $i \in \{1, \dots, n\}$, the real sequence $(x_{m,i})_{m \ge 0}$ is a Cauchy sequence in $(\mathbb{R}, |\cdot|)$.
+
+\textbf{Step 2 (Convergence in $\mathbb{R}$ by Completeness of $\mathbb{R}$):} \\
+Since $\mathbb{R}$ is complete, every Cauchy sequence in $\mathbb{R}$ converges. Therefore, for each coordinate $i \in \{1, \dots, n\}$, there exists a real limit:
+\[
+x_i := \lim_{m \to \infty} x_{m,i} \in \mathbb{R}.
+\]
+
+\textbf{Step 3 (Reconstruction of the Vector Limit):} \\
+We assemble these $n$ coordinate limits into a candidate vector:
+\[
+x := (x_1, x_2, \dots, x_n) \in \mathbb{R}^n.
+\]
+By \cref{lem:componentwise-convergence-rn} (Direction $\Longleftarrow$), since $x_{m,i} \to x_i$ for all $i \in \{1, \dots, n\}$, it follows that:
+\[
+\lim_{m \to \infty} x_m = x \quad \text{in } (\mathbb{R}^n, d_{\text{Eucl}}).
+\]
+Hence, every Cauchy sequence in $\mathbb{R}^n$ converges, establishing that $(\mathbb{R}^n, d_{\text{Eucl}})$ is complete.
+\end{proof}
+\end{content}
+
+\end{proofWrapper}
+
+\subsection{Student Question on the Norm Equivalence Bound}
+
+\begin{speech}[01:19:37 - 01:19:44]
+\inlinemetanote{tosses the Catchbox throwable microphone to a student in the front rows}
+\end{speech}
+
+\begin{student}[Student Question: Minimum versus Maximum in Norm Bound]
+Could you please elaborate why you used the minimum with the distances there, instead of for instance the maximum?
+\end{student}
+
+\begin{speech}[01:19:52 - 01:19:55]
+It's the maximum.
+\end{speech}
+
+\begin{student}[Student Question continued]
+Okay. Thank you.
+\end{student}
+
+\begin{speech}[01:19:57 - 01:20:22]
+Thank you. \inlinemetanote{walks over to the board, erases \qt{$\min$} and corrects it to \qt{$\max$} in the inequality $\|x - y\| \le \max_i |x_i - y_i| \sqrt{n}$, then sets down the chalk} \inlinemetanote{lecturer packs up his materials at the podium as students pack up their bags; audio ends}
+\end{speech}
+
+\begin{content}
+\begin{remark}[Two-Sided Bounds Relating Coordinates and Norms]\label[remark]{rem:norm-bounds-comparison}
+For any two vectors $x, y \in \mathbb{R}^n$, the individual coordinate distances and the Euclidean norm satisfy the two-sided bounds:
+\begin{equation}\label{eq:two-sided-norm-bounds}
+\max_{1 \le i \le n} |x_i - y_i| \le \|x - y\| \le \sqrt{n} \max_{1 \le i \le n} |x_i - y_i|.
+\end{equation}
+\begin{itemize}
+    \item \textbf{Lower Bound on the Norm:} Since $\|x - y\| = \sqrt{\sum_{j=1}^n (x_j - y_j)^2} \ge \sqrt{(x_i - y_i)^2} = |x_i - y_i|$ for every $i$, taking the maximum over all $i$ yields the left inequality.
+    \item \textbf{Upper Bound on the Norm:} Since $|x_i - y_i| \le \max_{1 \le j \le n} |x_j - y_j|$ for each $i$:
+    \[
+    \|x - y\|^2 = \sum_{i=1}^n |x_i - y_i|^2 \le \sum_{i=1}^n \left(\max_{1 \le j \le n} |x_j - y_j|\right)^2 = n \left(\max_{1 \le j \le n} |x_j - y_j|\right)^2.
+    \]
+    Taking the square root yields the factor $\sqrt{n}$. The lecturer originally wrote $\min$ by a slip of the pen and corrected it to $\max$ following the student's question.
+\end{itemize}
+\end{remark}
+\end{content}
+
+\begin{overview}[Summary of Key Concepts]
+\begin{itemize}
+    \item \textbf{Sequences and Limits in Metric Spaces:} A sequence $(x_n)_{n \ge 0}$ in $(X, d)$ converges to $x \in X$ if and only if $d(x_n, x) \to 0$ in $\mathbb{R}$. The limit is unique by the triangle inequality and separation axiom ($x \neq y \implies d(x, y) > 0$).
+    \item \textbf{Subsequences and Accumulation Points:} A subsequence is formed by a strictly advancing index map $f \colon \mathbb{N} \to \mathbb{N}$ ($n_k \ge k$). An accumulation point of a sequence is the limit of a convergent subsequence.
+    \item \textbf{Subsequence Criteria for Convergence:} In general metric spaces, $x_n \to x$ if and only if every subsequence converges to $x$, or equivalently, if every subsequence contains a sub-subsequence converging to $x$. Having a unique accumulation point does not suffice in non-compact spaces (e.g., $x_{2n} = n, x_{2n+1} = 1/n$ in $\mathbb{R}$).
+    \item \textbf{Cauchy Sequences and Completeness:} A metric space $(X, d)$ is complete if every Cauchy sequence in $X$ converges to a limit in $X$. Subspaces like $(0, \infty)$ and $\mathbb{Q}$ are incomplete because their Cauchy sequences lack limits in the space, whereas closed intervals $[a, b]$ are complete.
+    \item \textbf{Completeness of $(\mathbb{R}^n, d_{\text{Eucl}})$:} A sequence in $\mathbb{R}^n$ converges (or is Cauchy) if and only if it converges (or is Cauchy) componentwise in each coordinate. The metric completeness of $\mathbb{R}^n$ follows directly from the completeness of $\mathbb{R}$ via coordinate-wise reconstruction.
+\end{itemize}
+\end{overview}

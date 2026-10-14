@@ -1,0 +1,1951 @@
+% ==========================================
+% Step 4/4 - Final refinement (refinement step 3)
+% Output: step4-02-23-2026-monday-week2-Analysis_II-_mehrere_Variablen-offset-final.tex
+% Input: step3-02-23-2026-monday-week2-Analysis_II-_mehrere_Variablen-offset-speech_refined.tex
+% Model: gemini-3.7-flash
+% Temperature: 0.35
+% TopP: 0.9
+% TopK: 10
+% MaxOutputTokens: 65535
+% ThinkingBudget: 4096
+% ThinkingLevel: MEDIUM
+% Processed on: 2026-10-12 21:53:27
+% ------------------------------------------
+% Token Usage (1 Request(s)):
+%   - Total Prompt Tokens : 72'852 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 72'852 (neu verrechneter Input)
+%   - Output Tokens       : 39'265 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 4'498 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 3/4 - Speech refinement (refinement step 2)
+% Output: step3-02-23-2026-monday-week2-Analysis_II-_mehrere_Variablen-offset-speech_refined.tex
+% Input: step2-02-23-2026-monday-week2-Analysis_II-_mehrere_Variablen-offset-merged.tex
+% Model: gemini-3.7-flash
+% Temperature: 0.35
+% TopP: 0.9
+% TopK: 10
+% MaxOutputTokens: 65535
+% ThinkingBudget: 4096
+% ThinkingLevel: MEDIUM
+% Processed on: 2026-10-12 21:43:44
+% ------------------------------------------
+% Token Usage (1 Request(s)):
+%   - Total Prompt Tokens : 233'572 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 51'841 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 181'731 (neu verrechneter Input)
+%   - Output Tokens       : 39'635 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 17'566 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 2/4 - Merge & timestamp alignment (refinement step 1)
+% Output: step2-02-23-2026-monday-week2-Analysis_II-_mehrere_Variablen-offset-merged.tex
+% Input: step1-02-23-2026-monday-week2-Analysis_II-_mehrere_Variablen-all-offset.tex
+% Model: gemini-3.7-flash
+% Temperature: 0.4
+% TopP: 0.95
+% TopK: 40
+% MaxOutputTokens: 65535
+% ThinkingBudget: 32765
+% ThinkingLevel: MEDIUM
+% Processed on: 2026-10-12 21:32:21
+% ------------------------------------------
+% Token Usage (1 Request(s)):
+%   - Total Prompt Tokens : 209'765 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 22'799 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 186'966 (neu verrechneter Input)
+%   - Output Tokens       : 42'261 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 10'167 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 1/4 - Transcription, 4 part(s) combined
+% Output: step1-02-23-2026-monday-week2-Analysis_II-_mehrere_Variablen-all-offset.tex
+% Source video: 02-23-2026-monday-week2-Analysis_II-_mehrere_Variablen-speed-1-compressed.mp4
+% Model: gemini-3.8-flash
+% Temperature: 0.36
+% TopP: 0.95
+% TopK: 40
+% MaxOutputTokens: 65535
+% ThinkingBudget: 32765
+% ThinkingLevel: HIGH
+% Processed on: 2026-10-12 21:08:29
+% ------------------------------------------
+% Parts:
+%   - Part 1: 02-23-2026-monday-week2-Analysis_II-_mehrere_Variablen-part1.mp4 | start 00:00:00 | model gemini-3.8-flash | processed 2026-10-12 20:37:44 | prompt 339'826 | output 13'866 | thinking 15'341
+%   - Part 2: 02-23-2026-monday-week2-Analysis_II-_mehrere_Variablen-part2.mp4 | start 00:20:39 | model gemini-3.8-flash | processed 2026-10-12 20:43:44 | prompt 352'322 | output 13'123 | thinking 15'291
+%   - Part 3: 02-23-2026-monday-week2-Analysis_II-_mehrere_Variablen-part3.mp4 | start 00:41:19 | model gemini-3.8-flash | processed 2026-10-12 20:53:23 | prompt 364'407 | output 12'142 | thinking 32'051
+%   - Part 4: 02-23-2026-monday-week2-Analysis_II-_mehrere_Variablen-part4.mp4 | start 01:01:58 | model gemini-3.8-flash | processed 2026-10-12 21:08:29 | prompt 375'585 | output 13'144 | thinking 18'033
+% ------------------------------------------
+% Token Usage of this run (4 Request(s)):
+%   - Total Prompt Tokens : 1'432'140 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 251'275 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 1'180'865 (neu verrechneter Input)
+%   - Output Tokens       : 52'275 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 80'716 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+
+% Primary Language: English
+% End of the video: 01:26:37
+
+\lecturechapter[2]{Monday}{23 Feb}{23 February 2026}{Continuity, the Banach Fixed Point Theorem, and Compactness}
+
+\begin{overview}[Course Content Overview]
+This lecture completes the proof of the equivalence between the three characterizations of continuity ($\varepsilon$-$\delta$, sequential, and topological) by demonstrating that topological continuity implies $\varepsilon$-$\delta$ continuity. We then introduce the stronger notions of uniform continuity and Lipschitz continuity, prove that the distance to a fixed point is $1$-Lipschitz continuous via the reverse triangle inequality, and state and prove the fundamental Banach Fixed Point Theorem for contraction mappings on complete metric spaces along with its connections to ordinary differential equations. Finally, we turn to compactness in metric spaces, defining covers, subcovers, sequential compactness, and topological compactness, and prove that sequential compactness implies topological compactness via an inscribed-radius contradiction argument.
+\end{overview}
+
+\section{Equivalence of Definitions of Continuity}
+
+\subsection{Review of Continuity Definitions}
+
+\begin{speech}[00:00:00 - 00:01:57]
+Okay, so, good morning.
+
+I remind you that on Thursday we were talking about continuity. And we gave three definitions of continuity: number \textbf{(1)}, number \textbf{(2)}, and number \textbf{(3)}. The first one was the $\varepsilon$-$\delta$ continuity, the second one was the sequential continuity, and the third one was the topological continuity.
+
+On Thursday we proved that... I think you missed about the first two minutes, or one minute and a half of recap, but it's for you that I do the recap. So, if you want to skip it, this is like the series in Netflix, isn't it? You can skip the introduction.
+
+We gave these three equivalent definitions of continuity. We proved that the $\varepsilon$-$\delta$ continuity implied the sequential continuity. Then the sequential continuity implied the topological continuity. That maybe was the one that was a bit new, the topological continuity: it was this thing that the preimage of an open set is an open set.
+
+And now it remained to be shown that \textbf{(3)} implies \textbf{(1)}. So, topological continuity implies $\varepsilon$-$\delta$ continuity. This will be actually the easiest of all the three implications, right? We will do it now. But maybe it is also the newest.
+\end{speech}
+
+\begin{content}[Review: Equivalent Characterizations of Continuity]
+Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces, and let $f \colon X \to Y$ be a mapping. The three definitions of continuity introduced in the previous lecture are:
+
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0}
+    \item \textbf{$\varepsilon$-$\delta$ Continuity:}
+    \[
+    \forall x \in X, \ \forall \varepsilon > 0, \ \exists \delta > 0 \quad \text{such that} \quad f(B_\delta(x)) \subseteq B_\varepsilon(f(x)).
+    \]
+    \setcounter{enumi}{1}
+    \item \textbf{Sequential Continuity:}
+    \[
+    \forall (x_n)_{n \ge 0} \subseteq X \quad \text{with} \quad x_n \xrightarrow{n \to \infty} x \implies f(x_n) \xrightarrow{n \to \infty} f(x).
+    \]
+    \setcounter{enumi}{2}
+    \item \textbf{Topological Continuity:}
+    \[
+    \forall V \subseteq Y \text{ open} \implies f^{-1}(V) \subseteq X \text{ is open}.
+    \]
+\end{enumerate}
+
+\par\vspace{1ex}\noindent
+\textbf{Status of Equivalence from Last Lecture:}
+\begin{align*}
+    \textbf{(1)} &\implies \textbf{(2)} && \text{(\textcolor{ForestGreen}{proven})} \\
+    \textbf{(2)} &\implies \textbf{(3)} && \text{(\textcolor{ForestGreen}{proven})} \\
+    \textbf{(3)} &\implies \textbf{(1)} && \text{(\textcolor{BrickRed}{to be done})}
+\end{align*}
+\end{content}
+
+\subsection{Proof: Topological Continuity Implies \texorpdfstring{$\varepsilon$-$\delta$}{epsilon-delta} Continuity}
+
+\begin{speech}[00:01:57 - 00:03:55]
+Here you have a small picture of what we try to do when we prove $\varepsilon$-$\delta$ continuity. We are given an $\varepsilon$ --- you give me the $\varepsilon$ positive ---, and what I will try to find... I have this ball of radius $\varepsilon$, and I need to find here some ball of radius $\delta$ \inlinemetanote{draws dashed circle around $x$} such that when I compute the image of this ball --- that maybe is not a ball, because the continuous map can distort shapes ---, the image of this ball will be some sort of potato over here, and this potato needs to be contained in the yellow, in the ball of radius $\varepsilon$. So, this is the ball of radius $\delta$, and this is the ball of radius $\varepsilon$.
+
+This is what I need to show. And my assumption is the topological continuity. What I need to use is that the preimage of an open set is an open set. What is the open set that I can take here that can be helpful? Well, the open set can be precisely the ball $V$, the ball of radius $\varepsilon$ centered at $f(x)$ \inlinemetanote{writes $V = B_\varepsilon(f(x))$}. This will be my open set.
+
+Then I know that the preimage of an open set is an open set \inlinemetanote{draws green boundary in $X$ and writes $f^{-1}(V)$}. This would be $f^{-1}(V)$. By the topological continuity, this preimage is an open set. And now $x$ is a point that belongs to this open set, so I can always find a ball of radius $\delta$ inside \inlinemetanote{draws $B_\delta(x)$ inside $f^{-1}(V)$}. And this $\delta$ works! So, this is the proof, right? This shows...
+
+Should I put it with symbols? Now I will put what I just described here with symbols.
+\end{speech}
+
+\begin{content}[Geometric Idea: Preimage of an Open Ball]
+\begin{hidden}
+% - Canvas: scale 1.25, two spaces X and Y side-by-side.
+%   X centered at (0,0), radius approx 1.6; Y centered at (5.2,0), radius approx 1.6.
+% - Order:
+%   (1) Domain X outline (MidnightBlue) and Codomain Y outline (MidnightBlue).
+%   (2) Target open ball V = B_\varepsilon(f(x)) in Y (BurntOrange dashed).
+%   (3) Point f(x) in Y.
+%   (4) Preimage f^{-1}(V) in X (ForestGreen boundary, filled ForestGreen!5).
+%   (5) Point x in X.
+%   (6) Ball B_\delta(x) in X (BrickRed dashed circle centered at x).
+%   (7) Image f(B_\delta(x)) in Y (BrickRed deformed potato containing f(x)).
+%   (8) Arrow f: X -> Y.
+% - Key coordinates:
+%   x = (0, -0.2), f(x) = (5.2, -0.1).
+%   Radius \varepsilon = 1.0 cm in Y.
+%   Preimage f^{-1}(V) surrounds x comfortably with room for radius \delta = 0.45 cm.
+%   Deformed potato f(B_\delta(x)) is strictly inside B_\varepsilon(f(x)).
+% - Labels: f above the map arrow; B_\varepsilon(f(x)) in BurntOrange; B_\delta(x) in BrickRed; f^{-1}(V) in ForestGreen.
+% - Collisions: labels separated from contours.
+\end{hidden}
+\begin{center}
+\begin{tikzpicture}[scale=1.25, >=Stealth]
+    % Domain X
+    \draw[thick, MidnightBlue] (-1.8,-1.3) .. controls (-2.0,0.5) and (-1.2,1.5) .. (0,1.4)
+                                          .. controls (1.2,1.3) and (1.7,0.2) .. (1.5,-0.8)
+                                          .. controls (1.3,-1.5) and (-0.5,-1.6) .. cycle;
+    \node[MidnightBlue, font=\large\bfseries] at (-1.4, 1.2) {$X$};
+
+    % Codomain Y
+    \begin{scope}[shift={(5.2,0)}]
+        \draw[thick, MidnightBlue] (-1.7,-1.4) .. controls (-2.0,0.2) and (-1.3,1.4) .. (0,1.5)
+                                              .. controls (1.4,1.6) and (1.9,0.4) .. (1.6,-0.7)
+                                              .. controls (1.3,-1.6) and (-0.3,-1.5) .. cycle;
+        \node[MidnightBlue, font=\large\bfseries] at (1.4, 1.2) {$Y$};
+    \end{scope}
+
+    % Mapping arrow f
+    \draw[->, thick] (1.3, 0.6) to[bend left=20] node[midway, above] {$f$} (3.9, 0.6);
+
+    % Point f(x) and ball B_\varepsilon(f(x)) in Y
+    \coordinate (FX) at (5.2, -0.1);
+    \draw[dashed, thick, BurntOrange, fill=BurntOrange!10] (FX) circle (1.0cm);
+    \fill[black] (FX) circle (1.8pt) node[below right=1pt, font=\small] {$f(x)$};
+    \draw[->, BurntOrange, thick] (FX) -- ++(75:1.0cm) node[midway, left=1pt, font=\small] {$\varepsilon$};
+    \node[BurntOrange, above right] at ($(FX)+(45:1.0cm)$) {$V = B_\varepsilon(f(x))$};
+
+    % Preimage f^{-1}(V) in X
+    \coordinate (X) at (0, -0.2);
+    \draw[thick, ForestGreen, fill=ForestGreen!10] 
+        (-0.8,-0.9) .. controls (-1.1,-0.2) and (-0.8,0.7) .. (-0.1,0.8)
+                    .. controls (0.6,0.9) and (1.0,0.2) .. (0.9,-0.5)
+                    .. controls (0.8,-1.0) and (0.0,-1.1) .. cycle;
+    \node[ForestGreen, above left, font=\small] at (-0.5, 0.6) {$f^{-1}(V)$};
+
+    % Point x and ball B_\delta(x) in X
+    \draw[dashed, thick, BrickRed, fill=BrickRed!15] (X) circle (0.45cm);
+    \fill[black] (X) circle (1.8pt) node[below left=1pt, font=\small] {$x$};
+    \draw[->, BrickRed, thick] (X) -- ++(40:0.45cm) node[midway, above left=-2pt, font=\footnotesize] {$\delta$};
+    \node[BrickRed, below, font=\footnotesize] at ($(X)+(-90:0.45cm)$) {$B_\delta(x)$};
+
+    % Image f(B_\delta(x)) in Y (potato inside B_\varepsilon(f(x)))
+    \begin{scope}[shift={(5.2, -0.1)}]
+        \draw[thick, ForestGreen, fill=ForestGreen!25, opacity=0.8] 
+            (-0.35,-0.25) .. controls (-0.5,0.1) and (-0.2,0.45) .. (0.2,0.4)
+                          .. controls (0.5,0.35) and (0.55,-0.1) .. (0.4,-0.35)
+                          .. controls (0.25,-0.5) and (-0.15,-0.45) .. cycle;
+        \node[ForestGreen!90!black, font=\footnotesize] at (0.35, -0.1) {$f(B_\delta(x))$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{steps}[Logic of the Topological Argument]
+To establish $\varepsilon$-$\delta$ continuity at an arbitrary point $x \in X$:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0}
+    \item \textbf{Choose the Target Open Set:} Given $\varepsilon > 0$, construct the open target neighborhood $V := B_\varepsilon(f(x)) \subseteq Y$.
+    \item \textbf{Pull Back via Continuity:} By topological continuity, the preimage $f^{-1}(V)$ is open in $X$.
+    \item \textbf{Point Membership:} Because $f(x) \in V$, the point $x$ necessarily belongs to $f^{-1}(V)$.
+    \item \textbf{Fit an Open Ball:} Since $f^{-1}(V)$ is open in $X$ and contains $x$, the definition of an open set guarantees the existence of a radius $\delta > 0$ such that $B_\delta(x) \subseteq f^{-1}(V)$.
+    \item \textbf{Push Forward to Conclude:} Applying $f$ to both sides yields $f(B_\delta(x)) \subseteq f(f^{-1}(V)) \subseteq V = B_\varepsilon(f(x))$.
+\end{enumerate}
+\end{steps}
+\end{content}
+
+\begin{speech}[00:03:55 - 00:05:25]
+So, take $V$, the ball of radius $\varepsilon$ centered at $f(x)$ \inlinemetanote{writes $\text{take } V = B_\varepsilon(f(x))$}. I missed the parentheses here, right?
+
+Then, by topological continuity --- so, since $f$ is topologically continuous \inlinemetanote{writes $\implies (f \text{ top. cont.})$} ---, the set $f^{-1}(V)$ is open \inlinemetanote{writes $f^{-1}(V) \text{ open}$}. And since this contains $f(x)$, the point $x$ belongs here, right? \inlinemetanote{writes $\ni x$}
+
+And then, by definition of open, there exists $\delta > 0$ \inlinemetanote{writes $\implies \exists \delta > 0$} such that the ball of radius $\delta$ centered at the point $x$ is contained in this open set \inlinemetanote{writes $\text{st } B_\delta(x) \subset f^{-1}(V)$}.
+
+And then one checks that the image under $f$ of the ball of radius $\delta$ is contained in the ball of radius $\varepsilon$ centered at $f(x)$ \inlinemetanote{writes $\implies f(B_\delta(x)) \subset B_\varepsilon(f(x))$}. That is what we want. Okay? \inlinemetanote{draws a shaded square box for Q.E.D.}
+
+So, this finishes the third implication, all right?
+\end{speech}
+
+\begin{content}[Formal Proof of \textbf{(3)} $\implies$ \textbf{(1)}]
+\begin{proposition}[Topological Continuity Implies $\varepsilon$-$\delta$ Continuity]\label[proposition]{prop:top-implies-eps-delta}
+Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces, and let $f \colon X \to Y$ be a map. If $f$ is topologically continuous, then $f$ is $\varepsilon$-$\delta$ continuous.
+\end{proposition}
+
+\begin{proof}
+Let $x \in X$ and let $\varepsilon > 0$ be given. We define the target set as the open ball in $Y$:
+\begin{equation}\label{eq:choice-of-v}
+V := B_\varepsilon(f(x)).
+\end{equation}
+Since every open ball in a metric space is an open set, $V \subseteq Y$ is open. By the assumption of topological continuity:
+\begin{equation}\label{eq:preimage-open}
+f \text{ topologically continuous} \implies f^{-1}(V) \subseteq X \text{ is open}.
+\end{equation}
+Furthermore, since $f(x) \in V$, we have $x \in f^{-1}(V)$.
+
+Because $f^{-1}(V)$ is an open subset of $X$ containing $x$, there exists, by definition of openness in a metric space, a radius $\delta > 0$ such that:
+\begin{equation}\label{eq:ball-inside-preimage}
+B_\delta(x) \subseteq f^{-1}(V).
+\end{equation}
+Applying the forward mapping $f$ to both sides of \eqref{eq:ball-inside-preimage} gives:
+\begin{equation}\label{eq:final-inclusion}
+f(B_\delta(x)) \subseteq f\bigl(f^{-1}(V)\bigr) \subseteq V = B_\varepsilon(f(x)).
+\end{equation}
+This establishes that $f$ is $\varepsilon$-$\delta$ continuous at $x$. Since $x \in X$ was arbitrary, $f$ is $\varepsilon$-$\delta$ continuous on $X$.
+\end{proof}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:05:30
+% topic: Equivalence of continuity characterizations completed ((3) implies (1))
+% board_state: prop:top-implies-eps-delta, eq:choice-of-v, eq:preimage-open, eq:ball-inside-preimage, eq:final-inclusion
+% next_goal: Introduce uniform continuity and Lipschitz continuity
+% open_loops: none
+\end{hidden}
+
+\section{Uniform and Lipschitz Continuity}
+
+\subsection{Concepts and Definitions}
+
+\begin{speech}[00:05:25 - 00:07:38]
+Now you've got three equivalent definitions of continuity that you can use throughout the lecture, and even in the setup of general metric spaces. As I said, most of the time, if not all of the time after a couple of weeks more, we will use $\mathbb{R}^n$ and $\mathbb{R}^m$, most of the time. Just at the very end of the lecture we will see again spaces of functions for ordinary differential equations, that you have already seen when you have seen Cauchy--Lipschitz. Well, I will tell you something later about Cauchy--Lipschitz.
+
+Now let me introduce some notion that you are also familiar with when you work in $\mathbb{R}$, that is uniform continuity. Remember uniform continuity.
+
+So, definition... \inlinemetanote{starts writing on the board} Same setup as before: we have a map $f$ from $X$ to $Y$ \inlinemetanote{writes $f \colon X \to Y$}, where $X$ and $Y$ are metric spaces --- a map between metric spaces \inlinemetanote{writes $(\text{map between metric spaces})$}.
+
+Now, we say that $f$ is uniformly continuous \inlinemetanote{writes $\circ \ f \text{ is unif. cont.}$}. So, uniformly continuous, as in $\mathbb{R}$, is the same as $\varepsilon$-$\delta$ continuous --- almost the same.
+\end{speech}
+
+\begin{speech}[00:07:38 - 00:09:32]
+The only difference is that this \qt{for all $x$}, you put it here \inlinemetanote{points at the board}, which is very different, because, you know, in the quantifiers in math, the order of the \qt{exists}, \qt{for all}, and so on matters a lot. It's not the same to have the \qt{for all $x$} here and the \qt{for all $x$} at the beginning. This is what makes it uniform.
+
+Let's do that. For every $\varepsilon$ --- you first give me the $\varepsilon$ \inlinemetanote{writes $\forall \varepsilon > 0$} ---, now you give me the $\varepsilon$, I need to give you the $\delta$: there exists $\delta > 0$ \inlinemetanote{writes $\exists \delta > 0$}, and this $\delta$ needs to be good for all $x$. That's why this is more difficult. Such that for all $x$ in my space \inlinemetanote{writes $\text{st } \forall x \in X$}, the ball of radius $\delta$ centered at $x$ is mapped to the ball of radius $\varepsilon$ centered at $f(x)$ \inlinemetanote{writes $f(B_\delta(x)) \subset B_\varepsilon(f(x))$}.
+
+Again, exactly as in Analysis~I, the key difference is that the $\delta$ that I give you will be independent of the point $x$. Because you didn't tell me the point yet. You just told me the $\varepsilon$, and I need to tell you the $\delta$, and it needs to work for every $x$. Instead, there, I insist: first you tell me the point, then you tell me the $\varepsilon$, and then knowing the $\varepsilon$ and the point I need to give you the $\delta$. Very different.
+\end{speech}
+
+\begin{content}[Definition of Uniform Continuity]
+Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces, and let $f \colon X \to Y$ be a map.
+
+\begin{definition}[Uniform Continuity]\label[definition]{def:uniform-continuity}
+The map $f \colon X \to Y$ is called \newterm{uniformly continuous} if:
+\begin{equation}\label{eq:uniform-continuity}
+\forall \varepsilon > 0, \ \exists \delta > 0 \quad \text{such that} \quad \forall x \in X, \quad f\bigl(B_\delta(x)\bigr) \subseteq B_\varepsilon\bigl(f(x)\bigr).
+\end{equation}
+Equivalently, in terms of distance functions:
+\begin{equation}\label{eq:uniform-continuity-metric}
+\forall \varepsilon > 0, \ \exists \delta > 0 \quad \text{such that} \quad \forall x, y \in X, \quad d_X(x, y) < \delta \implies d_Y\bigl(f(x), f(y)\bigr) < \varepsilon.
+\end{equation}
+\end{definition}
+
+\begin{steps}[Quantifier Ordering: Pointwise vs. Uniform Continuity]
+The critical conceptual distinction between ordinary continuity and uniform continuity lies entirely in the order of the logical quantifiers:
+\begin{itemize}
+    \item \textbf{Pointwise Continuity:}
+    \[
+    \forall x \in X, \ \forall \varepsilon > 0, \ \exists \delta > 0 \quad \text{such that} \quad d_X(x, y) < \delta \implies d_Y(f(x), f(y)) < \varepsilon.
+    \]
+    Here, the choice of $\delta = \delta(x, \varepsilon)$ depends on \textbf{both} the precision $\varepsilon$ and the specific baseline point $x$. Near regions where the function steepens, $\delta$ can become arbitrarily small.
+    \item \textbf{Uniform Continuity:}
+    \[
+    \forall \varepsilon > 0, \ \exists \delta > 0 \quad \text{such that} \quad \forall x \in X, \quad d_X(x, y) < \delta \implies d_Y(f(x), f(y)) < \varepsilon.
+    \]
+    Here, $\delta = \delta(\varepsilon)$ is chosen knowing only $\varepsilon$. It must serve simultaneously as a valid modulus of continuity across the \textbf{entire space} $X$, regardless of the point $x$.
+\end{itemize}
+\end{steps}
+\end{content}
+
+\begin{speech}[00:09:32 - 00:11:08]
+And a particular case of uniform continuity that will be very important, and we will use many, many times, is that of Lipschitz continuity. Have you seen this in $\mathbb{R}$? Lipschitz continuity.
+
+Now, in a metric space it is essentially the same. We call it $\lambda$-Lipschitz \inlinemetanote{writes $\circ \ f \text{ is } \lambda\text{-Lipschitz}$}. $\lambda$ is the Lipschitz constant, or $L$ --- let me call it capital $L$ \inlinemetanote{overwrites $\lambda$ with $L$ and puts a green box around $L$}. This $L$ will be what is called the Lipschitz constant; it is a positive number \inlinemetanote{writes $L \text{ Lipschitz ctt}$}, that is, a number $> 0$ \inlinemetanote{writes $> 0 \text{ number}$}, right?
+
+And the definition is that the distance in $Y$ between $f(x)$ and $f(y)$ \inlinemetanote{writes $d_Y(f(x), f(y))$} is less than or equal to the Lipschitz constant --- now it is $L$, right? --- $L$ times the distance in $X$ between $x$ and $y$ \inlinemetanote{writes $\le L \, d_X(x, y)$}. And this is true for every pair of points, for all $x$ and $y$ in $X$ \inlinemetanote{writes $\forall x, y \in X$}.
+\end{speech}
+
+\begin{speech}[00:11:08 - 00:12:15]
+So, if you want, an exercise that should be quite immediate is: show that a Lipschitz function is uniformly continuous \inlinemetanote{writes on the board: \qt{Show Lipschitz fctn is uniformly continuous.} accompanied by an exercise icon}.
+
+For a Lipschitz function, the relation between the $\varepsilon$ and the $\delta$ is very explicit, right? Because since the map is multiplying the distance by $L$ at most, if you want to make sure that the ball of radius $\delta$ is mapped to the ball of radius $\varepsilon$, you just need to take $\delta = \varepsilon / L$, and then it will work. But you can write this down. Okay.
+\end{speech}
+
+\begin{content}[Definition of Lipschitz Continuity and Exercise]
+\begin{definition}[Lipschitz Continuity]\label[definition]{def:lipschitz-continuity}
+Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces. A map $f \colon X \to Y$ is called \newterm{$L$-Lipschitz} (or \newterm{Lipschitz continuous}) if there exists a real constant $L > 0$ such that:
+\begin{equation}\label{eq:lipschitz-def}
+d_Y\bigl(f(x), f(y)\bigr) \le L \cdot d_X(x, y) \quad \forall x, y \in X.
+\end{equation}
+The constant $L$ is called the \newterm{Lipschitz constant} of $f$.
+\end{definition}
+
+\begin{exercise}[Lipschitz Implies Uniform Continuity]\label[exercise]{ex:lipschitz-implies-uniform}
+Show that any Lipschitz continuous function $f \colon X \to Y$ between metric spaces is uniformly continuous.
+\end{exercise}
+
+\begin{steps}[Explicit Selection of $\delta$]
+Let $L > 0$ be the Lipschitz constant of $f$. To verify uniform continuity:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0}
+    \item Let $\varepsilon > 0$ be given.
+    \item Define $\delta := \frac{\varepsilon}{L} > 0$. Notice that $\delta$ depends strictly on $\varepsilon$ and $L$, and is completely independent of any base point $x \in X$.
+    \item For any points $x, y \in X$ satisfying $d_X(x, y) < \delta$, the Lipschitz bound \eqref{eq:lipschitz-def} gives:
+    \[
+    d_Y\bigl(f(x), f(y)\bigr) \le L \cdot d_X(x, y) < L \cdot \delta = L \cdot \frac{\varepsilon}{L} = \varepsilon.
+    \]
+    Thus, $f$ is uniformly continuous on $X$.
+\end{enumerate}
+\end{steps}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:12:15
+% topic: Definitions of Uniform and Lipschitz Continuity; Exercise
+% board_state: def:uniform-continuity, def:lipschitz-continuity, ex:lipschitz-implies-uniform
+% next_goal: Demonstrate that the distance to a fixed point is 1-Lipschitz continuous
+% open_loops: none
+\end{hidden}
+
+\subsection{Example: Distance Functions Are \texorpdfstring{$1$}{1}-Lipschitz}
+
+\begin{speech}[00:12:15 - 00:13:30]
+Maybe I give some example of something that is interesting... \inlinemetanote{slides the blackboards up and pulls down a fresh board}
+
+Example: \inlinemetanote{writes \qt{Example} on the board} As always, $(X, d)$ is a metric space \inlinemetanote{writes $(X, d) \text{ metric space}$}, and fix a point $x_0 \in X$ \inlinemetanote{writes $x_0 \in X$}. And now we define the function $f(x)$ as the distance from $x$ to the point $x_0$ \inlinemetanote{writes $f(x) := \operatorname{dist}(x, x_0)$}.
+
+Why do I put \qt{dist}? Okay, this is $d$ \inlinemetanote{erases $\operatorname{dist}$ and writes $d(x, x_0)$}. The distance, but we call it $d$, right? Then $f$ is $1$-Lipschitz \inlinemetanote{writes $\text{then } f \text{ is } 1\text{-Lipschitz}$}, so Lipschitz with constant $1$, right?
+\end{speech}
+
+\begin{speech}[00:13:30 - 00:14:31]
+Let's prove this, okay? We need to compute the distance between $f(x)$ and $f(y)$... \inlinemetanote{writes $d(f(x), f(y))$}
+
+The first thing that I need to identify is: what is the target space here? This map $f$ goes from $X$ to what? What is $Y$? The question is: what is $Y$? \inlinemetanote{walks over to retrieve the catch-box microphone}
+\end{speech}
+
+\begin{student}[Student Answer]
+The positive real numbers?
+\end{student}
+
+\begin{speech}[00:14:33 - 00:16:22]
+Yeah, the non-negative real numbers, right? \inlinemetanote{writes $Y = [0, \infty)$ on the board} Exactly. Thank you. \inlinemetanote{catches the microphone back}
+
+So, $Y$ is that one. And when we don't explicitly specify, if our $Y$ is a subset of $\mathbb{R}$, the distance will be the Euclidean distance, the one given by the absolute value, right?
+
+So, this, by definition of distance, is $|f(x) - f(y)|$ \inlinemetanote{writes $\stackrel{d_Y}{=} |f(x) - f(y)|$}.
+
+Now, I copy the definition of $f$: this is equal to the distance between $x$ and $x_0$ minus the distance between $y$ and $x_0$, in absolute value \inlinemetanote{writes $\stackrel{\text{def}}{=} |d(x, x_0) - d(y, x_0)|$}.
+
+And now my goal is to show that the map is $1$-Lipschitz, so we want to show that this is less than or equal to the distance between $x$ and $y$ \inlinemetanote{writes $\le d(x, y)$ with an arrow labeled \qt{goal}}.
+
+And this would be the $\lambda$, or the $L$ --- sorry, I always call it... So, the $L$ in this case is equal to $1$, right? \inlinemetanote{writes $1$ and $1$ under the coefficient}
+\end{speech}
+
+\begin{speech}[00:16:22 - 00:18:22]
+And this inequality, I'm saying this is equivalent to the triangle inequality. This is precisely the triangle inequality \inlinemetanote{writes \qt{triangle inequality} with an arrow pointing to the inequality}.
+
+Why? Because if you remember, the triangle inequality says that the distance between $A$ and $C$ is less than or equal to the distance between $A$ and $B$ plus the distance between $B$ and $C$ \inlinemetanote{writes $d(A, C) \le d(A, B) + d(B, C)$}, right?
+
+And then this is the same as... you can pass this one to the left: so, the distance between $A$ and $C$ minus the distance between $A$ and $B$ is less than or equal to the distance between $B$ and $C$ \inlinemetanote{writes $\implies d(A, C) - d(A, B) \le d(B, C)$}, right?
+
+And then, since you can reorder the points and do all possible combinations, you get actually the positive and the minus version of that, right? So, you get this \inlinemetanote{draws absolute value bars $|d(A, C) - d(A, B)| \le d(B, C)$ and encloses the derivation in brackets}. Right?
+
+So, this is just one example. In every metric space, when you compute the distance to a point, something that is interesting from here is that the distance is continuous in particular. It's Lipschitz continuous, so it is uniformly continuous, and then it is continuous. The distance with respect to each of its arguments is a continuous map.
+\end{speech}
+
+\begin{content}[Distance to a Fixed Point is $1$-Lipschitz]
+\begin{example}[Distance to a Fixed Point is $1$-Lipschitz]\label[example]{ex:dist-fixed-point-1-lipschitz}
+Let $(X, d)$ be a metric space and let $x_0 \in X$ be a fixed reference point. Consider the distance function to $x_0$:
+\begin{equation}\label{eq:dist-function-def}
+f \colon X \to [0, \infty), \quad f(x) := d(x, x_0).
+\end{equation}
+Then $f$ is $1$-Lipschitz continuous with respect to the standard Euclidean metric on the codomain $Y = [0, \infty) \subset \mathbb{R}$.
+\end{example}
+
+\begin{proof}
+Let $x, y \in X$. Since the codomain is $Y = [0, \infty) \subset \mathbb{R}$, the metric on $Y$ is the standard absolute value metric $d_Y(a, b) = |a - b|$. Using the definition of $f$, we have:
+\begin{align}
+d_Y\bigl(f(x), f(y)\bigr) &= |f(x) - f(y)| \nonumber \\
+&= \bigl| d(x, x_0) - d(y, x_0) \bigr|. \label{eq:dist-diff-abs}
+\end{align}
+We claim that for any $x, y, x_0 \in X$:
+\begin{equation}\label{eq:reverse-triangle-claim}
+\bigl| d(x, x_0) - d(y, x_0) \bigr| \le 1 \cdot d(x, y).
+\end{equation}
+
+To prove \eqref{eq:reverse-triangle-claim}, apply the standard triangle inequality for $(X, d)$ with points $x, y, x_0$:
+\begin{align*}
+d(x, x_0) &\le d(x, y) + d(y, x_0) \implies d(x, x_0) - d(y, x_0) \le d(x, y).
+\end{align*}
+By symmetry, interchanging the roles of $x$ and $y$ and using $d(y, x) = d(x, y)$:
+\begin{align*}
+d(y, x_0) &\le d(y, x) + d(x, x_0) \implies -\bigl(d(x, x_0) - d(y, x_0)\bigr) \le d(x, y).
+\end{align*}
+Combining both inequalities yields the reverse triangle inequality:
+\begin{equation}\label{eq:reverse-triangle-proved}
+\bigl| d(x, x_0) - d(y, x_0) \bigr| \le d(x, y).
+\end{equation}
+Substituting \eqref{eq:reverse-triangle-proved} into \eqref{eq:dist-diff-abs} gives:
+\[
+d_Y\bigl(f(x), f(y)\bigr) \le 1 \cdot d(x, y) \quad \forall x, y \in X.
+\]
+This proves that $f$ is $1$-Lipschitz continuous (with Lipschitz constant $L = 1$).
+\end{proof}
+
+\begin{steps}[Consequences of the $1$-Lipschitz Property]
+From the hierarchy of continuity conditions:
+\[
+\text{Lipschitz Continuous} \implies \text{Uniformly Continuous} \implies \text{Continuous},
+\]
+we immediately obtain:
+\begin{itemize}
+    \item The function $x \mapsto d(x, x_0)$ is continuous on $(X, d)$.
+    \item More generally, the metric $d \colon X \times X \to [0, \infty)$ is jointly continuous in both arguments with respect to the product metric on $X \times X$.
+\end{itemize}
+\end{steps}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:18:20
+% topic: Distance function proved 1-Lipschitz via reverse triangle inequality
+% board_state: ex:dist-fixed-point-1-lipschitz, eq:dist-function-def, eq:reverse-triangle-proved
+% next_goal: State and motivate the Banach Fixed Point Theorem
+% open_loops: none
+\end{hidden}
+
+\section{The Banach Fixed Point Theorem}
+
+\subsection{Statement of the Theorem}
+
+\begin{speech}[00:18:22 - 00:20:15]
+And now we will show some nice application, some very important property of Lipschitz maps from a space onto itself that are $\lambda$-Lipschitz with $\lambda < 1$. This is a theorem that is called the Banach Fixed Point Theorem \inlinemetanote{writes \qt{Thm (Banach fixed pt)} on the board}.
+
+The first thing is the assumption on the space: $(X, d)$ is a complete metric space \inlinemetanote{writes $(X, d) \text{ complete m.s.}$}. We have a complete metric space, and you are given a map $T$ from $X$ to $X$ \inlinemetanote{writes $\text{Suppose } T \colon X \to X$} that is $\lambda$-Lipschitz \inlinemetanote{writes $\text{map } \lambda\text{-Lipschitz}$}.
+
+Suppose that we have a map like this that is $\lambda$-Lipschitz for $\lambda \in (0, 1)$ \inlinemetanote{writes $\lambda \in (0, 1)$}. There are two very important things in this theorem: it's very, very general, but you need a complete space --- and that's actually one of the reasons why complete metric spaces are so important.
+
+And then you need what is called a contraction mapping. So, you need a $\lambda$-Lipschitz map for $\lambda < 1$.
+\end{speech}
+
+\begin{speech}[00:20:15 - 00:21:58]
+When this happens, you will see sometimes in books and so on that it is said that $T$ is a contraction \inlinemetanote{underlines in green and writes $T \text{ is a contraction}$}.
+
+Contraction means that it shortens the distance. You take two points, you compute the images of these two points, and they will always be closer than before.
+
+And the conclusion is: then $T$ has a unique fixed point \inlinemetanote{writes $\text{Then } T \text{ has a unique fixed pt}$}. Fixed point means a point such that... there exists a unique $x \in X$ such that $T(x) = x$ \inlinemetanote{writes $(\exists! \, x \in X \text{ st } T(x) = x)$}.
+
+A fixed point is a point that does not move. The map is sending $x$ to itself. And the theorem is saying that there is always one of those points, and just one of them. \inlinemetanote{underlines the statement and draws a dividing line}
+\end{speech}
+
+\begin{content}[The Banach Fixed Point Theorem]
+\begin{theorem}[Banach Fixed Point Theorem / Contraction Mapping Principle]\label[theorem]{thm:banach-fixed-point}
+Let $(X, d)$ be a complete metric space, and let $T \colon X \to X$ be a contraction mapping, that is, a $\lambda$-Lipschitz map with contraction factor $\lambda \in (0, 1)$:
+\begin{equation}\label{eq:contraction-condition}
+d\bigl(T(x), T(y)\bigr) \le \lambda \cdot d(x, y) \quad \forall x, y \in X.
+\end{equation}
+Then $T$ possesses a unique fixed point $x^* \in X$:
+\begin{equation}\label{eq:unique-fixed-point}
+\exists! \, x^* \in X \quad \text{such that} \quad T(x^*) = x^*.
+\end{equation}
+\end{theorem}
+
+\begin{steps}[Core Hypotheses and Architecture of the Theorem]
+The Banach Fixed Point Theorem relies on three critical mathematical components:
+\begin{itemize}
+    \item \textbf{Metric Completeness of $(X, d)$:} The metric space must have no \qt{holes}. Every Cauchy sequence must converge to a point within $X$. (Without completeness, iterates could converge toward a missing boundary point, e.g., $f(x) = x/2$ on $(0, 1]$ has no fixed point in $(0, 1]$).
+    \item \textbf{Strict Contraction ($\lambda < 1$):} It is not sufficient that $d(T(x), T(y)) < d(x, y)$ for $x \neq y$; there must exist a uniform factor $\lambda \in (0, 1)$ strictly bounding the shrinkage rate.
+    \item \textbf{Uniqueness of the Fixed Point:} Uniqueness is immediate from the contraction property: if $x^*$ and $y^*$ are two fixed points, then:
+    \[
+    d(x^*, y^*) = d\bigl(T(x^*), T(y^*)\bigr) \le \lambda \cdot d(x^*, y^*).
+    \]
+    Since $(1 - \lambda) > 0$, this requires $(1 - \lambda) d(x^*, y^*) \le 0$, forcing $d(x^*, y^*) = 0 \implies x^* = y^*$.
+\end{itemize}
+\end{steps}
+\end{content}
+
+\subsection{Heuristic Geometric Sketch and Iteration Dynamics}
+
+\begin{speech}[00:21:58 - 00:23:28]
+Before writing the proof, let me do a small sketch and tell you why it is reasonable to expect such a theorem, okay?
+
+Now we have our set $X$ \inlinemetanote{draws a large closed curve representing $X$ on the right board}. The map $T$ goes from $X$ onto itself \inlinemetanote{draws a loop arrow labeled $T$ from $X$ to $X$}.
+
+So, if I take a point $x$, the image of my point, $T(x)$, is perhaps here \inlinemetanote{marks $x$ and $T(x)$}. And if I take a point $y$ here \inlinemetanote{marks $y$}, the image of the point $y$ is, I don't know, maybe here \inlinemetanote{marks $T(y)$}.
+
+But I can be very, very sure that the distance between these two points that are the images is shorter than the distance between these two. This is the contraction: I take any two points, I compute the images, and the distance is shorter, right?
+\end{speech}
+
+\begin{speech}[00:23:28 - 00:25:05]
+And now, what we will do is this: we will take a single point, say $x_0$ \inlinemetanote{marks $x_0$ in green chalk near the center of $X$}. We will compute its image, $T(x_0)$ \inlinemetanote{draws arrow to $T(x_0)$}. And now we will think of this point as the $y$.
+
+Then I will compute its image again, let's say $T^2(x_0)$ \inlinemetanote{writes $T^2(x_0)$ and draws arrow}, the image $T(T(x_0))$. This is just a notation: $T^2$ means I apply the map $T$ twice, right?
+
+I'm just looking at where this point is sent: $x_0$ is sent to $T(x_0)$, this is sent to $T(T(x_0))$, then $T(T(T(x_0)))$ \inlinemetanote{writes $T^3(x_0)$ and draws arrow}, right?
+
+And what happens? These were my first point, the second point... and you see, these two are the images: this is sent to this, and this is sent to this, right?
+
+So, the distance here is bigger than the distance here; the distance here is bigger than the distance here. And it's not only bigger: it is geometrically bigger, the distances form a geometric sequence. It's contracting with a geometric factor.
+
+So, every time the distances will become smaller and smaller in a geometric fashion. And since we are in a complete metric space, we will have a Cauchy sequence, which will force the convergence of the sequence, okay?
+
+This is the plan of the proof, and now we write it.
+\end{speech}
+
+\begin{content}[Heuristic Visualization of the Picard Iteration]
+\begin{hidden}
+% - Canvas: scale 1.3, large smooth oval domain X centered at (0,0), radius approx 2.6.
+% - Elements:
+%   (1) Domain boundary X (thick MidnightBlue).
+%   (2) Self-mapping loop arrow T: X -> X outside the domain.
+%   (3) Picard iteration sequence points:
+%       x_0 = (-1.4, 0.4) [in ForestGreen]
+%       x_1 = T(x_0) = (0.3, 0.9)
+%       x_2 = T^2(x_0) = (0.9, 0.1)
+%       x_3 = T^3(x_0) = (0.6, -0.3)
+%       x_4 = T^4(x_0) = (0.4, -0.15)
+%       Fixed point x^* = (0.45, -0.05) [in BrickRed]
+%   (4) Step arrows connecting x_n -> x_{n+1} (BurntOrange).
+%   (5) Another pair of points (x, y) with chord distances showing shrinkage.
+% - Distance calculation:
+%   d(x_0, x_1) = sqrt(1.7^2 + 0.5^2) ≈ 1.77
+%   d(x_1, x_2) = sqrt(0.6^2 + 0.8^2) = 1.00  (factor ≈ 0.56)
+%   d(x_2, x_3) = sqrt(0.3^2 + 0.4^2) = 0.50  (factor = 0.50)
+%   d(x_3, x_4) = sqrt(0.2^2 + 0.15^2) = 0.25 (factor = 0.50)
+% - Collision check: Labels placed carefully at offsets from nodes.
+\end{hidden}
+\begin{center}
+\begin{tikzpicture}[scale=1.3, >=Stealth]
+    % Domain X
+    \draw[ultra thick, MidnightBlue, fill=MidnightBlue!5] 
+        (0,0) .. controls (2.2,2.0) and (2.8,0.5) .. (2.4,-1.2)
+              .. controls (2.0,-2.3) and (-0.5,-2.2) .. (-1.8,-1.5)
+              .. controls (-2.8,-0.8) and (-2.6,1.4) .. cycle;
+    \node[MidnightBlue, font=\Large\bfseries] at (-2.0, 1.4) {$X$};
+
+    % Self-map loop T
+    \draw[->, thick, MidnightBlue] (1.5, 1.6) arc[start angle=150, end angle=-130, radius=0.7cm] 
+        node[midway, right=2pt, font=\bfseries] {$T$};
+
+    % Picard iteration points
+    \coordinate (X0) at (-1.4, 0.4);
+    \coordinate (X1) at (0.3, 0.9);
+    \coordinate (X2) at (0.9, 0.1);
+    \coordinate (X3) at (0.6, -0.35);
+    \coordinate (X4) at (0.4, -0.15);
+    \coordinate (Xstar) at (0.48, -0.05);
+
+    % Iteration path arrows
+    \draw[->, thick, BurntOrange] (X0) -- (X1);
+    \draw[->, thick, BurntOrange] (X1) -- (X2);
+    \draw[->, thick, BurntOrange] (X2) -- (X3);
+    \draw[->, thick, BurntOrange] (X3) -- (X4);
+
+    % Point nodes
+    \fill[ForestGreen] (X0) circle (2.2pt) node[below left, ForestGreen, font=\small\bfseries] {$x_0$};
+    \fill[black] (X1) circle (1.8pt) node[above=2pt, font=\footnotesize] {$T(x_0)$};
+    \fill[black] (X2) circle (1.8pt) node[right=2pt, font=\footnotesize] {$T^2(x_0)$};
+    \fill[black] (X3) circle (1.5pt) node[below=2pt, font=\footnotesize] {$T^3(x_0)$};
+    \fill[BrickRed] (Xstar) circle (2.0pt) node[above left=1pt, BrickRed, font=\footnotesize\bfseries] {$x^*$};
+
+    % Contraction illustration on another pair of points
+    \coordinate (A) at (-1.6, -0.9);
+    \coordinate (B) at (-0.8, -1.5);
+    \coordinate (TA) at (-0.8, -0.8);
+    \coordinate (TB) at (-0.4, -1.1);
+
+    \fill[gray!80!black] (A) circle (1.5pt) node[left=1pt, font=\footnotesize] {$x$};
+    \fill[gray!80!black] (B) circle (1.5pt) node[below=1pt, font=\footnotesize] {$y$};
+    \draw[dashed, thick, gray!80] (A) -- (B) node[midway, below left, font=\tiny] {$d(x,y)$};
+
+    \fill[gray!80!black] (TA) circle (1.5pt) node[above=1pt, font=\footnotesize] {$T(x)$};
+    \fill[gray!80!black] (TB) circle (1.5pt) node[right=1pt, font=\footnotesize] {$T(y)$};
+    \draw[dashed, thick, ForestGreen] (TA) -- (TB) node[midway, right=1pt, font=\tiny] {$d(T(x),T(y))$};
+
+    \draw[->, thin, gray!60] (A) to[bend left=15] (TA);
+    \draw[->, thin, gray!60] (B) to[bend left=15] (TB);
+\end{tikzpicture}
+\end{center}
+
+\begin{steps}[The Picard Iteration Mechanism]
+The heuristic idea of the constructive proof consists in setting up the \newterm{Picard iteration}:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0}
+    \item Pick an arbitrary initial point $x_0 \in X$ and define recursively:
+    \[
+    x_1 := T(x_0), \quad x_2 := T(x_1) = T^2(x_0), \quad \dots, \quad x_{n+1} := T(x_n) = T^{n+1}(x_0).
+    \]
+    \item By the contraction property \eqref{eq:contraction-condition}:
+    \[
+    d(x_{n+1}, x_n) = d\bigl(T(x_n), T(x_{n-1})\bigr) \le \lambda \cdot d(x_n, x_{n-1}) \le \dots \le \lambda^n \cdot d(x_1, x_0).
+    \]
+    \item Since $\lambda < 1$, the terms $\lambda^n$ form a convergent geometric series. For any $m > n$:
+    \[
+    d(x_m, x_n) \le \sum_{k=n}^{m-1} d(x_{k+1}, x_k) \le d(x_1, x_0) \sum_{k=n}^{m-1} \lambda^k \le d(x_1, x_0) \cdot \frac{\lambda^n}{1 - \lambda}.
+    \]
+    As $n \to \infty$, the right-hand side tends to $0$, proving that $(x_n)_{n \ge 0}$ is a Cauchy sequence.
+    \item Because $(X, d)$ is complete, the Cauchy sequence converges to a limit $x^* \in X$, which is the unique fixed point.
+\end{enumerate}
+\end{steps}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:24:42
+% topic: Banach Fixed Point Theorem heuristic sketch and Picard iteration
+% board_state: thm:banach-fixed-point, eq:contraction-condition, eq:unique-fixed-point
+% next_goal: Formal proof of the Banach Fixed Point Theorem (Cauchy sequence estimates and limit)
+% open_loops: none
+\end{hidden}
+
+\subsection{Proof of the Banach Fixed Point Theorem}
+
+\begin{proofWrapper}[Proof of the Banach Fixed Point Theorem \ref{thm:banach-fixed-point}]
+
+\subsubsection{Construction of the Sequence and Contraction Decay}
+
+\begin{speech}[00:25:05 - 00:26:36]
+\inlinemetanote{writes \qt{Proof} on the upper right board} What did I say? Fix a point. A bit the strength and the magic about this theorem is that it doesn't matter. You want to find a solution of this equation, right?
+
+This is a non-linear map, so this is any map. It's not linear algebra, it's any map. Finding a solution to an equation with a non-linear map is typically very, very hard, right?
+
+You can start with any initial point. Start with any $x_0$.
+
+\inlinemetanote{writes $\text{fix } x_0 \in X$} And now you start to bootstrap. So, you start to say: okay, let me define $x_1$ equal to $T(x_0)$ \inlinemetanote{writes $x_1 = T(x_0)$}. Then $x_2$ is equal to $T(x_1)$ \inlinemetanote{writes $x_2 = T(x_1)$}, that is, $T(T(x_0))$. And so on: $x_{n+1}$ is equal to $T(x_n)$ \inlinemetanote{writes $x_{n+1} = T(x_n)$}, for all $n \ge 0$ \inlinemetanote{writes $\forall n \ge 0$}. Right?
+
+This is the recurrence. \inlinemetanote{draws a frame around $x_{n+1} = T(x_n), \ \forall n \ge 0$}
+\end{speech}
+
+\begin{content}[Iterative Sequence Construction]
+\textbf{Step 1: Picard Iteration Scheme.} \\
+Fix an arbitrary point $x_0 \in X$. We define the sequence of iterates $(x_n)_{n=0}^\infty \subseteq X$ recursively by:
+\begin{align}
+x_1 &:= T(x_0), \nonumber \\
+x_2 &:= T(x_1) = T\bigl(T(x_0)\bigr) = T^2(x_0), \nonumber \\
+&\;\;\vdots \nonumber \\
+x_{n+1} &:= T(x_n) \quad \forall n \ge 0. \label{eq:picard-iteration-recurrence}
+\end{align}
+\end{content}
+
+\begin{speech}[00:26:36 - 00:28:27]
+And now I use that it is a contraction, right? I say: okay, the distance between $x_{n+1}$ and $x_n$ \inlinemetanote{writes $d(x_{n+1}, x_n)$}...
+
+What is $x_{n+1}$? This is the distance between $T(x_n)$ and $T(x_{n-1})$ \inlinemetanote{writes $= d(T(x_n), T(x_{n-1}))$}, right? Each point is, by definition, $T$ applied to the previous point in the sequence. So, the distance between these points is the same, because this is this, and this is that.
+
+And now I use that $T$ is a contraction. So, this distance is less than or equal to $\lambda$ times the distance between $x_n$ and $x_{n-1}$ \inlinemetanote{writes $\le \lambda \, d(x_n, x_{n-1})$}. And $\lambda < 1$, right?
+
+\inlinemetanote{draws a green box around the inequality $d(x_{n+1}, x_n) = d(T(x_n), T(x_{n-1})) \le \lambda \, d(x_n, x_{n-1})$} And this is the key property I will use to prove that my sequence is Cauchy. \inlinemetanote{writes $(*)$ in green chalk underneath the boxed inequality}
+\end{speech}
+
+\begin{content}[The Fundamental Step Estimate]
+\textbf{Step 2: Consecutive Distance Decay.} \\
+Using the recursive definition \eqref{eq:picard-iteration-recurrence} and the contraction property \eqref{eq:contraction-condition}, we compute the distance between consecutive iterates for any $n \ge 1$:
+\begin{equation}\label{eq:consecutive-step-decay}
+d(x_{n+1}, x_n) = d\bigl(T(x_n), T(x_{n-1})\bigr) \le \lambda \cdot d(x_n, x_{n-1}). \tag{\textcolor{ForestGreen}{$\ast$}}
+\end{equation}
+The relation \eqref{eq:consecutive-step-decay} is our key structural estimate: each step is strictly contracted by the constant factor $\lambda \in (0, 1)$.
+\end{content}
+
+\subsubsection{Proof of the Cauchy Property}
+
+\begin{speech}[00:28:27 - 00:30:11]
+Now I claim that $(*)$ \inlinemetanote{points at \eqref{eq:consecutive-step-decay}} will give me that the sequence $(x_n)$ is Cauchy \inlinemetanote{writes $(*) \implies (x_n) \text{ is Cauchy}$ on the board}.
+
+Well, first I need to compound property $(*)$, right? I need to say: okay, a first consequence of $(*)$ is that the distance between $x_{n+1}$ and $x_n$ is less than or equal to $\lambda$ times the distance between $x_n$ and $x_{n-1}$ \inlinemetanote{writes $d(x_{n+1}, x_n) \le \lambda \, d(x_n, x_{n-1})$}.
+
+And I can compare to the previous step, right? This is less than or equal to $\lambda \cdot \lambda$ times the distance between $x_{n-1}$ and $x_{n-2}$ \inlinemetanote{writes $\le \lambda \lambda \, d(x_{n-1}, x_{n-2})$}.
+
+And then you can prove by induction --- if you want to write a full, rigorous proof --- that after $n$ steps you arrive at $\lambda^n$ times the distance between $x_1$ and $x_0$ \inlinemetanote{writes $\le \dots \le \lambda^n \, d(x_1, x_0)$}, right? Okay.
+\end{speech}
+
+\begin{content}[Compounding the Contraction Estimate]
+\textbf{Step 3: Iterated Contraction Bound.} \\
+Applying the fundamental estimate \eqref{eq:consecutive-step-decay} iteratively $n$ times yields:
+\begin{align}
+d(x_{n+1}, x_n) &\le \lambda \cdot d(x_n, x_{n-1}) \nonumber \\
+&\le \lambda^2 \cdot d(x_{n-1}, x_{n-2}) \nonumber \\
+&\le \dots \nonumber \\
+&\le \lambda^n \cdot d(x_1, x_0) \quad \forall n \ge 0. \label{eq:iterated-contraction-bound}
+\end{align}
+\end{content}
+
+\begin{speech}[00:30:11 - 00:31:57]
+And now we will use the triangle inequality.
+
+I want to prove that the sequence is Cauchy, right? So, I want to control the distance between $x_n$ and $x_m$ \inlinemetanote{writes $d(x_n, x_m)$}.
+
+Let me assume, because the distance is symmetric, that $m < n$ \inlinemetanote{writes $m < n$ in a small box}. This is the large one. I can assume this without loss of generality, because the distance is symmetric in its arguments.
+
+Then I want to control that, and what I can do is use the triangle inequality \inlinemetanote{writes $\le \text{triangle inequality}$}. This is bounded by the sum for $k = m$ to $n-1$ \inlinemetanote{writes $\sum_{k=m}^{n-1}$}, and now I need to take the distance between $x_{k+1}$ and $x_k$ \inlinemetanote{writes $d(x_{k+1}, x_k)$}. So...
+\end{speech}
+
+\begin{speech}[00:31:57 - 00:33:27]
+Let's go step by step. What I'm saying over here is that this is a triangle inequality. Actually, it is a compounded triangle inequality: I'm using the triangle inequality many times, right?
+
+You will see this very clearly in a picture. What I'm saying is: I have my point $x_m$. Now comes the point $x_{m+1}$, $x_{m+2}$, $x_{m+3}$, and so on, up to the point $x_n$, right? Every time they are closer.
+
+And what I'm saying is that the distance between these two points \inlinemetanote{draws a chord connecting $x_m$ and $x_n$ directly} is less than or equal to the sum of the distances between this and this, this and this, this and this, this and this, and so on \inlinemetanote{draws segments connecting the intermediate points forming a polygonal path}. Right?
+
+Now, if you want a fully rigorous, fully detailed proof that this form of the triangle inequality is true --- intuitively it's clear, but if you want to write the full proof --- you need to prove it by induction on the number of segments, right? You start with three points: that's the standard triangle inequality. Then you add one, step by step, and you get the proof of that.
+\end{speech}
+
+\begin{content}[The Polygonal Triangle Inequality]
+\textbf{Step 4: Compounded Triangle Inequality.} \\
+Let $n, m \in \mathbb{N}$ with $m < n$ (assumed without loss of generality since $d(x_n, x_m) = d(x_m, x_n)$). By repeatedly applying the triangle inequality across intermediate points $x_m, x_{m+1}, \dots, x_n$:
+\begin{equation}\label{eq:compounded-triangle-inequality}
+d(x_n, x_m) \le \sum_{k=m}^{n-1} d(x_{k+1}, x_k).
+\end{equation}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.4, >=Stealth]
+% \begin{hidden}
+% - Canvas: scale=1.4, frame bounding the polygonal chain in [0, 4.5] x [0, 2.5]
+% - Order: (1) Frame enclosing the blackboard sketch; (2) Chord connecting x_m to x_n (direct distance);
+%   (3) Intermediate polygon edges connecting consecutive points x_k to x_{k+1};
+%   (4) Point markers and labels.
+% - Coordinates:
+%   x_m = (0.5, 0.4)
+%   x_{m+1} = (1.4, 1.3)
+%   x_{m+2} = (2.2, 1.7)
+%   x_{m+3} = (2.9, 1.8)
+%   dots ≈ (3.4, 1.75)
+%   x_n = (4.0, 1.5)
+% - Label placement:
+%   x_m below left; x_{m+1} above left; x_n above right;
+%   direct chord marked with d(x_n, x_m); polygonal edges marked with d(x_{k+1}, x_k).
+% \end{hidden}
+
+    % Chalkboard frame
+    \draw[thick, gray!50] (0, 0) rectangle (4.6, 2.4);
+
+    \coordinate (Xm) at (0.5, 0.4);
+    \coordinate (Xm1) at (1.4, 1.3);
+    \coordinate (Xm2) at (2.2, 1.7);
+    \coordinate (Xm3) at (2.9, 1.8);
+    \coordinate (Xn) at (4.0, 1.5);
+
+    % Direct chord (d(x_n, x_m))
+    \draw[dashed, thick, MidnightBlue] (Xm) -- (Xn)
+        node[midway, below right, font=\footnotesize] {$d(x_n, x_m)$};
+
+    % Polygonal path
+    \draw[ultra thick, ForestGreen] (Xm) -- (Xm1) -- (Xm2) -- (Xm3);
+    \draw[ultra thick, ForestGreen, dotted] (Xm3) -- (3.5, 1.65);
+    \draw[ultra thick, ForestGreen] (3.5, 1.65) -- (Xn);
+
+    \fill[black] (Xm) circle (1.8pt) node[below left, font=\footnotesize] {$x_m$};
+    \fill[black] (Xm1) circle (1.8pt) node[above left, font=\footnotesize] {$x_{m+1}$};
+    \fill[black] (Xm2) circle (1.8pt);
+    \fill[black] (Xm3) circle (1.8pt);
+    \node[font=\footnotesize] at (3.4, 1.95) {$\dots$};
+    \fill[black] (Xn) circle (1.8pt) node[above right, font=\footnotesize] {$x_n$};
+\end{tikzpicture}
+\end{center}
+
+\begin{steps}[Inductive Justification of the Polygonal Inequality]
+For two points, the inequality is trivial ($d(x, x) = 0$). For three points, it is the standard triangle inequality $d(x_3, x_1) \le d(x_3, x_2) + d(x_2, x_1)$. Assuming the claim holds for $p$ segments:
+\[
+d(x_{m+p}, x_m) \le d(x_{m+p}, x_{m+p-1}) + d(x_{m+p-1}, x_m) \le d(x_{m+p}, x_{m+p-1}) + \sum_{k=m}^{m+p-2} d(x_{k+1}, x_k) = \sum_{k=m}^{m+p-1} d(x_{k+1}, x_k),
+\]
+which proves \eqref{eq:compounded-triangle-inequality} by mathematical induction for all $n > m$.
+\end{steps}
+\end{content}
+
+\begin{speech}[00:33:27 - 00:35:09]
+And now, when I have this, I use the property that I showed here \inlinemetanote{points at \eqref{eq:iterated-contraction-bound}}.
+
+This implies that the distance between $x_n$ and $x_m$ \inlinemetanote{writes $\implies d(x_n, x_m)$} is less than or equal to the sum from $k = m$ to $n-1$ \inlinemetanote{writes $\le \sum_{k=m}^{n-1}$}. And now, remember that the distance between $x_{k+1}$ and $x_k$ was $\lambda^k$ times the distance between $x_1$ and $x_0$ \inlinemetanote{writes $\lambda^k \, d(x_1, x_0)$}.
+
+And this is now a common factor \inlinemetanote{underlines $d(x_1, x_0)$ in green}, so I can take it out: this is the distance between $x_1$ and $x_0$ \inlinemetanote{writes $\le d(x_1, x_0)$} times the sum of a geometric series. Remember that I said before that there will be a geometric series? So, here you have your geometric series.
+
+When you sum this geometric series, you get $\lambda^m$ \inlinemetanote{writes $\lambda^m$}, right? And then something that is less than $1 / (1 - \lambda)$ \inlinemetanote{writes $\frac{1}{1-\lambda}$}.
+
+This $1 / (1 - \lambda)$ is the sum of the geometric series up to infinity. When I truncate, it's less than that, right? Now you know how to sum geometric series: in Analysis~I you did a lot of that.
+\end{speech}
+
+\begin{speech}[00:35:09 - 00:35:47]
+Okay, this is just a constant, this is just a constant, and what is important is this \inlinemetanote{draws a green box around $\lambda^m$}: since when $m$ goes to infinity, this $\lambda^m$ goes to zero, my sequence is Cauchy.
+
+So, as $\lambda^m \to 0$ as $m \to \infty$ \inlinemetanote{writes $\implies \lambda^m \to 0 \text{ as } m \to \infty$}, the sequence is Cauchy \inlinemetanote{writes $\text{sequence is as Cauchy}$ and underlines Cauchy in green}, right?
+\end{speech}
+
+\begin{content}[Geometric Series Summation and the Cauchy Condition]
+\textbf{Step 5: Summing the Geometric Series.} \\
+Substituting the iterated bound \eqref{eq:iterated-contraction-bound} into the polygonal triangle inequality \eqref{eq:compounded-triangle-inequality}:
+\begin{align}
+d(x_n, x_m) &\le \sum_{k=m}^{n-1} d(x_{k+1}, x_k) \nonumber \\
+&\le \sum_{k=m}^{n-1} \lambda^k \cdot d(x_1, x_0) \nonumber \\
+&= d(x_1, x_0) \sum_{k=m}^{n-1} \lambda^k. \label{eq:factoring-initial-step}
+\end{align}
+Factoring out $\lambda^m$ from the summation:
+\begin{equation}\label{eq:geometric-summation}
+\sum_{k=m}^{n-1} \lambda^k = \lambda^m \sum_{j=0}^{n-1-m} \lambda^j < \lambda^m \sum_{j=0}^\infty \lambda^j = \lambda^m \cdot \frac{1}{1 - \lambda}.
+\end{equation}
+Therefore, combining \eqref{eq:factoring-initial-step} and \eqref{eq:geometric-summation}:
+\begin{equation}\label{eq:cauchy-uniform-bound}
+d(x_n, x_m) \le d(x_1, x_0) \cdot \frac{\lambda^m}{1 - \lambda} \quad \forall n > m \ge 0.
+\end{equation}
+Since $\lambda \in (0, 1)$, we have:
+\begin{equation}\label{eq:lambda-m-vanishes}
+\lim_{m \to \infty} \lambda^m = 0.
+\end{equation}
+Hence, for any $\varepsilon > 0$, choosing $M \in \mathbb{N}$ sufficiently large such that:
+\[
+d(x_1, x_0) \cdot \frac{\lambda^M}{1 - \lambda} < \varepsilon
+\]
+guarantees that $d(x_n, x_m) < \varepsilon$ for all $n > m \ge M$. This proves that $(x_n)_{n=0}^\infty$ is a \textbf{Cauchy sequence} in $(X, d)$.
+\end{content}
+
+\subsubsection{Convergence and Existence of the Fixed Point}
+
+\begin{speech}[00:35:47 - 00:36:41]
+Now that I know that the sequence is Cauchy, I use my assumption that the metric space is complete, and this sequence has a limit in my space.
+
+So then, since $X$ is complete \inlinemetanote{writes $X \text{ is complete}$}, there exists $x = \lim_{n \to \infty} x_n$ \inlinemetanote{writes $\exists \ x = \lim_{n \to \infty} x_n$}, right? In my drawing...
+
+\inlinemetanote{points at the Picard sketch on the right board} I was taking the sequence of points: every time they are closer and closer, and in the end, I get a point that is so close to itself that it doesn't move, right? So, this will be the fixed point.
+\end{speech}
+
+\begin{speech}[00:36:41 - 00:37:50]
+Now, why is this a fixed point? Now it's very easy, because you see, if I compute $T(x)$ \inlinemetanote{writes $T x$}... Well, the map is continuous, right? The map is Lipschitz, so it is continuous \inlinemetanote{writes $T \text{ continuous}$ above the equals sign}.
+
+Since $T$ is continuous, this is the limit as $n \to \infty$ of $T(x_n)$ \inlinemetanote{writes $= \lim_{n \to \infty} T x_n$}, right?
+
+But this is the limit as $n \to \infty$ of $x_{n+1}$ \inlinemetanote{writes $= \lim_{n \to \infty} x_{n+1}$}. And $(x_{n+1})$ is just the same sequence, right? It is a subsequence, just shifting by one. So, this has the same limit, $x$ \inlinemetanote{writes $= x$}.
+
+So, my point $x$ is a fixed point. \inlinemetanote{draws a green box around $T x = \lim_{n \to \infty} T x_n = \lim_{n \to \infty} x_{n+1} = x$}
+\end{speech}
+
+\begin{content}[Convergence to a Fixed Point]
+\textbf{Step 6: Existence of the Limit and Fixed Point Property.} \\
+Because $(X, d)$ is assumed to be a \textbf{complete} metric space, every Cauchy sequence converges to a limit in $X$:
+\begin{equation}\label{eq:limit-definition}
+\exists \, x^* \in X \quad \text{such that} \quad x^* = \lim_{n \to \infty} x_n.
+\end{equation}
+We verify that $x^*$ is indeed a fixed point of $T$. Since $T$ is $\lambda$-Lipschitz, it is in particular continuous. Passing the limit inside $T$:
+\begin{align}
+T(x^*) &= T\left(\lim_{n \to \infty} x_n\right) \nonumber \\
+&= \lim_{n \to \infty} T(x_n) && \text{(since $T$ is continuous)} \nonumber \\
+&= \lim_{n \to \infty} x_{n+1} && \text{(by definition of the sequence)} \nonumber \\
+&= x^* && \text{(shifting indices preserves the limit)}. \label{eq:fixed-point-verification}
+\end{align}
+Thus, $T(x^*) = x^*$, establishing the existence of a fixed point.
+\end{content}
+
+\subsubsection{Uniqueness of the Fixed Point}
+
+\begin{speech}[00:37:50 - 00:38:44]
+And I'm almost done. I just need to check something: now I showed the existence of a fixed point.
+
+What I need to show to close the proof of the theorem is that this fixed point is unique, that there cannot be two fixed points. But this is very easy because of the contraction property, right?
+
+If $x$ and $y$ are two fixed points \inlinemetanote{writes $\text{If } x, y \text{ are } 2 \text{ fixed pts}$}, because they are fixed points, $x = T(x)$ \inlinemetanote{writes $x = T(x)$} and $y = T(y)$ \inlinemetanote{writes $y = T(y)$}.
+
+And now I use the contracting property: $d(x, y) = d(T(x), T(y))$ \inlinemetanote{writes $d(x, y) = d(T(x), T(y))$}.
+\end{speech}
+
+\begin{speech}[00:38:44 - 00:39:49]
+Then this is less than or equal to $\lambda$ times the distance between $x$ and $y$ \inlinemetanote{writes $\le \lambda \, d(x, y)$}. And $\lambda < 1$.
+
+So, you can never have a positive number less than or equal to $\lambda$ times itself, with $\lambda < 1$, unless this number is zero.
+
+This implies that $d(x, y) = 0$ \inlinemetanote{writes $\implies d(x, y) = 0$}, and then by one of the axioms of the metric, this implies $x = y$ \inlinemetanote{writes $\implies x = y$}.
+
+And this ends the proof of the theorem. \inlinemetanote{draws a shaded box on the board for Q.E.D.}
+\end{speech}
+
+\begin{content}[Uniqueness of the Fixed Point]
+\textbf{Step 7: Uniqueness.} \\
+Suppose $x, y \in X$ are both fixed points of $T$, so that $T(x) = x$ and $T(y) = y$. Applying the contraction property \eqref{eq:contraction-condition}:
+\begin{align}
+d(x, y) &= d\bigl(T(x), T(y)\bigr) \nonumber \\
+&\le \lambda \cdot d(x, y). \label{eq:uniqueness-contraction-ineq}
+\end{align}
+Subtracting $\lambda \cdot d(x, y)$ from both sides gives:
+\begin{equation}\label{eq:uniqueness-factorization}
+(1 - \lambda) \cdot d(x, y) \le 0.
+\end{equation}
+Since $\lambda \in (0, 1)$, the coefficient $1 - \lambda$ is strictly positive ($1 - \lambda > 0$). Because distances in a metric space are non-negative ($d(x, y) \ge 0$), inequality \eqref{eq:uniqueness-factorization} forces:
+\begin{equation}\label{eq:distance-is-zero}
+d(x, y) = 0.
+\end{equation}
+By the definiteness axiom of a metric:
+\[
+d(x, y) = 0 \implies x = y.
+\]
+Therefore, the fixed point is unique, completing the proof of the Banach Fixed Point Theorem.
+\end{content}
+
+\end{proofWrapper}
+
+\begin{hidden}
+% timestamp: 00:19:10
+% topic: Banach Fixed Point Theorem Proof Completed
+% board_state: thm:banach-fixed-point, eq:consecutive-step-decay, eq:iterated-contraction-bound, eq:cauchy-uniform-bound, eq:fixed-point-verification
+% next_goal: Contextual remarks on Cauchy-Lipschitz and Inverse Function Theorem before lecture break
+% open_loops: none
+\end{hidden}
+
+\section{Connection to Ordinary Differential Equations and the Break}
+
+\subsection{The Cauchy--Lipschitz Theorem and Fixed Point Methods}
+
+\begin{speech}[00:39:49 - 00:40:57]
+Now I'm going to wash my hands and erase the blackboard, and then you think if you have questions about the theorem, okay? \inlinemetanote{walks over to the sink to wash hands, then wipes the lower blackboard with a wet sponge and squeegee}
+\end{speech}
+
+\begin{note}[Blackboard Maintenance]
+The lecturer washes his hands at the sink and thoroughly cleans the lower blackboard panels with a sponge and squeegee while the students review the proof.
+\end{note}
+
+\begin{speech}[00:40:57 - 00:41:52]
+Since it is almost the time of the break, and you can also think about questions during the break, let me tell you something to connect this theorem with something you already know: that is Cauchy--Lipschitz.
+
+In Analysis~I, you should have proven the Cauchy--Lipschitz theorem for ordinary differential equations, haven't you? \inlinemetanote{throws the orange catch-box microphone to a student in the audience} Sorry.
+\end{speech}
+
+\begin{student}[Student Remark]
+We did it at the end, but it was more like, how to say it, freiwilliger Zusatzstoff. He said that we're going to do it in Analysis II.
+\end{student}
+
+\begin{speech}[00:42:01 - 00:42:03]
+Could you speak a bit louder? Yeah.
+\end{speech}
+
+\begin{student}[Student Remark, Continued]
+Yes. Um, I'm not sure if I'm the right spokesperson for this, but Professor Figalli said we did it at the end, but it was more like Zusatzmaterial. He said we will do it more profoundly in Analysis II.
+\end{student}
+
+\begin{speech}[00:42:14 - 00:44:24]
+This is correct. Cauchy--Lipschitz we will do at the end of this course, in all detail in Analysis~II. That's why we bother about spaces of functions.
+
+When you want to prove the existence of a solution of an ODE, you have some equation --- it is a non-linear equation ---, but the space where your equation lives is a space of functions: it will be the trajectories of your ODE. Every point in your space is a trajectory. This is how you do it.
+
+And then the key idea of this proof --- the Picard proof --- is to set up a contraction map. Since it is a contraction, it will easily give you the existence of a fixed point.
+
+Whenever you want to solve a complicated equation, there is a general strategy that does not always work, but works in many cases and is very effective: to rewrite your equation as a fixed point of some contraction. And then you just run the machine, you compose your map with itself, and you end up with a fixed point. \inlinemetanote{wipes down the remainder of the lower board with a sponge}
+
+We will also use this in this course to prove a very fundamental and important theorem in the course: that is the Inverse Function Theorem. This is one of the big theorems in the course that is very useful, and the proof is not trivial; it will be again based on a variant of this Banach Fixed Point Theorem.
+\end{speech}
+
+\begin{insight}[The Contraction Mapping Principle as a Universal Existence Machine]
+The Banach Fixed Point Theorem is one of the most powerful foundational tools in modern analysis because it transforms an otherwise intractable \textbf{non-linear equation solving problem}:
+\[
+F(x) = 0
+\]
+into a \textbf{fixed point problem}:
+\[
+T(x) = x \quad (\text{for instance by setting } T(x) := x - \alpha F(x)).
+\]
+When $T$ is arranged to be a contraction on a complete space:
+\begin{itemize}
+    \item \textbf{Constructive Nature:} The proof does not merely assert existence abstractly; it provides an explicit algorithm (Picard iteration $x_{n+1} = T(x_n)$) that generates approximations with quantifiable geometric error bounds:
+    \[
+    d(x_n, x^*) \le \frac{\lambda^n}{1 - \lambda} \cdot d(x_1, x_0).
+    \]
+    \item \textbf{Infinite-Dimensional Function Spaces:} When applied to spaces of continuous trajectories $C([0, T], \mathbb{R}^n)$ equipped with the supremum metric $\|u - v\|_\infty$, the theorem yields the Picard--Lindelöf (Cauchy--Lipschitz) Theorem for existence and uniqueness of solutions to initial value problems $\dot{x}(t) = f(t, x(t))$.
+    \item \textbf{Multivariable Calculus:} In later chapters of this course, an adapted form of this principle will serve as the engine driving the proof of the Inverse Function Theorem and the Implicit Function Theorem in $\mathbb{R}^n$.
+\end{itemize}
+\end{insight}
+
+\subsection{Mid-Lecture Break and Q\&A}
+
+\begin{speech}[00:44:24 - 00:44:32]
+Is there any question before the break, or shall we just take the break? Okay, then let's take the break. \inlinemetanote{puts down microphone and announces break}
+\end{speech}
+
+\begin{pause}[Mid-Lecture Break]
+The lecturer announces a short break. Students use the time to think about questions regarding the Banach Fixed Point Theorem.
+\end{pause}
+
+\begin{speech}[00:44:33 - 00:46:20]
+Again, is there some question about the Banach Fixed Point Theorem? No?
+
+Does anyone have any question about the theorem? I left it on the blackboard to discuss it if you would like to. I don't see any question.
+
+Now let's try to be honest, so that I can adjust the pace: you have no questions because everything is so clear --- option number one ---, or you have no questions because you are completely lost? Option number one: who has no questions because it's so clear? \inlinemetanote{some students raise hands}
+
+Okay.
+
+And who has no questions because they are a bit lost? \inlinemetanote{other students raise hands}
+
+Well. The advantage is that many people... Thanks for the honesty. It's very important, because then I can see better.
+
+Since many people got something, or at least they say so... The problem is that if you don't ask me questions, it's very difficult for me to reply to questions. \inlinemetanote{laughter}
+
+What you can do when you think more about your questions: you can go to the TAs and to the peers that already understood the theorem, or some parts of it, and then we can continue the discussion another day.
+\end{speech}
+
+\begin{hidden}
+% timestamp: 00:05:01
+% topic: Break Q&A on Banach fixed point theorem complete; transition to compactness.
+% board_state: thm:banach-fixed-point, def:uniform-continuity, def:lipschitz-continuity
+% next_goal: Introduce Compactness; define covers, subcovers, and open covers.
+% open_loops: student questions on Banach fixed point deferred to TAs/office hours.
+\end{hidden}
+
+\section{Compactness}
+
+\subsection{Covers, Subcovers, and Open Covers}
+
+\begin{speech}[00:46:20 - 00:48:31]
+We can then switch to another topic, that is compactness. This starts to be... \inlinemetanote{walks to the left blackboard and writes \qt{Compactness}}
+
+This starts to be a bit more difficult today, okay? I warn you. We will give the first proof that is a bit more difficult: it is not long, but it is more difficult.
+
+First, let me define what a cover is. Given a set $X$... Let me give a definition. \inlinemetanote{writes \qt{Def'n (cover)} on the board} Definition of cover.
+
+Given a set $X$ \inlinemetanote{writes $X \text{ set}$} and $E \subseteq X$ \inlinemetanote{writes $E \subset X$}, we say that \inlinemetanote{writes $\text{we say that}$} this calligraphic letter $\mathcal{U}$ \inlinemetanote{writes $\mathcal{U}$} --- that is a collection of sets \inlinemetanote{writes $= \{ U_i \}_{i \in I}$} --- is a cover of $E$ \inlinemetanote{writes $\text{is a cover of } E$} if the union of the sets covers my set $E$. So, if $E$ is contained in the union of this family, capital $\mathcal{U}$ \inlinemetanote{writes $\text{if } E \subset \bigcup \mathcal{U}$}, which just means the union for $i \in I$ of the $U_i$ \inlinemetanote{writes $= \bigcup_{i \in I} U_i$}, right?
+\end{speech}
+
+\begin{speech}[00:48:31 - 00:49:50]
+And whenever you have a cover, if I give you $\mathcal{V} \subseteq \mathcal{U}$ that still covers \inlinemetanote{writes $\mathcal{V} \subset \mathcal{U}$} \inlinemetanote{writes $\text{still covers}$}, this is still a cover, we call it a subcover \inlinemetanote{writes $\text{we call subcover}$}, right?
+
+And maybe the last point: when all the sets in my cover are open \inlinemetanote{draws a box around the first part and writes above right}... If $\mathcal{U}$ is a collection of open sets that covers, as before \inlinemetanote{writes $\text{if } \mathcal{U} \text{ is a collection of open sets}$}, we call it an open cover \inlinemetanote{writes $\text{we call it open cover}$}, right?
+\end{speech}
+
+\begin{content}[Definition of Cover, Subcover, and Open Cover]
+Let $X$ be a set and let $E \subseteq X$ be a subset.
+
+\begin{definition}[Cover, Subcover, and Open Cover]\label[definition]{def:cover-subcover-open-cover}
+Let $\mathcal{U} = \{U_i\}_{i \in I}$ be a collection of subsets of $X$ indexed by a set $I$.
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0}
+    \item \textbf{Cover:} The collection $\mathcal{U}$ is called a \newterm{cover} of $E$ if $E$ is contained in the union of the sets in $\mathcal{U}$:
+    \begin{equation}\label{eq:cover-condition}
+    E \subseteq \bigcup \mathcal{U} = \bigcup_{i \in I} U_i.
+    \end{equation}
+    \setcounter{enumi}{1}
+    \item \textbf{Subcover:} If $\mathcal{V} \subseteq \mathcal{U}$ is a subcollection of $\mathcal{U}$ that still covers $E$, that is:
+    \begin{equation}\label{eq:subcover-condition}
+    E \subseteq \bigcup \mathcal{V} = \bigcup_{V \in \mathcal{V}} V,
+    \end{equation}
+    then $\mathcal{V}$ is called a \newterm{subcover} of $E$. If $\mathcal{V}$ contains only finitely many sets, it is called a \newterm{finite subcover}.
+    \setcounter{enumi}{2}
+    \item \textbf{Open Cover:} If $(X, d)$ is a metric space and every set $U_i \in \mathcal{U}$ is an open subset of $X$, then $\mathcal{U}$ is called an \newterm{open cover} of $E$.
+\end{enumerate}
+\end{definition}
+
+\begin{steps}[Notation and Structure of Covers]
+\begin{itemize}
+    \item \textbf{Index Set $I$:} The index set $I$ can be arbitrary: finite, countably infinite, or uncountably infinite.
+    \item \textbf{The Operator $\bigcup \mathcal{U}$:} In set theory, $\bigcup \mathcal{U}$ denotes the union of all elements of the family $\mathcal{U}$, meaning $x \in \bigcup \mathcal{U} \iff \exists U \in \mathcal{U} \text{ such that } x \in U$.
+    \item \textbf{Subcover vs. Subcollection:} A subcover $\mathcal{V} \subseteq \mathcal{U}$ consists of a selection of sets from $\mathcal{U}$. Crucially, $\mathcal{V}$ must still cover the entire set $E$, so no points of $E$ are left uncovered when discarding the remaining sets $\mathcal{U} \setminus \mathcal{V}$.
+\end{itemize}
+\end{steps}
+\end{content}
+
+\subsection{Geometric Example of a Cover in \texorpdfstring{$\mathbb{R}^2$}{R2}}
+
+\begin{speech}[00:49:50 - 00:50:33]
+Sometimes the set $E$ will be the whole space. Now, when I discuss compactness, the set $E$ will be the whole space, so it can be everything. But in general it could be --- and we will use many times in this course --- a subset.
+
+It is something like this. Let's say that $X = \mathbb{R}^2$ \inlinemetanote{writes $X = \mathbb{R}^2$} to make a drawing, and then I have my set... This is my set $E$, the square \inlinemetanote{draws a square and writes $E = [0, 1]^2$}:
+\end{speech}
+
+\begin{speech}[00:50:33 - 00:51:43]
+Then I can draw a cover of $E$ that could be this thing \inlinemetanote{draws rectangles covering $E$}, right? A cover by three sets. Or let's put four: these three, and then we can have another one that is, I don't know, this one \inlinemetanote{draws dashed rectangle with internal dots}.
+
+This is a cover, because every point is contained in one of the sets. Every point in my original square is contained in at least one of the rectangles I drew, isn't it? This point is contained actually in the yellow and in the dashed rectangle, right? The property to be a cover is that every point should be contained in at least one. It can be contained in many, but at least one.
+
+And then a subcover: if I want a subcover of this, I can take just the colored ones. So, I erase the dashed one, and it is still a cover, because every point will still be contained in at least one.
+\end{speech}
+
+\begin{speech}[00:51:43 - 00:52:13]
+And that's why we put it like this: we will also use infinite families of sets that cover my given space.
+
+Yeah, there is a question... \inlinemetanote{throws catch-box microphone to a student in the audience}
+\end{speech}
+
+\begin{student}[Student Question]
+So, um, should $\mathcal{V}$ as a subcover now be a subset of the family or of the union of the family?
+\end{student}
+
+\begin{speech}[00:52:21 - 00:52:34]
+A cover is a collection of sets, and a subcover is a subcollection that still covers.
+\end{speech}
+
+\begin{student}[Student Answer]
+Okay.
+\end{student}
+
+\begin{speech}[00:52:35 - 00:52:51]
+Right? Yes.
+
+Okay, this is a definition. Now we will see how to use that for compactness.
+\end{speech}
+
+\begin{content}[Geometric Example of a Cover and Subcover in $\mathbb{R}^2$]
+Let $X = \mathbb{R}^2$ and consider the unit square $E = [0, 1]^2 \subset \mathbb{R}^2$.
+
+\begin{example}[Cover and Subcover of a Square]\label[example]{ex:cover-subcover-square}
+Consider four open rectangles $U_1, U_2, U_3, U_4 \subset \mathbb{R}^2$ covering $E$:
+\begin{align*}
+U_1 &:= (-0.15, 1.15) \times (-0.15, 0.45), && \text{(\textcolor{BrickRed}{lower horizontal rectangle})} \\
+U_2 &:= (-0.1, 0.65) \times (0.3, 1.15), && \text{(\textcolor{ForestGreen}{upper-left rectangle})} \\
+U_3 &:= (0.45, 1.15) \times (0.25, 1.1), && \text{(\textcolor{BurntOrange}{upper-right rectangle})} \\
+U_4 &:= (-0.15, 0.55) \times (-0.1, 0.55). && \text{(\textcolor{gray}{redundant dashed rectangle})}
+\end{align*}
+Then $\mathcal{U} := \{U_1, U_2, U_3, U_4\}$ is an open cover of $E$. The subcollection $\mathcal{V} := \{U_1, U_2, U_3\} \subset \mathcal{U}$ already satisfies $E \subseteq U_1 \cup U_2 \cup U_3$, so $\mathcal{V}$ is a valid subcover of $E$.
+\end{example}
+
+\begin{center}
+\begin{tikzpicture}[scale=2.2, >=Stealth]
+    % \begin{hidden}
+    % - Canvas: scale 2.2, x in [-0.4, 1.4], y in [-0.3, 1.3]
+    % - Order: (1) Background unit square E = [0,1]^2 (MidnightBlue outline, light fill);
+    %   (2) U_1 (BrickRed rectangle, bottom); (3) U_2 (ForestGreen rectangle, upper-left);
+    %   (4) U_3 (BurntOrange rectangle, upper-right); (5) U_4 (dashed gray rectangle, redundant);
+    %   (6) Labels for E, U_1, U_2, U_3, U_4
+    % - Coordinates:
+    %   E: (0,0) rectangle (1,1)
+    %   U_1: (-0.15, -0.15) rectangle (1.15, 0.45)
+    %   U_2: (-0.1, 0.3) rectangle (0.65, 1.15)
+    %   U_3: (0.45, 0.25) rectangle (1.15, 1.1)
+    %   U_4: (-0.15, -0.1) rectangle (0.55, 0.55) [dashed]
+    % - Labels: E near top right inside, U_1 right, U_2 left, U_3 right, U_4 left
+    % - Collisions: none; distinct placements with clear offsets
+    % \end{hidden}
+    
+    % The Set E (Unit Square)
+    \draw[ultra thick, MidnightBlue, fill=MidnightBlue!5] (0,0) rectangle (1,1);
+    \node[MidnightBlue, font=\bfseries] at (0.85, 0.15) {$E = [0, 1]^2$};
+
+    % U_1: Lower horizontal rectangle (BrickRed)
+    \draw[thick, BrickRed, fill=BrickRed!10, opacity=0.7] (-0.15, -0.15) rectangle (1.15, 0.45);
+    \node[BrickRed, font=\footnotesize\bfseries] at (1.25, 0.3) {$U_1$};
+
+    % U_2: Upper-left vertical rectangle (ForestGreen)
+    \draw[thick, ForestGreen, fill=ForestGreen!10, opacity=0.7] (-0.1, 0.3) rectangle (0.65, 1.15);
+    \node[ForestGreen, font=\footnotesize\bfseries] at (-0.25, 0.95) {$U_2$};
+
+    % U_3: Upper-right vertical rectangle (BurntOrange)
+    \draw[thick, BurntOrange, fill=BurntOrange!10, opacity=0.7] (0.45, 0.25) rectangle (1.15, 1.1);
+    \node[BurntOrange, font=\footnotesize\bfseries] at (1.25, 0.9) {$U_3$};
+
+    % U_4: Redundant dashed rectangle (Gray)
+    \draw[thick, dashed, gray!80, fill=gray!15, opacity=0.6] (-0.15, -0.1) rectangle (0.55, 0.55);
+    \node[gray!90!black, font=\footnotesize\bfseries] at (-0.25, 0.1) {$U_4$};
+\end{tikzpicture}
+\end{center}
+
+\begin{steps}[Reading the Diagram]
+\begin{itemize}
+    \item \textbf{Cover Condition:} Every point $(x, y) \in [0, 1]^2$ belongs to at least one of the rectangles: points near the bottom lie in $U_1$, points on the upper-left lie in $U_2$, and points on the upper-right lie in $U_3$. Thus, $\mathcal{U} = \{U_1, U_2, U_3, U_4\}$ covers $E$.
+    \item \textbf{Subcover Extraction:} The dashed rectangle $U_4$ covers points that are already covered by $U_1$ and $U_2$. Discarding $U_4$ leaves $\mathcal{V} = \{U_1, U_2, U_3\}$, which still covers $E$, forming a subcover.
+    \item \textbf{Student Clarification:} As the professor clarified in the lecture, a subcover is a \emph{subcollection of sets} $\mathcal{V} \subseteq \mathcal{U}$ (not a geometric sub-region or subset of the union) that retains the covering property $E \subseteq \bigcup \mathcal{V}$.
+\end{itemize}
+\end{steps}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:11:32
+% topic: Definition of cover, subcover, open cover; geometric example on [0,1]^2 in R^2.
+% board_state: def:cover-subcover-open-cover, ex:cover-subcover-square
+% next_goal: Define Sequential Compactness; give Bolzano-Weierstrass example and Q counterexample.
+% open_loops: none
+\end{hidden}
+
+\subsection{Sequential Compactness}
+
+\begin{speech}[00:52:52 - 00:53:52]
+Now, definition... \inlinemetanote{writes $(X, d) \text{ metric space}$} Let $(X, d)$ be a metric space.
+
+Let $K \subseteq X$ be a set \inlinemetanote{writes $K \subset X \text{ set is called}$}. A set $K$ is called...
+
+As for continuity, we will have two equivalent definitions of compactness. Now I will say them: this is compactness, this is compactness. Later I will prove that they are really equivalent, right?
+
+Now I give different names. The first one is called sequential compactness:
+\end{speech}
+
+\begin{speech}[00:53:52 - 00:56:11]
+\inlinemetanote{writes $(1) \text{ sequential compactness}$} Sequential compactness.
+
+We say that $K$ is sequentially compact... \inlinemetanote{writes $K \text{ is seq cpt if}$}
+
+You know that sometimes I use abbreviations: they are useful for the blackboard, and also for you to take notes. The standard abbreviation of compactness is \qt{CPT}, compact. Sequential I put as \qt{seq}. Sequential compactness.
+
+$K$ is sequentially compact if for every sequence $(x_n)_{n \ge 0} \subseteq K$ \inlinemetanote{writes $\forall (x_n)_{n \ge 0} \subset K$} contained in my set $K$, I can find a convergent subsequence \inlinemetanote{writes $\exists (x_{n_k}) \text{ subsequence s.t.}$}: there exists a subsequence $(x_{n_k})$ such that $\lim_{k \to \infty} x_{n_k}$ \inlinemetanote{writes $\lim_{k \to \infty} x_{n_k}$} exists \inlinemetanote{writes $\text{exists}$} and belongs to $K$ \inlinemetanote{writes $\text{and belongs to } K$}.
+
+So, the first definition of compactness: a set is compact if whenever I take any sequence in the set, I can extract a subsequence that is convergent, and the limit is inside the set, okay?
+\end{speech}
+
+\begin{content}[Definition of Sequential Compactness]
+Let $(X, d)$ be a metric space and let $K \subseteq X$ be a subset.
+
+\begin{definition}[Sequential Compactness]\label[definition]{def:sequential-compactness}
+The set $K$ is called \newterm{sequentially compact} (abbreviated \newterm{seq.\ cpt}) if every sequence in $K$ possesses a subsequence that converges to a limit in $K$:
+\begin{equation}\label{eq:sequential-compactness-def}
+\forall (x_n)_{n \ge 0} \subseteq K, \quad \exists (x_{n_k})_{k \ge 0} \subseteq (x_n) \quad \text{such that} \quad \lim_{k \to \infty} x_{n_k} \text{ exists and } \lim_{k \to \infty} x_{n_k} \in K.
+\end{equation}
+\end{definition}
+
+\begin{steps}[Two Indispensable Requirements of the Definition]
+The condition of sequential compactness imposes two simultaneous constraints:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0}
+    \item \textbf{Existence of a Subsequential Limit (Boundedness/No Escape to Infinity):} For any sequence $(x_n) \subseteq K$, the points cannot escape to infinity or oscillate without accumulation points; there must exist at least one cluster point $x^*$.
+    \item \textbf{Containment of the Limit (Closedness/No Escape Across Boundaries):} The limit point $x^*$ must remain strictly inside $K$ ($x^* \in K$). If points could accumulate on a missing boundary point outside $K$, the condition would fail.
+\end{enumerate}
+\end{steps}
+\end{content}
+
+\subsection{Examples: Bolzano--Weierstrass and Non-Compactness of \texorpdfstring{$[0, 1] \cap \mathbb{Q}$}{[0, 1] cap Q}}
+
+\begin{speech}[00:56:12 - 00:57:26]
+Let me give an example from Analysis~I \inlinemetanote{writes \qt{Example (Analysis 1)} on the board}.
+
+Probably you have seen it under this name: the Bolzano--Weierstrass theorem \inlinemetanote{writes \qt{Bolzano-Weierstrass}}. Bolzano--Weierstrass says that if you take a closed interval $[a, b] \subset \mathbb{R}$ \inlinemetanote{writes $[a, b] \subset \mathbb{R}$}, it is always sequentially compact \inlinemetanote{writes $\text{is seq compact}$}, right? A closed interval with finite endpoints.
+
+Where was the question? Here? \inlinemetanote{throws catch-box microphone to a student in the audience} Oops, sorry, I fell short.
+\end{speech}
+
+\begin{student}[Student Question]
+Um... Isn't this just our definition of completeness, with the Cauchy sequence, but with a subsequence?
+\end{student}
+
+\begin{speech}[00:57:36 - 00:57:37]
+Any sequence.
+\end{speech}
+
+\begin{student}[Student Question, Continued]
+With, yeah, with any sequence and any subsequence. Is not the the same definition?
+\end{student}
+
+\begin{speech}[00:57:42 - 00:57:46]
+For any sequence there exists some subsequence.
+\end{speech}
+
+\begin{student}[Student Question, Continued]
+Okay.
+\end{student}
+
+\begin{speech}[00:57:47 - 00:57:51]
+Given a sequence, there is a subsequence. It's very strong, this.
+\end{speech}
+
+\begin{student}[Student Question, Continued]
+Okay. So it is like our completeness definition with the Cauchy sequence? 'Cause our completeness definition with the Cauchy sequence is that every, uh, sequence converges to a point inside the complete interval.
+\end{student}
+
+\begin{speech}[00:58:09 - 00:58:19]
+What you are asking is if compact implies complete, right? \inlinemetanote{student nods \qt{Yes}} Yes. \inlinemetanote{catches microphone back} Yes.
+\end{speech}
+
+\begin{speech}[00:58:20 - 00:59:47]
+Compact will be stronger than complete. Complete in $\mathbb{R}$ is closed sets.
+
+In $\mathbb{R}$ or in $\mathbb{R}^n$ --- we will see, not in a general metric space, but in $\mathbb{R}^n$ --- we will see a theorem that says that compact in $\mathbb{R}$ is closed and bounded. And the same in $\mathbb{R}^n$. So, you are adding boundedness.
+
+Another example \inlinemetanote{writes \qt{Example} on the board} of something that is bounded and is not compact --- you will be missing completeness ---: if you take the closed interval $[0, 1]$ intersected with $\mathbb{Q}$, the rational numbers \inlinemetanote{writes $[0, 1] \cap \mathbb{Q}$}, right? Here, if you take any sequence, it will have a convergent subsequence, but in $\mathbb{R}$, not in $\mathbb{Q}$, right?
+
+So, this is not compact \inlinemetanote{writes $\text{is not cpt}$ and underlines \qt{not cpt}}.
+
+And now there is the definition... \inlinemetanote{pulls down the middle blackboard panel}
+\end{speech}
+
+\begin{content}[Examples: Bolzano--Weierstrass and Non-Compactness of Rational Subsets]
+\begin{example}[The Bolzano--Weierstrass Theorem in $\mathbb{R}$]\label[example]{ex:bolzano-weierstrass}
+In $\mathbb{R}$ equipped with the standard Euclidean metric, any closed and bounded interval $[a, b] \subset \mathbb{R}$ (with $-\infty < a \le b < \infty$) is sequentially compact:
+\[
+[a, b] \subset \mathbb{R} \quad \text{is sequentially compact}.
+\]
+Every sequence $(x_n) \subseteq [a, b]$ has a subsequence converging to a point $x^* \in [a, b]$.
+\end{example}
+
+\begin{example}[{A Bounded Non-Compact Subset: $[0, 1] \cap \mathbb{Q}$}]\label[example]{ex:rational-subset-not-compact}
+Consider the set of rational numbers in the unit interval:
+\[
+K := [0, 1] \cap \mathbb{Q} \subset \mathbb{Q}.
+\]
+Although $K$ is bounded, it is \textbf{not} sequentially compact:
+\begin{itemize}
+    \item Choose an irrational number in the interval, for instance $\frac{1}{\sqrt{2}} \in (0, 1) \setminus \mathbb{Q}$.
+    \item Construct a sequence of rational numbers $(q_n)_{n \ge 0} \subseteq [0, 1] \cap \mathbb{Q}$ converging to $\frac{1}{\sqrt{2}}$ in $\mathbb{R}$ (e.g., via decimal truncations).
+    \item Any subsequence $(q_{n_k})$ must also converge to $\frac{1}{\sqrt{2}}$ in $\mathbb{R}$.
+    \item However, $\frac{1}{\sqrt{2}} \notin \mathbb{Q}$, so $(q_{n_k})$ has no limit in $[0, 1] \cap \mathbb{Q}$. Thus, no subsequence converges in $K$.
+\end{itemize}
+\end{example}
+\end{content}
+
+\begin{insight}[Compactness vs. Completeness]
+The student's question highlights a fundamental distinction in metric geometry:
+\begin{itemize}
+    \item \textbf{Completeness:} Requires that every \emph{Cauchy} sequence converges in the space. It ensures there are no \qt{missing puncture points} or \qt{holes}.
+    \item \textbf{Sequential Compactness:} Requires that \emph{every sequence whatsoever} (even sequences that wander wildly, like $(-1)^n$) possesses a convergent subsequence.
+    \item \textbf{Relation:} Compactness is strictly stronger than completeness:
+    \[
+    \text{Compact} \implies \text{Complete and Bounded}.
+    \]
+    In $\mathbb{R}$ (and $\mathbb{R}^n$), the Heine--Borel theorem establishes that a subset is compact if and only if it is closed and bounded. In $[0, 1] \cap \mathbb{Q}$, boundedness is satisfied, but completeness fails because of the gaps formed by irrational numbers.
+\end{itemize}
+\end{insight}
+
+\begin{hidden}
+% timestamp: 00:18:28
+% topic: Sequential compactness examples; comparison between compactness and completeness.
+% board_state: ex:bolzano-weierstrass, ex:rational-subset-not-compact
+% next_goal: Define Topological Compactness (open covers and finite subcovers).
+% open_loops: none
+\end{hidden}
+
+\subsection{Topological Compactness}
+
+\begin{speech}[00:59:57 - 01:01:19]
+This was definition number one of compactness.
+
+Now I continue... \inlinemetanote{writes \qt{Compactness} at the top left of the lower middle board}
+
+Definition number two: this one is new. But you will see that we will use it many, many times; it's very useful.
+
+A set $K$ is called topologically compact if for every open cover $\mathcal{U}$ of $K$ \inlinemetanote{writes $\forall \mathcal{U} \text{ open cover of } K$}, there exists a finite subcover \inlinemetanote{writes $\text{exists a finite subcover}$}. \inlinemetanote{draws a frame around this definition}
+
+Okay?
+\end{speech}
+
+\begin{content}[Definition of Topological Compactness]
+Let $(X, d)$ be a metric space.
+
+\begin{definition}[Topological Compactness]\label[definition]{def:topological-compactness}
+A subset $K \subseteq X$ is called \newterm{topologically compact} if every open cover of $K$ contains a finite subcover:
+\begin{equation}\label{eq:topological-compactness-def}
+\forall \mathcal{U} \text{ open cover of } K, \quad \exists \{U_1, \dots, U_N\} \subseteq \mathcal{U} \quad \text{such that} \quad K \subseteq \bigcup_{j=1}^N U_j.
+\end{equation}
+\end{definition}
+
+\begin{steps}[The Finite Subcover Condition]
+Topological compactness allows one to reduce a potentially intractable, uncountably infinite collection of local approximations to a finite collection. In analysis, finiteness allows one to take maximums, minimums, and finite sums, making global estimates possible.
+\end{steps}
+\end{content}
+
+\subsection{Counterexample: Infinite Open Cover of \texorpdfstring{$(0, 1) \cap \mathbb{Q}$}{(0, 1) cap Q} without Finite Subcover}
+
+\begin{speech}[01:01:19 - 01:02:26]
+Here it is very important that the open cover can be infinite, right?
+
+Let me give you an example. Again, this set $X = (0, 1) \cap \mathbb{Q}$ \inlinemetanote{writes $X = (0, 1) \cap \mathbb{Q}$}, right? You learned in Analysis~I that the rationals are countable.
+
+So, you can enumerate the rationals, right? \inlinemetanote{writes $\mathbb{Q} \subset \{ x_n \mid n > 0 \}$} They are contained in the image of a sequence.
+
+We can take a sequence... I think I saw in your notes of Analysis~I even the nice drawing of how you do this sequence. You remember that, right? \inlinemetanote{sketches snake diagonal pattern in the air} That sequence that is like a snake, and enumerates the rationals, right? You know what I'm talking about, yeah?
+
+There is a sequence that will enumerate, or that will cover, all the rationals.
+\end{speech}
+
+\begin{speech}[01:02:26 - 01:03:58]
+Now, for every element of the sequence, you can take a ball, let's say the ball of radius $2^{-n}$ centered at $x_n$ \inlinemetanote{writes $B_{2^{-n}}(x_n)$}, right?
+
+If you start with $2^{-n}$, maybe it covers everything, right? But you can take $2^{-n - 1000}$ \inlinemetanote{modifies exponent to $2^{-n - 1000}$}, right?
+
+$2^{-1000}$ is a ridiculously small number, but it's positive, right?
+
+What we are doing here is: for every rational number, we put on top of it a tiny interval \inlinemetanote{draws a point with a tiny interval on the board}. But we have infinitely many of them, right?
+
+Of course, this covers all the rationals. This set \inlinemetanote{writes $\bigcup_n B_{2^{-n-1000}}(x_n)$ on the board}... These balls are intervals, right? In this case, a ball in $\mathbb{R}$ is just the interval of this radius.
+
+These sets cover my whole interval. There are infinitely many of them, but I can never extract a finite subcover.
+\end{speech}
+
+\begin{speech}[01:03:58 - 01:05:35]
+We will see more about this, but if you want some strong heuristic of why you cannot cover this: it is because this thing is geometric. If you sum the lengths of all these intervals, it's a geometric series. You will see that the length of all these intervals is about $2 \cdot 2^{-10^3}$ \inlinemetanote{writes $2 \cdot 2^{-10^3}$ on the board}.
+
+Two times a ridiculous number.
+
+I have infinitely many intervals, but when I sum all of their lengths --- actually it's four times, but who cares \inlinemetanote{changes $2$ to $4$: $4 \cdot 2^{-10^3}$} ---, it's four times this.
+
+Of course, I cannot cover an interval of length $1$ by tiny, tiny intervals whose total length is ridiculously small, right?
+
+We will see more about that. \inlinemetanote{draws a square on the board} You can also prove in other ways that it doesn't cover. \inlinemetanote{writes an arrow from $4 \cdot 2^{-10^3}$ to \qt{total length}} This is the total length.
+
+What I would like to prove today is that these two definitions --- sequential compactness and topological compactness --- are equivalent: \textbf{(1)} implies \textbf{(2)}, and \textbf{(2)} implies \textbf{(1)}, okay?
+
+And that's what we are going to do now.
+\end{speech}
+
+\subsection{Equivalence of Compactness Definitions and Board Reset}
+
+\begin{speech}[01:05:35 - 01:06:06]
+In this way we will also understand the definition a bit better. \inlinemetanote{walks over to the board controls}
+
+Let me put it there... \inlinemetanote{slides boards and operates motorized shades}
+
+Now we start with the shades... This gets complicated. \inlinemetanote{shades settle into position}
+
+Yeah, I hope you can see. I will try not to use that part of the blackboard.
+\end{speech}
+
+\begin{note}[Blackboard Transition]
+The lecturer operates the motorized controls to reposition the blackboard panels and shades, bringing down a large clean black surface on the lower level while preserving the previous summary of compactness definitions on the upper boards.
+\end{note}
+
+\section{Proof of Equivalence: Sequential Implies Topological Compactness}
+
+\begin{content}[Equivalence Theorem]
+\begin{theorem}[Equivalence of Compactness Notions in Metric Spaces]\label[theorem]{thm:compactness-equivalence}
+Let $(X, d)$ be a metric space, and let $K \subseteq X$ be a subset. Then the following statements are equivalent:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Sequential Compactness:} Every sequence $(x_n)_{n \ge 0} \subseteq K$ has a subsequence converging to a limit in $K$.
+    \item \textbf{Topological Compactness:} Every open cover $\mathcal{U}$ of $K$ possesses a finite subcover $\mathcal{V} \subseteq \mathcal{U}$.
+\end{enumerate}
+\end{theorem}
+\end{content}
+
+\begin{proofWrapper}[Proof of \textbf{(1)} $\implies$ \textbf{(2)}: Sequential Compactness Implies Topological Compactness]
+
+\subsection{Proof Strategy and Open Cover Characterization}
+
+\begin{speech}[01:06:06 - 01:07:41]
+I told you: this proof is a bit hard.
+
+It's not long, but it's one of these proofs that... if you didn't know the trick of how to start, it's hard to do it, which is an indication that there is something deep going on in this proof. So, let's be careful with this proof, okay?
+
+The other implication is also delicate.
+
+Our assumption now is that we have a subset... Assume $K \subseteq X$ is sequentially compact \inlinemetanote{writes $\textbf{(1)} \implies \textbf{(2)}$ and \qt{Assume $K \subset X$ is seq. cpt.}}.
+
+Our goal is to show \inlinemetanote{writes \qt{Goal show}} that for every open cover $\mathcal{U} = \{ U_i \}_{i \in I}$ \inlinemetanote{writes $\forall \mathcal{U} = \{ U_i \}_{i \in I} \text{ open cover}$}, I can extract a finite subcover: there exists $\mathcal{V} \subseteq \mathcal{U}$ finite subcover \inlinemetanote{writes $\exists \mathcal{V} \subset \mathcal{U} \text{ finite subcover}$}.
+
+This is the same as \textbf{(1)} implies \textbf{(2)}, right? But I repeat everything again so that we are all on the same page to start this proof.
+\end{speech}
+
+\begin{content}[Setup and Objective of the Implication]
+\textbf{Implication:} $\textbf{(1)} \implies \textbf{(2)}$.
+
+\begin{itemize}
+    \item \textbf{Assumption:} $K \subseteq X$ is \newterm{sequentially compact}:
+    \[
+    \forall (x_n)_{n \ge 0} \subseteq K, \quad \exists (x_{n_\ell})_{\ell \ge 0} \quad \text{such that} \quad \lim_{\ell \to \infty} x_{n_\ell} = x \in K.
+    \]
+    \item \textbf{Goal:} Prove that $K$ is \newterm{topologically compact}:
+    \[
+    \forall \mathcal{U} = \{ U_i \}_{i \in I} \text{ open cover of } K, \quad \exists \mathcal{V} \subseteq \mathcal{U} \text{ finite subcover such that } K \subseteq \bigcup_{V \in \mathcal{V}} V.
+    \]
+\end{itemize}
+\end{content}
+
+\begin{speech}[01:07:41 - 01:09:11]
+Okay.
+
+This is the goal, I want to show that. You give me the cover, $\mathcal{U}$, and I will need to provide you with a finite subcover. This is my task: someone gives me the cover, and I need to give you the finite subcover.
+
+Let $\{U_i\}$ be an open cover \inlinemetanote{writes \qt{Let $\{U_i\}$ be a open cover $\iff$}}.
+
+This is the same as: for every $x \in K$, there exists at least one $U_i$ such that $x \in U_i$ \inlinemetanote{writes $x \in K \implies \exists U_i \text{ open st } x \in U_i$}. These guys are always open.
+\end{speech}
+
+\begin{content}[Pointwise Characterization of an Open Cover]
+Let $\mathcal{U} = \{ U_i \}_{i \in I}$ be an arbitrary open cover of $K$. By definition of a cover:
+\begin{equation}\label{eq:cover-pointwise}
+K \subseteq \bigcup_{i \in I} U_i \iff \forall x \in K, \ \exists i \in I \text{ such that } U_i \text{ is open and } x \in U_i.
+\end{equation}
+Because each $U_i$ is an open subset of $(X, d)$, every point $x \in K$ possesses an open neighborhood within the cover.
+\end{content}
+
+\subsection{Construction of the Inscribed Radius Function}
+
+\begin{speech}[01:09:11 - 01:10:46]
+If you give me many, many sets that cover my original compact set, you are giving me more freedom. But actually it's also tricky, because some of the sets can be very bad to cover.
+
+I need to identify which sets here see a big chunk of my set, so that I can pick them.
+
+The way to do this is:
+
+Given $x \in K$ \inlinemetanote{writes \qt{Given $x \in K$ let}}, I will define $r(x)$, radius, that is the supremum of $r > 0$ such that the ball of radius $r$ centered at $x$ is contained in $U_i$ for some $i$ \inlinemetanote{writes $r(x) := \sup \{ r > 0 \mid B_r(x) \subset U_i, \ U_i \in \mathcal{U} \}$}, where $U_i$ is some element in the cover.
+
+This is $U_i$, and this is the cover.
+\end{speech}
+
+\begin{speech}[01:10:46 - 01:12:43]
+Let me draw this, because otherwise it's complicated.
+
+Here we have our set $K$ \inlinemetanote{draws a smooth closed curve representing $K$ on the board}. This is $K$.
+
+And now you give me some cover \inlinemetanote{draws overlapping closed curves in white and red chalk} across $K$.
+
+Now I have another one here. I put different colors because otherwise they are very hard to see: maybe one is this, and now is that. Now every point in my set is contained in one of the sets of the cover, right?
+
+And now I pick a point here, this one.
+
+There is a biggest possible radius such that the ball of radius $r$ centered at my point --- this is $x$ --- is contained in the set of my cover, in the blue set \inlinemetanote{draws a circle centered at $x$ touching the boundary of the covering set}.
+
+Just pick the point and enlarge the radius until the ball touches the boundary of my set: this is the greatest radius.
+
+It could be that some of the open sets in my cover are really, really large, and then potentially the radius could be infinity. To rule this out, I will just put the minimum between this number and $1$.
+
+Let me redefine $r(x)$ as the minimum between this number and the number $1$ \inlinemetanote{modifies definition to $r(x) := \min \{ \sup \{ \dots \}, 1 \}$}.
+
+Okay? This is just the definition.
+\end{speech}
+
+\begin{content}[The Inscribed Radius Function $r(x)$]
+\begin{definition}[Inscribed Radius Function]\label[definition]{def:inscribed-radius-function}
+Let $\mathcal{U} = \{ U_i \}_{i \in I}$ be an open cover of $K$. For each point $x \in K$, we define the \newterm{inscribed radius} $r(x)$ by:
+\begin{equation}\label{eq:inscribed-radius-def}
+r(x) := \min \left\{ \sup \bigl\{ r > 0 \;\big|\; \exists i \in I \text{ such that } B_r(x) \subseteq U_i \bigr\}, \, 1 \right\}.
+\end{equation}
+\end{definition}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.3, >=Stealth]
+    % \begin{hidden}
+    % - Canvas: scale 1.3, x in [-2.5, 3.0], y in [-1.8, 1.8]
+    % - Order: (1) Compact set K boundary, MidnightBlue; (2) Open cover sets U_1, U_2, U_3;
+    %   (3) Point x in K; (4) Inscribed open ball B_{r(x)}(x) in BurntOrange; (5) Labels
+    % - Coordinates: x = (0.2, 0.1); U_1 contains x and has distance approx 0.8 to boundary
+    % - Labels: K at upper right, x at center, B_{r(x)}(x) with radius arrow
+    % - Collisions: labels spatially separated and cleanly placed
+    % \end{hidden}
+    % Compact set K
+    \draw[ultra thick, MidnightBlue, fill=MidnightBlue!5] 
+        (-1.8,-1.2) .. controls (-2.2,0.3) and (-1.5,1.4) .. (0,1.3)
+                    .. controls (1.4,1.2) and (2.2,0.4) .. (2.0,-0.7)
+                    .. controls (1.8,-1.5) and (-0.5,-1.6) .. cycle;
+    \node[MidnightBlue, font=\Large\bfseries] at (1.8, 1.3) {$K$};
+
+    % Open cover set U_1 covering x
+    \draw[thick, ForestGreen, fill=ForestGreen!10, opacity=0.7] 
+        (-0.8,-0.9) .. controls (-1.1,0.2) and (-0.6,1.2) .. (0.6,1.1)
+                    .. controls (1.5,1.0) and (1.6,-0.3) .. (1.1,-0.9)
+                    .. controls (0.6,-1.2) and (-0.2,-1.2) .. cycle;
+    \node[ForestGreen!90!black, font=\small\bfseries] at (-0.8, 1.1) {$U_i \in \mathcal{U}$};
+
+    % Other covering sets
+    \draw[thick, dashed, gray!70] 
+        (-1.9,-0.5) .. controls (-2.1,0.8) and (-0.8,1.5) .. (0.2,1.3)
+                    .. controls (-0.2,0.2) and (-1.0,-1.0) .. cycle;
+    \draw[thick, dashed, gray!70] 
+        (0.4,-1.4) .. controls (1.2,-1.4) and (2.1,-0.8) .. (1.9,0.5)
+                   .. controls (1.0,0.0) and (0.2,-0.8) .. cycle;
+
+    % Point x
+    \coordinate (PtX) at (0.2, 0.1);
+    \fill[black] (PtX) circle (1.8pt) node[below=2pt, font=\small] {$x$};
+
+    % Inscribed ball of radius r(x)
+    \draw[thick, BurntOrange, dashed, fill=BurntOrange!15, opacity=0.75] (PtX) circle (0.75cm);
+    \draw[->, thick, BurntOrange] (PtX) -- ++(45:0.75cm) node[midway, above left=-2pt, font=\footnotesize] {$r(x)$};
+    \node[BurntOrange, font=\footnotesize\bfseries] at ($(PtX)+(-45:0.85cm)$) {$B_{r(x)}(x)$};
+\end{tikzpicture}
+\end{center}
+
+\begin{steps}[Properties of the Radius Function]
+\begin{itemize}
+    \item \textbf{Strict Positivity ($r(x) > 0$):} Because $\mathcal{U}$ is an open cover of $K$, for any $x \in K$ there is some index $i \in I$ such that $x \in U_i$. Since $U_i$ is open, there exists an open ball $B_\varepsilon(x) \subseteq U_i$ for some $\varepsilon > 0$. Hence the set of valid radii contains $\varepsilon > 0$, guaranteeing:
+    \[
+    r(x) > 0 \quad \forall x \in K.
+    \]
+    \item \textbf{Capping by $1$:} If $U_i = X$ is unbounded or infinitely large, the supremum could be $+\infty$. Capping the definition with $\min\{\dots, 1\}$ ensures $0 < r(x) \le 1$ for every $x \in K$.
+\end{itemize}
+\end{steps}
+\end{content}
+
+\subsection{Selection of Efficient Open Sets}
+
+\begin{speech}[01:12:43 - 01:14:45]
+Now, given $x \in K$, select $U_i$ in the cover such that the ball of radius $r(x) / 2$ centered at $x$ is contained in $U_i$ \inlinemetanote{writes $\text{Given } x \in K \text{ select } U_i \text{ st } B_{\frac{r(x)}{2}}(x) \subset U_i$}.
+
+Select $U_i$ where $i$ depends on $x$ \inlinemetanote{writes $i = i(x)$ and $U_{i(x)}$}.
+
+For every point, this supremum is $r(x)$. But you know that the supremum maybe is not attained.
+
+However, half of the supremum is always attained, right?
+
+If you want to put the supremum here, maybe it's just attained in the limit, along a sequence of $U_i$; but if I put half of the supremum, there is always one set that gives me half of the supremum.
+
+That's why I take this $r(x) / 2$, just to take care of this supremum.
+
+So, for every point, there exists some $U_i$ that is efficient covering the point in this sense: it's quite large.
+\end{speech}
+
+\begin{content}[Selection of Covering Sets with Half-Radius Balls]
+For each $x \in K$, we select an index $i(x) \in I$ and an associated open set $U_{i(x)} \in \mathcal{U}$ satisfying:
+\begin{equation}\label{eq:half-radius-inclusion}
+B_{\frac{r(x)}{2}}(x) \subseteq U_{i(x)}.
+\end{equation}
+
+\begin{steps}[Why Halving the Radius is Necessary]
+Because $r(x)$ is defined as a supremum, an inscribed ball of the exact radius $r(x)$ might not be contained in any single element $U_i \in \mathcal{U}$ (the supremum could be a supremum of radii over an infinite sequence of distinct covering sets). However, by definition of the supremum, any strictly smaller radius---specifically:
+\[
+\frac{r(x)}{2} < r(x)
+\]
+---is strictly exceeded by at least one valid radius in the set. Therefore, there is guaranteed to exist at least one set $U_{i(x)} \in \mathcal{U}$ containing the ball $B_{r(x)/2}(x)$.
+\end{steps}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:13:00
+% topic: Proof that sequential compactness implies topological compactness
+% board_state: thm:compactness-equivalence, def:inscribed-radius-function, eq:half-radius-inclusion
+% next_goal: Construct the sequence of points x_0, x_1, ... and candidate finite subcover
+% open_loops: none
+\end{hidden}
+
+\subsection{Iterative Construction of the Sequence of Points}
+
+\begin{speech}[01:14:45 - 01:16:31]
+Now you will see how it goes.
+
+Pick any point --- you can choose it --- $x_0 \in K$ \inlinemetanote{writes \qt{Pick any $x_0 \in K$}}, right?
+
+And now I will start to construct the finite cover for you.
+
+Pick any point. The finite subcover I call $\mathcal{V}$, right?
+
+The first element of the subcover will be this $U_i$ associated to my first point, $x_0$ \inlinemetanote{writes $\mathcal{V} := \{ U_{i(x_0)}, \dots \}$}. Right?
+
+But this is not covering everything. So, what I do is... I will draw it here, okay?
+
+I have my set \inlinemetanote{draws a new sketch of set $K$ on the right board}: this is the set $K$.
+
+I start with any point, $x_0$.
+
+And then I pick what I will call $U_{i(x_0)}$ --- let me call this for brevity $U_0$ \inlinemetanote{writes $U_0$ above $U_{i(x_0)}$}.
+
+$U_0$ will be this one. And this one is good because at least I have some ball here: the ball of radius $r(x_0) / 2$, right?
+
+This is my first set of the cover.
+\end{speech}
+
+\begin{speech}[01:16:31 - 01:18:11]
+Now I will take a second. All the points that are covered by this first set are already taken care of. So, let me take any point outside of this.
+
+I will take $x_1$ here \inlinemetanote{marks $x_1$ outside $U_0$}.
+
+And this point, because it's a cover, belongs to one of these $U$: this will be $U_1$.
+
+Let me define $U_{i(x_1)}$, which I call $U_1$ \inlinemetanote{writes $U_1 in \mathcal{V}$}, where $x_1$ will be any point in $K \setminus U_0$ \inlinemetanote{writes $x_1 \in K \setminus U_0$}.
+
+And I continue like this.
+
+Now, if these two sets cover the whole $K$, I'm happy, because I gave you a finite subcover of two sets.
+
+So, I can assume that these two don't cover, and I have a point $x_2$ \inlinemetanote{marks $x_2$ in blue chalk outside $U_0 \cup U_1$}.
+
+Now in blue here: $x_2$. And this $x_2$ is contained in some $U_2$, that is $U_{i(x_2)}$ \inlinemetanote{writes $U_2 in \mathcal{V}$}.
+
+And so on and so forth.
+\end{speech}
+
+\begin{content}[Greedy Extraction Algorithm for the Subcover]
+We attempt to construct a finite subcover $\mathcal{V} \subseteq \mathcal{U}$ iteratively:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0}
+    \item \textbf{Base Step:} Choose an arbitrary point $x_0 \in K$. Select $U_0 := U_{i(x_0)} \in \mathcal{U}$ satisfying $B_{r(x_0)/2}(x_0) \subseteq U_0$.
+    \begin{itemize}
+        \item If $K \subseteq U_0$, then $\mathcal{V} := \{ U_0 \}$ is a finite subcover, and the proof terminates.
+    \end{itemize}
+    \item \textbf{First Iteration:} If $K \not\subseteq U_0$, choose a point $x_1 \in K \setminus U_0$. Select $U_1 := U_{i(x_1)} \in \mathcal{U}$ satisfying $B_{r(x_1)/2}(x_1) \subseteq U_1$.
+    \begin{itemize}
+        \item If $K \subseteq U_0 \cup U_1$, then $\mathcal{V} := \{ U_0, U_1 \}$ is a finite subcover, and the proof terminates.
+    \end{itemize}
+    \item \textbf{Second Iteration:} If $K \not\subseteq U_0 \cup U_1$, choose a point $x_2 \in K \setminus (U_0 \cup U_1)$. Select $U_2 := U_{i(x_2)} \in \mathcal{U}$ satisfying $B_{r(x_2)/2}(x_2) \subseteq U_2$.
+\end{enumerate}
+\end{content}
+
+\subsection{Infinite Sequence Generation and Sequential Compactness}
+
+\begin{speech}[01:18:11 - 01:19:21]
+Now, if this process... I would pick a point $x_3$ here, right? Now it's the last color I have, so it's the last example: $x_3$ here, and it's covered by its set. The important point is that $x_2 \in K \setminus (U_0 \cup U_1)$ \inlinemetanote{writes $x_2 \in K \setminus (U_0 \cup U_1)$}, and so on and so forth.
+
+If eventually I get finitely many sets that cover, I'm happy.
+
+Otherwise, this sequence that I'm constructing will go on forever: I will have infinitely many elements of this sequence.
+
+And now I plan to reach a contradiction, using my assumption that $K$ is sequentially compact.
+
+You see? I did all of this construction to construct a sequence.
+
+Now I will use my assumption on this sequence: the subset is sequentially compact, this sequence will have a convergent subsequence, and I will reach some sort of contradiction.
+
+Let's do that.
+\end{speech}
+
+\begin{speech}[01:19:21 - 01:21:33]
+Doing so, unless I find a finite subcover \inlinemetanote{writes \qt{Doing so, unless I find finite subcover,}}, I'll produce a sequence \inlinemetanote{writes \qt{I'll produce a sequence}} $(x_n)$ such that $x_n \in K \setminus \bigcup_{k=0}^{n-1} U_{i(x_k)}$ for $n > 0$ \inlinemetanote{writes $x_n \in K \setminus \bigcup_{k=0}^{n-1} U_{i(x_k)}, \ n > 0$}, right?
+
+And this sequence is infinite.
+
+By sequential compactness \inlinemetanote{writes \qt{By seq. compactness,}}, this sequence has a convergent subsequence $(x_{n_\ell})_{\ell \ge 0}$ \inlinemetanote{writes $(x_n) \text{ has converging subsequence } (x_{n_\ell})_{\ell \ge 0}$}.
+
+Let me define $x := \lim_{\ell \to \infty} x_{n_\ell}$ \inlinemetanote{writes $x := \lim_{\ell \to \infty} x_{n_\ell}$}.
+
+This limit exists by assumption \inlinemetanote{writes $\exists \text{ by assumption}$}, and belongs to $K$ \inlinemetanote{writes $\in K$}.
+
+Remember that $r(x) > 0$, right? \inlinemetanote{writes $r(x) > 0$}
+
+We have three minutes, let's try to make it as clear as possible.
+\end{speech}
+
+\begin{content}[The Infinite Sequence and Subsequential Convergence]
+\textbf{The Infinite Escape Sequence:} \\
+Suppose for the sake of contradiction that no finite subcollection of $\mathcal{U}$ covers $K$. Then this iterative process never terminates, producing an infinite sequence $(x_n)_{n=0}^\infty \subseteq K$ satisfying:
+\begin{equation}\label{eq:escape-property}
+x_n \in K \setminus \bigcup_{k=0}^{n-1} U_{i(x_k)} \quad \forall n \ge 1.
+\end{equation}
+In particular, for any two indices $n > m \ge 0$:
+\begin{equation}\label{eq:disjoint-point-set}
+x_n \notin U_{i(x_m)}.
+\end{equation}
+
+\textbf{Application of Sequential Compactness:} \\
+By hypothesis $\textbf{(1)}$, the set $K$ is sequentially compact. Therefore, the infinite sequence $(x_n)_{n=0}^\infty \subseteq K$ admits a convergent subsequence $(x_{n_\ell})_{\ell \ge 0}$ whose limit lies in $K$:
+\begin{equation}\label{eq:subsequence-limit}
+\lim_{\ell \to \infty} x_{n_\ell} = x \in K.
+\end{equation}
+Since $x \in K$, the inscribed radius at the limit point is strictly positive:
+\begin{equation}\label{eq:limit-radius-positive}
+r(x) > 0.
+\end{equation}
+\end{content}
+
+\subsection{Geometric Contradiction and Completion of the Proof}
+
+\begin{speech}[01:21:33 - 01:23:04]
+Right, we have our set $K$. We have $U_0$, then $x_0$, then $x_1$ is covered by someone, $x_2$ is covered by someone. But now these converge to $x$, right?
+
+That a subsequence converges to $x$ means that eventually I will have infinitely many elements that are here, right?
+
+So, I will have...
+\end{speech}
+
+\begin{speech}[01:23:04 - 01:24:25]
+Remember that this point is always outside, right? Every element of the sequence is outside the previous sets.
+
+By construction of the sequence, now the radius $r(x_n)$ needs to converge to zero \inlinemetanote{writes \qt{by construction $r(x_n) \to 0$}}.
+
+Because otherwise the sequence could not converge to $x$. These radii of the balls need to go to zero, right?
+\end{speech}
+
+\begin{speech}[01:24:25 - 01:26:37]
+On the other hand, the limit point $x$ is in one of the sets of the cover: there is $U_{i(x)}$, an efficient set that covers my point $x$. This means that the ball of radius $r(x) / 2$ \inlinemetanote{writes $B_{\frac{r(x)}{2}}(x)$} is contained in $U_{i(x)}$ \inlinemetanote{writes $\subset U_{i(x)}$}.
+
+You see now the contradiction: eventually all these points $x_{n_\ell}$ will be very, very close to $x$ because they are convergent.
+
+The points $x_{n_\ell}$ will be super close to $x$. And I'm picking a radius $r(x_{n_\ell})$ that is going to zero, yet I could have chosen a radius that is much larger!
+
+$r(x) / 4$ would work for me.
+
+This will be the contradiction. Let me just finish this sentence:
+
+On the one hand, $r(x_{n_\ell}) \to 0$ \inlinemetanote{writes $r(x_{n_\ell}) \to 0$}.
+
+On the other hand, for $\ell$ large, $r(x) / 4$ is a good radius here: the ball of radius $r(x) / 4$ centered at $x_{n_\ell}$ is contained in $U_{i(x)}$ \inlinemetanote{writes $\text{for } \ell \text{ large } B_{\frac{r(x)}{4}}(x_{n_\ell}) \subset U_{i(x)}$}. And this is a contradiction! \inlinemetanote{draws a box around the contradiction statement}
+
+Okay, we will revisit next time. \inlinemetanote{students applaud, lecturer concludes}
+\end{speech}
+
+\begin{content}[Derivation of the Contradiction]
+\textbf{1. The Radii Must Shrink to Zero ($r(x_{n_\ell}) \to 0$):} \\
+By construction, every iterate $x_{n_k}$ lies outside all previous sets:
+\[
+x_{n_k} \notin U_{i(x_{n_j})} \quad \forall k > j.
+\]
+Since $B_{\frac{r(x_{n_j})}{2}}(x_{n_j}) \subseteq U_{i(x_{n_j})}$, this non-inclusion implies:
+\begin{equation}\label{eq:inter-point-distance-bound}
+d(x_{n_k}, x_{n_j}) \ge \frac{r(x_{n_j})}{2} \quad \forall k > j.
+\end{equation}
+Because the subsequence $(x_{n_\ell})_{\ell \ge 0}$ converges to $x$, it is a Cauchy sequence, so $d(x_{n_k}, x_{n_j}) \to 0$ as $j, k \to \infty$. In particular, taking $k = j + 1 \to \infty$:
+\begin{equation}\label{eq:radii-vanish}
+\lim_{\ell \to \infty} r(x_{n_\ell}) = 0.
+\end{equation}
+
+\textbf{2. The Persistent Ball Around the Limit:} \\
+By \eqref{eq:half-radius-inclusion}, the target set $U_{i(x)}$ contains the ball of radius $\frac{r(x)}{2}$ around the limit $x$:
+\begin{equation}\label{eq:limit-ball-inclusion}
+B_{\frac{r(x)}{2}}(x) \subseteq U_{i(x)}.
+\end{equation}
+Since $x_{n_\ell} \to x$, there exists $L \in \mathbb{N}$ such that for all $\ell \ge L$:
+\begin{equation}\label{eq:subsequence-close-to-limit}
+d(x_{n_\ell}, x) < \frac{r(x)}{4}.
+\end{equation}
+For any such $\ell \ge L$ and any point $z \in B_{\frac{r(x)}{4}}(x_{n_\ell})$, the triangle inequality gives:
+\[
+d(z, x) \le d(z, x_{n_\ell}) + d(x_{n_\ell}, x) < \frac{r(x)}{4} + \frac{r(x)}{4} = \frac{r(x)}{2}.
+\]
+Consequently:
+\begin{equation}\label{eq:ball-nested-inclusion}
+B_{\frac{r(x)}{4}}(x_{n_\ell}) \subseteq B_{\frac{r(x)}{2}}(x) \subseteq U_{i(x)}.
+\end{equation}
+By the definition of the inscribed radius $r(x_{n_\ell})$ as the supremum in \eqref{eq:inscribed-radius-def}, the inclusion \eqref{eq:ball-nested-inclusion} implies:
+\begin{equation}\label{eq:radii-bounded-below}
+r(x_{n_\ell}) \ge \min\left\{ \frac{r(x)}{4}, \, 1 \right\} = \frac{r(x)}{4} > 0 \quad \forall \ell \ge L.
+\end{equation}
+
+\textbf{3. The Contradiction:} \\
+Inequality \eqref{eq:radii-bounded-below} states that $r(x_{n_\ell}) \ge \frac{r(x)}{4} > 0$ for all large $\ell$, which directly contradicts \eqref{eq:radii-vanish}, where $\lim_{\ell \to \infty} r(x_{n_\ell}) = 0$.
+
+Hence, the assumption that no finite subcover exists is false. Every open cover of $K$ must admit a finite subcover, concluding the proof that sequential compactness implies topological compactness.
+\end{content}
+
+\begin{content}[Geometric Visualization of the Contradiction]
+\begin{center}
+\begin{tikzpicture}[scale=1.45, >=Stealth]
+    % \begin{hidden}
+    % - Canvas: scale 1.45, x in [-3.0, 3.2], y in [-2.0, 2.2]
+    % - Order: (1) Set K boundary, MidnightBlue; (2) Open set U_{i(x)} around limit x, ForestGreen;
+    %   (3) Concentric balls around limit x: B_{r(x)/2}(x) dashed ForestGreen;
+    %   (4) Sequence points x_{n_l} accumulating toward x; (5) Ball B_{r(x)/4}(x_{n_l}) in BrickRed;
+    %   (6) Labels and annotations
+    % - Coordinates: x = (0.4, 0.0); x_{n_l} = (0.22, -0.05); r(x) / 2 = 1.05 cm
+    % - Contradiction: B_{r(x)/4}(x_{n_l}) is strictly contained within B_{r(x)/2}(x) \subseteq U_{i(x)}
+    % \end{hidden}
+    % Boundary of compact set K
+    \draw[ultra thick, MidnightBlue, fill=MidnightBlue!5] 
+        (-2.2,-1.4) .. controls (-2.6,0.2) and (-1.8,1.6) .. (0,1.5)
+                    .. controls (1.6,1.4) and (2.6,0.6) .. (2.4,-0.8)
+                    .. controls (2.2,-1.8) and (-0.6,-1.9) .. cycle;
+    \node[MidnightBlue, font=\Large\bfseries] at (2.1, 1.3) {$K$};
+
+    % Open set U_{i(x)} containing the limit point
+    \draw[thick, ForestGreen, fill=ForestGreen!10, opacity=0.7] 
+        (-0.8,-1.1) .. controls (-1.3,0.3) and (-0.6,1.4) .. (0.8,1.3)
+                    .. controls (1.8,1.2) and (1.9,-0.4) .. (1.3,-1.1)
+                    .. controls (0.7,-1.5) and (-0.1,-1.5) .. cycle;
+    \node[ForestGreen!90!black, font=\bfseries] at (1.4, 1.1) {$U_{i(x)}$};
+
+    % Limit point x
+    \coordinate (X) at (0.4, 0.0);
+    \fill[black] (X) circle (2.0pt) node[above right=1pt, font=\small\bfseries] {$x$};
+
+    % Inscribed ball B_{r(x)/2}(x)
+    \draw[thick, ForestGreen, dashed] (X) circle (1.05cm);
+    \draw[->, thick, ForestGreen] (X) -- ++(130:1.05cm) 
+        node[midway, above left=-2pt, font=\footnotesize] {$\frac{r(x)}{2}$};
+    \node[ForestGreen!90!black, font=\footnotesize] at ($(X)+(160:1.2cm)$) {$B_{\frac{r(x)}{2}}(x)$};
+
+    % Converging subsequence points x_{n_l}
+    \coordinate (X1) at (-1.5, -0.7);
+    \coordinate (X2) at (-0.9, -0.2);
+    \coordinate (X3) at (-0.3, -0.1);
+    \coordinate (Xnl) at (0.22, -0.05);
+
+    \fill[gray!80] (X1) circle (1.5pt) node[below=1pt, font=\tiny] {$x_{n_1}$};
+    \fill[gray!80] (X2) circle (1.5pt) node[below=1pt, font=\tiny] {$x_{n_2}$};
+    \fill[gray!80] (X3) circle (1.5pt) node[below=1pt, font=\tiny] {$x_{n_3}$};
+    \fill[BrickRed] (Xnl) circle (1.8pt) node[below left=1pt, font=\footnotesize\bfseries] {$x_{n_\ell}$};
+
+    % Ball of radius r(x)/4 around x_{n_l}
+    \draw[thick, BrickRed, dashed, fill=BrickRed!20, opacity=0.75] (Xnl) circle (0.52cm);
+    \draw[->, thick, BrickRed] (Xnl) -- ++(-45:0.52cm) 
+        node[midway, below left=-2pt, font=\tiny] {$\frac{r(x)}{4}$};
+    \node[BrickRed, font=\footnotesize\bfseries] at ($(Xnl)+(-85:0.75cm)$) {$B_{\frac{r(x)}{4}}(x_{n_\ell})$};
+
+    % Arrow showing convergence to x
+    \draw[->, thick, MidnightBlue] (X1) to[bend left=10] (X2);
+    \draw[->, thick, MidnightBlue] (X2) to[bend left=10] (X3);
+    \draw[->, thick, MidnightBlue] (X3) to[bend left=10] (Xnl);
+    \draw[->, thick, MidnightBlue] (Xnl) -- (X);
+\end{tikzpicture}
+\end{center}
+
+\begin{steps}[Core Contradiction Mechanism]
+The visual clarifies the geometric tension that forces the contradiction:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0}
+    \item \textbf{Cauchy Separation:} Every point $x_{n_\ell}$ was chosen strictly outside the preceding covering sets, forcing the distance between iterates to be at least $\frac{r(x_{n_k})}{2}$. Since the subsequence converges to $x$, the points cluster together, which forces the radii $r(x_{n_\ell})$ to shrink to zero.
+    \item \textbf{Room in the Target Neighborhood:} At the limit $x$, the set $U_{i(x)}$ is open and contains a fixed ball of radius $\frac{r(x)}{2} > 0$. As soon as $x_{n_\ell}$ comes within $\frac{r(x)}{4}$ of $x$, a ball of radius $\frac{r(x)}{4}$ around $x_{n_\ell}$ fits completely inside $U_{i(x)}$.
+    \item \textbf{Contradiction:} This guarantees that $r(x_{n_\ell}) \ge \frac{r(x)}{4} > 0$ for all sufficiently large $\ell$, which directly contradicts the requirement that $r(x_{n_\ell}) \to 0$.
+\end{enumerate}
+\end{steps}
+\end{content}
+
+\end{proofWrapper}
+
+\begin{overview}[Summary of Key Concepts]
+\begin{itemize}
+    \item \textbf{Equivalence of Continuity Definitions:}
+    Sequential continuity, $\varepsilon$-$\delta$ continuity, and topological continuity ($f^{-1}(V)$ is open for every open $V$) are equivalent in general metric spaces. We proved the final implication $\textbf{(3)} \implies \textbf{(1)}$ using the preimage of the open ball $B_\varepsilon(f(x))$.
+    
+    \item \textbf{Uniform and Lipschitz Continuity:}
+    Uniform continuity requires a single modulus $\delta(\varepsilon) > 0$ valid for all $x \in X$. Lipschitz continuity ($d_Y(f(x), f(y)) \le L \cdot d_X(x, y)$) implies uniform continuity with $\delta = \varepsilon / L$. The distance function to any fixed reference point $x \mapsto d(x, x_0)$ is $1$-Lipschitz continuous by the reverse triangle inequality.
+    
+    \item \textbf{Banach Fixed Point Theorem:}
+    Every contraction mapping $T \colon X \to X$ with contraction factor $\lambda \in (0, 1)$ on a complete metric space $(X, d)$ possesses a unique fixed point $x^* \in X$. The Picard iterates $x_{n+1} = T(x_n)$ form a Cauchy sequence by geometric decay of step lengths, converging to $x^* = T(x^*)$ with error bound $d(x_n, x^*) \le \frac{\lambda^n}{1 - \lambda} d(x_1, x_0)$.
+    
+    \item \textbf{Compactness in Metric Spaces:}
+    \begin{itemize}
+        \item \emph{Sequential Compactness:} Every sequence in $K$ admits a subsequence converging to a point in $K$.
+        \item \emph{Topological Compactness:} Every open cover $\mathcal{U}$ of $K$ admits a finite subcover $\mathcal{V} \subseteq \mathcal{U}$.
+    \end{itemize}
+    Sequential compactness implies topological compactness via an inscribed-radius construction $r(x)$ where assuming non-existence of a finite subcover produces an infinite sequence with $r(x_{n_\ell}) \to 0$, contradicting the persistent containment $B_{r(x)/4}(x_{n_\ell}) \subseteq U_{i(x)}$.
+\end{itemize}
+\end{overview}
